@@ -1,0 +1,81 @@
+
+
+._container_primary_carusel {
+    display: flex;
+    width: 100%;
+    min-width: -webkit-fill-available;
+    min-height: 30em;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    position: relative;
+    user-select: none;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+._container_primary_carusel ._container_img_carusel {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    transform-origin: center;
+}
+
+._container_primary_carusel 
+._container_img_carusel img {
+    width: 100vw;
+    height: 30em;
+    object-fit: cover;
+}
+
+
+._container_primary_carusel::-webkit-scrollbar {
+    display: none;
+}
+
+._action_cirlcle,
+._container_actions {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: -webkit-fill-available;
+    height: inherit;
+    z-index: 26;
+    padding: 0 2em 0 2em;
+}
+
+._container_actions a {
+   cursor: pointer;
+}
+
+._action_cirlcle {
+    justify-content: center;
+    align-items: end;
+    gap: 10px;
+    z-index: 22;
+    padding-bottom: 2em;
+}
+
+._action_cirlcle ._circle {
+    cursor: pointer;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: var(--color-background-off);
+}
+
+._circle._active {
+    background-color: var(--color-primary-background);
+}
+
+/*
+   Variables Css
+*/
+:root {
+    --color-primary-background: #f5f5f5;
+    --color-background-off: #A1A1A1;
+}
