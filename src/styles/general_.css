@@ -14,3 +14,9 @@ html,body {
     width: 100%;
     overflow: hidden;
 }
+
+
+/*
+    Font
+*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');

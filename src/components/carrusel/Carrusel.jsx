@@ -59,8 +59,9 @@ const Carrusel = () => {
             return scrollPosition >= imageOffset && scrollPosition < imageOffset + containerWidth;
           });
 
-          setCurrentImageIndex(imageIndex);
           handleCircle(imageIndex);
+          setCurrentImageIndex(imageIndex);
+          
 
         }
 
