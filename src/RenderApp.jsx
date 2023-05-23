@@ -1,5 +1,6 @@
 //import Libs
 import React from 'react';
+import Login from './components/pages/Login';
 import {
     BrowserRouter as Router,
     Routes,
@@ -15,6 +16,7 @@ export default function RenderApp() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<><h1>No Found Route</h1></>} />
         </Routes>
       </Router>

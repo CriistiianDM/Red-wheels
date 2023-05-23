@@ -72,10 +72,131 @@
     background-color: var(--color-primary-background);
 }
 
+footer._container_footer_login,
+header._container_header_login  {
+    display: flex;
+    width: -webkit-fill-available;
+    background: var(--background-generl-primary);
+    height: 5em;
+    overflow: hidden;
+    padding: 1em 2em 1em 2em;
+}
+
+header._container_header_login img {
+    height: 5em;
+    object-fit: cover;
+    margin-right: 1em;
+}
+
+footer._container_footer_login {
+    padding: 0;
+    margin-top: 5em;
+}
+
+footer._container_footer_login img {
+    width: -webkit-fill-available;
+    height: 5em;
+    object-fit: cover;
+}
+
+._background_general_ {
+    background: var(--background-generl-primary);
+}
+
+._container_form_login {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+    overflow: hidden;
+}
+
+._container_form_login form {
+    display: grid;
+    height: auto;
+    min-height: calc(100vh - 18em);
+    width: 100%;
+    max-width: 350px;
+    border-radius: 60px;
+    padding: 4em;
+    background: var(--color-blue-page-primary);
+    overflow: hidden;
+}
+
+
+._container_form_login form div._img_circle {
+    place-self: center;
+    background: var(--background-terciary-color);
+    border-radius: 50%;
+    width: 10em;
+    height: 10em;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+._container_form_login form div._img_circle img {
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+}
+
+._container_form_login form label {
+    color: var(--color-primary-background);
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 1em;
+    font-family: var(--text-general-primary);
+    margin-bottom: 7px;
+    margin-top: 17px;
+}
+
+._container_form_login form select, 
+._container_form_login form input {
+    background: var(--color-rbga-primary);
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    padding: 1em;
+}
+
+._container_form_login form button {
+    place-self: center;
+    width: 80%;
+    height: 1.7em;
+    background: var(--color-red-primary);
+    border-radius: 30px;
+    font-family: var(--text-general-primary);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+    color: var(--color-primary-background);
+    border: none;
+    margin-top: 1em;
+}
+
+._container_form_login form a {
+    place-self: center;
+    color: var(--color-red-primary);
+    margin-top: 0.5em;
+    font-family: var(--text-general-primary);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    margin-top: 0.6em;
+}
+
 /*
    Variables Css
 */
 :root {
     --color-primary-background: #f5f5f5;
     --color-background-off: #A1A1A1;
+    --background-generl-primary: #001019;
+    --color-blue-page-primary: rgba(28, 43, 50, 0.25);
+    --background-terciary-color: #203138;
+    --text-general-primary: 'Quicksand', sans-serif;
+    --color-rbga-primary: rgba(228, 57, 70, 0.46);
+    --color-red-primary: #E43946;
 }
