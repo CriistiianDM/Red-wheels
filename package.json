@@ -1,0 +1,29 @@
+{
+  "name": "proyecto-final-desarrollo-software-i",
+  "version": "1.0.0",
+  "description": "Proyecto Final",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx vite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CriistiianDM/Proyecto-Final-Desarrollo-Software-I.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CriistiianDM/Proyecto-Final-Desarrollo-Software-I/issues"
+  },
+  "homepage": "https://github.com/CriistiianDM/Proyecto-Final-Desarrollo-Software-I#readme",
+  "devDependencies": {
+    "vite": "^4.2.1"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.10.0"
+  }
+}

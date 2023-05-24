@@ -1,0 +1,24 @@
+.section_padding{
+    padding: 2rem 3rem;
+}
+
+.header{
+    background-color: #070426;
+
+}
+
+.sb_header{
+    display: flex;
+    flex-direction: column;
+}
+
+.sb_header-links{
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 1rem;
+}
