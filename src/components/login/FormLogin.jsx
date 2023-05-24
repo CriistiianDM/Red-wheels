@@ -16,6 +16,10 @@ const FormLogin = () => {
                         <img src="/src/assets/icon/profile.svg" alt="circle" />
                     </div>
 
+                    <div className="_img_circle">
+                        <img src="/src/assets/icon/profile.svg" alt="circle" />
+                    </div>
+
                     <label>
                         Nombre de usuario
                     </label>

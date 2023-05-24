@@ -124,7 +124,7 @@ footer._container_footer_login img {
 }
 
 
-._container_form_login form div._img_circle {
+div._img_circle {
     place-self: center;
     background: var(--background-terciary-color);
     border-radius: 50%;
@@ -135,7 +135,7 @@ footer._container_footer_login img {
     overflow: hidden;
 }
 
-._container_form_login form div._img_circle img {
+div._img_circle img {
     width: 70%;
     height: 70%;
     object-fit: cover;
