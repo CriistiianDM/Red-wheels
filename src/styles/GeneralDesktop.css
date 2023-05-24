@@ -292,14 +292,14 @@ div._img_circle img {
     line-height: 25px;
     color: var(--color-primary-background);
     text-align: center;
-    -webkit-line-clamp: 1;
+    /* -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap; 
     width: -webkit-fill-available;
     height: 2.5em;
-    text-align: center;
+    text-align: center; */
 }
 
 ._container_products_view 

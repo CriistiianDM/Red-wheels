@@ -41,14 +41,27 @@ const PRODUCTS = [
 
 const Products = () => {
 
+    const [ products_, setProducts ] = React.useState(PRODUCTS);
 
+    const addProducts = () => {
+         setProducts([
+            ...products_,
+            {
+                id: 3,
+                name: "FIAT 500 “Edición 1957”",
+                price: 100,
+                description: "holi", 
+                img: "/src/assets/product_img/producto2.svg"
+            }
+        ])
+    }
 
     return (
         <>
          <div className="_container_root_products">
             {
                 
-                PRODUCTS.map((item , index) => (
+                products_.map((item , index) => (
 
                     <div product-key={item.id} key={index} className="_container_products_view">
 
@@ -60,9 +73,9 @@ const Products = () => {
 
                             <div className="_container-info">
                                     <h1>{item.name}</h1>
-                                    <div className="_description">
+                                    {/* <div className="_description"> */}
                                         <p>{item.description}</p>
-                                    </div>
+                                    {/* </div> */}
                                     <div className="_actions">
                                         <a>DETALLES</a>
                                     </div>
@@ -75,6 +88,9 @@ const Products = () => {
                 ))  
             }
           </div>
+          <a onClick={addProducts}>
+            add products
+          </a>
         </>
     )
 
