@@ -56,6 +56,15 @@ const Products = () => {
         ])
     }
 
+    React.useEffect(() => {
+        
+        //maximo 20 productos
+        if(products_.length > 20){
+            setProducts(products_.slice(0, 20))
+        }
+
+    }, [products_])
+
     return (
         <>
          <div className="_container_root_products">
