@@ -1,6 +1,7 @@
 //import Libs
 import React from 'react';
 import Login from './components/pages/Login';
+import Home from './components/pages/Home';
 import {
     BrowserRouter as Router,
     Routes,
@@ -8,7 +9,7 @@ import {
   } from 'react-router-dom';
 
 //import Components
-import Home from '/src/components/pages/home.jsx'
+// import Home from '/src/components/pages/home.jsx'
 
 export default function RenderApp() {
   return (
