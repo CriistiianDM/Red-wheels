@@ -27,23 +27,15 @@ const IMAGES = ([
 
 
 const characteristics = [
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    ''
+    '1 motor eléctrico (eje trasero)',
+    'POTENCIA TOTAL 208 kW (283 CV)',
+    'BATERÍA 60 kWh',
+    'VELOCIDAD MÁXIMA 225 km/h',
+    'ACELERACIÓN 6,1',
+    'AUTONOMÍA (WLTP) 491 km',
+    'DIMENSIONES (LARGO / ANCHO/ ALTO) 4.694 mm / 1.849 mm / 1.443 mm °BATALLA 2.875 mm ',
+    'MALETERO TRASERO / DELANTERO 425 litros / 117 litros',
+    'BATALLA 2.875 mm',
 ]
 
 /**

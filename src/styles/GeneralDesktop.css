@@ -495,12 +495,28 @@ div._item > label span {
 ._container_characteristics_view {
     display: grid;
     grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax( min(100%, 23em), 1fr));
     height: auto;
     min-height: 10em;
-    width: 95%;
+    gap: 0.3em;
+    width: calc(-webkit-fill-available - 5%);
+    padding: 1em;
 }
 
+._container_characteristics_view ol {
+    list-style-type: circle;
+}
 
+._container_characteristics_view ol li {
+    font-family: 'Inter' , sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 17px;
+    line-height: 24px;
+    margin-bottom: 0.9em;
+    letter-spacing: 1px;
+    color: var(--color-white);
+}
 /*
    Variables Css
 */
