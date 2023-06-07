@@ -9,6 +9,8 @@ import {
     Route
   } from 'react-router-dom';
 
+
+import ViewProduct from './components/pages/ViewProduct';
 //import Components
 // import Home from '/src/components/pages/home.jsx'
 
@@ -21,6 +23,7 @@ export default function RenderApp() {
           <Route path="/login" element={<Login />} />
           <Route path="/vehicles" element={<Vehicles />} />
           <Route path="*" element={<><h1>No Found Route</h1></>} />
+          <Route path="/view-product" element={<ViewProduct />} />
         </Routes>
       </Router>
     </>

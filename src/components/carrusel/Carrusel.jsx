@@ -32,11 +32,16 @@ const IMAGES = Object.freeze([
  * @author <cristian.machado@correounivalle.edu.co>
  * @returns COMPONENTE Carrusel
 */
-const Carrusel = () => {
-
+const Carrusel = ({
+  images_,
+  class_primary_,
+}) => {
+    // console.log(images_, class_primary_);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const containerRef = useRef(null);
-  
+    const _images = images_ || IMAGES;
+    const class_primary = class_primary_ || '';
+    
     useEffect(() => {
 
       //al primer elemento _action_cirlcle ._circle le agrega la clase _active
@@ -45,7 +50,7 @@ const Carrusel = () => {
       _circle.classList.add('_active');
 
       const handleScroll = () => {
-        console.log('handleScroll');
+        // console.log('handleScroll');
         const container = containerRef.current;
 
         if (container) {
@@ -114,16 +119,19 @@ const Carrusel = () => {
     };
 
     const handleCircle = (index) => {
-
-        if (currentImageIndex !== index) {
+        
+        if (currentImageIndex !== index && 
+            index >= 0 && index < _images.length) {
             //quita la clase _active al elemento que la tenga
             const _action_cirlcle = document.getElementsByClassName('_action_cirlcle')[0];
             const _circle = _action_cirlcle.getElementsByClassName('_circle')[currentImageIndex];
-            _circle.classList.remove('_active');
+            console.log(_circle);
+            _circle.classList?.remove('_active');
 
             //agrega la clase _active al elemento que se le dio click
             const _circle_ = _action_cirlcle.getElementsByClassName('_circle')[index];
-            _circle_.classList.add('_active');
+            console.log(_circle_,index);
+            _circle_.classList?.add('_active');
 
         }
 
@@ -131,9 +139,10 @@ const Carrusel = () => {
 
      return (
         <>
-            <div ref={containerRef} className='_container_primary_carusel'>
+            <div ref={containerRef} 
+                 className={`_container_primary_carusel ${class_primary}`}>
                 {
-                    IMAGES.map((image, index) => {
+                    _images.map((image, index) => {
                         return (
                             <div data-key={index}  key={index} className='_container_img_carusel'>
                                 <img src={image.img_} alt={index} />
@@ -153,7 +162,7 @@ const Carrusel = () => {
 
                 <div className='_action_cirlcle'>
                     {
-                        IMAGES.map((image, index) => {
+                        _images.map((image, index) => {
                             return (
                                 <div key={index} className='_circle'>
                                     <a></a>
