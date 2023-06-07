@@ -2,6 +2,7 @@
 import React from 'react';
 import Login from './components/pages/Login';
 import Home from './components/pages/Home';
+import Vehicles from './components/pages/Vehicles';
 import {
     BrowserRouter as Router,
     Routes,
@@ -20,6 +21,7 @@ export default function RenderApp() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/vehicles" element={<Vehicles />} />
           <Route path="*" element={<><h1>No Found Route</h1></>} />
           <Route path="/view-product" element={<ViewProduct />} />
         </Routes>
