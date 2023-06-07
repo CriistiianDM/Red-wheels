@@ -7,7 +7,7 @@ import Personalization from '../viewproduct/Personalization';
 import Hr from '../viewproduct/Hr';
 
 //RUTE IMG
-const IMAGES = Object.freeze([
+const IMAGES = ([
     {
         img_: '/src/assets/carrusel_img/view_product/1.svg',
         alt_: '1_',
@@ -25,6 +25,27 @@ const IMAGES = Object.freeze([
     }
 ]);
 
+
+const characteristics = [
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    ''
+]
+
 /**
  * 
  * @returns 
@@ -39,7 +60,7 @@ const ViewProduct = ({
           <nav className="_container_product_view">
             <DestailsPrimary data_img={IMAGES} />
             <Hr name_product="CARACTERISTICAS" />
-            <Characteristics />
+            <Characteristics data_product_selected={characteristics} />
             <Hr name_product="COLOR" />
             <Personalization />
           </nav>

@@ -352,7 +352,7 @@ div._img_circle img {
 }
 
 .border-bottom_ {
-    width: 80%;
+    width: 95%;
     border-bottom: 1px solid var(--color-primary-background);
 }
 
@@ -474,6 +474,32 @@ div._item > label span {
     height: 2.3em;
     font-size: 20px;
 }
+
+._container_hr {
+    display: grid;
+    place-items: center;
+    width: -webkit-fill-available;
+}
+
+._container_hr h1 {
+    width: 95%;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--color-white);
+}
+
+._container_characteristics_view {
+    display: grid;
+    grid-auto-rows: auto;
+    height: auto;
+    min-height: 10em;
+    width: 95%;
+}
+
 
 /*
    Variables Css
