@@ -2,7 +2,13 @@
     Font
 */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap');
 
+
+
+/*
+   General
+*/
 html,body {
     padding: unset;
     margin: unset;
@@ -21,4 +27,26 @@ html,body {
     overflow: hidden;
 }
 
+/*
+ * Scrollbar General
+*/
+::-webkit-scrollbar {
+    display: initial;
+    width: auto;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+}
 

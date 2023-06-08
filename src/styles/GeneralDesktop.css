@@ -341,6 +341,7 @@ div._img_circle img {
     min-height: 80vh;
     background: var(--color-background-product);
     border-radius: 30px;
+    margin-bottom: 6em;
     overflow: hidden;
 }
 
@@ -352,7 +353,7 @@ div._img_circle img {
 }
 
 .border-bottom_ {
-    width: 80%;
+    width: 95%;
     border-bottom: 1px solid var(--color-primary-background);
 }
 
@@ -364,6 +365,11 @@ div._container_img_carusel {
 
 ._primary_view_product {
     min-height: 25em;
+}
+
+._primary_view_product 
+div._container_img_carusel {
+    width: -webkit-fill-available;
 }
 
 ._primary_view_product 
@@ -473,6 +479,97 @@ div._item > label span {
     width: 55%;
     height: 2.3em;
     font-size: 20px;
+}
+
+._container_hr {
+    display: grid;
+    place-items: center;
+    width: -webkit-fill-available;
+}
+
+._container_hr h1 {
+    width: 95%;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--color-white);
+}
+
+._container_characteristics_view {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax( min(100%, 23em), 1fr));
+    height: auto;
+    min-height: 10em;
+    gap: 0.3em;
+    width: calc(-webkit-fill-available - 5%);
+    padding: 1em;
+}
+
+._container_characteristics_view ol {
+    list-style-type: circle;
+}
+
+._container_characteristics_view ol li {
+    font-family: 'Inter' , sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 17px;
+    line-height: 24px;
+    margin-bottom: 0.9em;
+    letter-spacing: 1px;
+    color: var(--color-white);
+}
+
+
+._container_personalization_view {
+    display: grid;
+    min-height: 10em;
+    gap: 0.3em;
+    width: calc(-webkit-fill-available - 5%);
+    padding: 2em;
+}
+
+
+._container_personalization_view div h2 {
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    width: 15em;
+    color: var(--color-white);   
+}
+
+
+._container_personalization_view
+div:not(._container_color) {
+    display: flex;
+    gap: 7em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    justify-content: space-between;
+}
+
+    
+._container_personalization_view
+div._container_color  {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+._container_personalization_view
+div ._circle_color {
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
 }
 
 /*
