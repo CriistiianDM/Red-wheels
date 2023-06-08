@@ -81,6 +81,11 @@ const Carrusel = ({
 
       div_.addEventListener('wheel', function(event) {
         event.preventDefault();
+        //dar el scroll a window
+        window.scrollBy({
+          top: event.deltaY * 0.5,
+          behavior: 'smooth',
+        });
       }, { passive: false });
 
   
