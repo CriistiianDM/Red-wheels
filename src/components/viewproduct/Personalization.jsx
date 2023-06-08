@@ -41,7 +41,7 @@ const Personalization = ({
             data_color_int: data_color_int ? data_color_int : []
         });
 
-    }, [])
+    }, [data_color_int])
 
     return (
         <>

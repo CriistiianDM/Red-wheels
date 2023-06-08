@@ -22,8 +22,8 @@ export default function RenderApp() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/vehicles" element={<Vehicles />} />
-          <Route path="*" element={<><h1>No Found Route</h1></>} />
           <Route path="/view-product" element={<ViewProduct />} />
+          <Route path="*" element={<><h1>No Found Route</h1></>} />
         </Routes>
       </Router>
     </>
