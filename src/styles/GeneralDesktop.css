@@ -341,6 +341,7 @@ div._img_circle img {
     min-height: 80vh;
     background: var(--color-background-product);
     border-radius: 30px;
+    margin-bottom: 6em;
     overflow: hidden;
 }
 
@@ -364,6 +365,11 @@ div._container_img_carusel {
 
 ._primary_view_product {
     min-height: 25em;
+}
+
+._primary_view_product 
+div._container_img_carusel {
+    width: -webkit-fill-available;
 }
 
 ._primary_view_product 
@@ -517,6 +523,55 @@ div._item > label span {
     letter-spacing: 1px;
     color: var(--color-white);
 }
+
+
+._container_personalization_view {
+    display: grid;
+    min-height: 10em;
+    gap: 0.3em;
+    width: calc(-webkit-fill-available - 5%);
+    padding: 2em;
+}
+
+
+._container_personalization_view div h2 {
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    width: 15em;
+    color: var(--color-white);   
+}
+
+
+._container_personalization_view
+div:not(._container_color) {
+    display: flex;
+    gap: 7em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    justify-content: space-between;
+}
+
+    
+._container_personalization_view
+div._container_color  {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+._container_personalization_view
+div ._circle_color {
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
+}
+
 /*
    Variables Css
 */
