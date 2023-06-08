@@ -76,6 +76,13 @@ const Carrusel = ({
       if (container) {
         container.addEventListener('scroll', handleScroll);
       }
+
+      var div_ = document.getElementById('__container_primary_carusel');
+
+      div_.addEventListener('wheel', function(event) {
+        event.preventDefault();
+      }, { passive: false });
+
   
       return () => {
         if (container) {
@@ -140,6 +147,7 @@ const Carrusel = ({
      return (
         <>
             <div ref={containerRef} 
+                id="__container_primary_carusel"
                  className={`_container_primary_carusel ${class_primary}`}>
                 {
                     _images.map((image, index) => {

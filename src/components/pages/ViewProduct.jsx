@@ -80,6 +80,9 @@ const ViewProduct = () => {
        image__ = image__.filter((item) => item.img_ !== '');
        set___image(image__);
        setDataProduct(data_product_selected);
+
+       //colocar el scroll en 0
+       window.scrollTo(0, 0);
     }, [])
 
     React.useEffect(() => {
