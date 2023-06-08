@@ -5,8 +5,16 @@ import InfoProduct from './InfoProduct';
 
 //first page
 const DestailsPrimary = ({
-    data_img
+    data_img,
+    data_product
 }) => {
+    const [ data, setData ] = React.useState({});
+
+    //useEffect
+    React.useEffect(() => {
+        setData(data_product);
+        console.log(data_product, 'data_product');
+    }, [data_product])
 
     return (
         <>
@@ -15,7 +23,12 @@ const DestailsPrimary = ({
                   images_={data_img}
                   class_primary_='_primary_view_product'
             />
-            <InfoProduct />
+            <InfoProduct 
+                  name_product={data.name_product}
+                  range={data.range}
+                  top_speed={data.top_speed}
+                  acceleration={data.acceleration}
+            />
           </div>
         </>
     )

@@ -19,7 +19,7 @@ const Characteristics = ({
 
       setCharacteristics((data_product_selected? data_product_selected : []));
 
-    }, [])
+    }, [data_product_selected])
 
     //todo: Tiene un costo computacional de O(3n) 
     //render
