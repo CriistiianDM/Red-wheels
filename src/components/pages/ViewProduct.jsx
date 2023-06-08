@@ -63,7 +63,13 @@ const ViewProduct = () => {
 
     const na = useNavigate();
 
-    if (!data_product_selected) return na('/')
+    //matar la pagina si no hay data_product_selected
+    React.useEffect(() => {
+        if (!data_product_selected) {
+          na('/');
+        }
+    }, [data_product_selected, na]);
+
 
     console.log(data_product_selected);
     const [ data_product, setDataProduct ] = React.useState({});
@@ -80,6 +86,9 @@ const ViewProduct = () => {
        image__ = image__.filter((item) => item.img_ !== '');
        set___image(image__);
        setDataProduct(data_product_selected);
+
+       //colocar el scroll en 0
+       window.scrollTo(0, 0);
     }, [])
 
     React.useEffect(() => {
