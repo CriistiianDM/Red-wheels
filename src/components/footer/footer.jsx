@@ -1,11 +1,11 @@
 import React from "react";
 import './footer.css';
-import fb from '../../assets/socialmedia_img/fb_img.png';
-import insta from '../../assets/socialmedia_img/insta_img.png';
-import twitter from '../../assets/socialmedia_img/twitter_img.png';
-import cel from '../../assets/socialmedia_img/cell_img.png';
-import tel from '../../assets/socialmedia_img/tel_img.png';
-import correo from '../../assets/socialmedia_img/correo_img.png';
+import fb from '../../../public/assets/socialmedia_img/fb_img.png';
+import insta from '../../../public/assets/socialmedia_img/insta_img.png';
+import twitter from '../../../public/assets/socialmedia_img/twitter_img.png';
+import cel from '../../../public/assets/socialmedia_img/cell_img.png';
+import tel from '../../../public/assets/socialmedia_img/tel_img.png';
+import correo from '../../../public/assets/socialmedia_img/correo_img.png';
 
 function Footer() {
     return (

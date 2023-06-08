@@ -13,17 +13,17 @@ import {
 //RUTE IMG
 const IMAGES = ([
     {
-        img_: '/src/assets/carrusel_img/view_product/1.svg',
+        img_: '/public/assets/carrusel_img/view_product/1.svg',
         alt_: '1_',
         haveLabel_: true,
     },
     {
-        img_: '/src/assets/carrusel_img/view_product/2.svg',
+        img_: '/public/assets/carrusel_img/view_product/2.svg',
         alt_: '2_',
         haveLabel_: false,
     },
     {
-        img_: '/src/assets/carrusel_img/view_product/3.svg',
+        img_: '/public/assets/carrusel_img/view_product/3.svg',
         alt_: '3_',
         haveLabel_: false,
     }

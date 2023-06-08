@@ -13,7 +13,7 @@ const FormLogin = () => {
                 <form onSubmit={handleForm} className="_form_login">
 
                     <div className="_img_circle">
-                        <img src="/src/assets/icon/profile.svg" alt="circle" />
+                        <img src="/public/assets/icon/profile.svg" alt="circle" />
                     </div>
 
                     <label>

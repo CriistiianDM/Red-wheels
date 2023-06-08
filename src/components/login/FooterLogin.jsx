@@ -6,7 +6,7 @@ const FooterLogin = () => {
     return (
         <>
            <footer className="_container_footer_login">
-                <img src="/src/assets/icon/footerlogin.png" alt="logo" />
+                <img src="/public/assets/icon/footerlogin.png" alt="logo" />
            </footer>
         </>
     )

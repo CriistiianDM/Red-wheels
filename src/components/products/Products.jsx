@@ -7,7 +7,7 @@ const PRODUCTS = [
         name: "FIAT 500 “Edición 1957”",
         price: 100,
         description: "Está equipado con el premiado motor Multiair® de 1.4 litros, capaz de desarrollar 101 caballos de fuerza y 98 lb-pie de torque, acoplado a una moderna transmisión automática de seis velocidades",
-        img: "/src/assets/product_img/producto1.svg",
+        img: "/public/assets/product_img/producto1.svg",
         characteristics: [
             '1 motor eléctrico (eje trasero)',
             'POTENCIA TOTAL 208 kW (283 CV)',
@@ -42,7 +42,7 @@ const PRODUCTS = [
         name: "FIAT 500 “Edición 1957”",
         price: 100,
         description: "Está equipado con el premiado motor Multiair® de 1.4 litros, capaz de desarrollar 101 caballos de fuerza y 98 lb-pie de torque, acoplado a una moderna transmisión automática de seis velocidades",
-        img: "/src/assets/product_img/producto1.svg",
+        img: "/public/assets/product_img/producto1.svg",
         characteristics: [
             '1 motor eléctrico (eje trasero)',
             'POTENCIA TOTAL 208 kW (283 CV)',
@@ -77,7 +77,7 @@ const PRODUCTS = [
         name: "FIAT 500 “Edición 1957”",
         price: 100,
         description: "Está equipado con el premiado motor Multiair® de 1.4 litros, capaz de desarrollar 101 caballos de fuerza y 98 lb-pie de torque, acoplado a una moderna transmisión automática de seis velocidades",
-        img: "/src/assets/product_img/producto2.svg",
+        img: "/public/assets/product_img/producto2.svg",
         characteristics: [
             '1 motor eléctrico (eje trasero)',
             'POTENCIA TOTAL 208 kW (283 CV)',
@@ -112,7 +112,7 @@ const PRODUCTS = [
         name: "FIAT 500 “Edición 1957”",
         price: 100,
         description: "Está equipado con el premiado motor Multiair® de 1.4 litros, capaz de desarrollar 101 caballos de fuerza y 98 lb-pie de torque, acoplado a una moderna transmisión automática de seis velocidades",
-        img: "/src/assets/product_img/producto2.svg",
+        img: "/public/assets/product_img/producto2.svg",
         characteristics: [
             '1 motor eléctrico (eje trasero)',
             'POTENCIA TOTAL 208 kW (283 CV)',
@@ -147,7 +147,7 @@ const PRODUCTS = [
         name: "FIAT 500 “Edición 1957”",
         price: 100,
         description: "Está equipado con el premiado motor Multiair® de 1.4 litros, capaz de desarrollar 101 caballos de fuerza y 98 lb-pie de torque, acoplado a una moderna transmisión automática de seis velocidades",
-        img: "/src/assets/product_img/producto2.svg",
+        img: "/public/assets/product_img/producto2.svg",
         characteristics: [
             '1 motor eléctrico (eje trasero)',
             'POTENCIA TOTAL 208 kW (283 CV)',
@@ -193,7 +193,7 @@ const Products = () => {
                 name: "FIAT 500 “Edición 1957”",
                 price: 100,
                 description: "holi", 
-                img: "/src/assets/product_img/producto2.svg"
+                img: "/public/assets/product_img/producto2.svg"
             }
         ])
     }
