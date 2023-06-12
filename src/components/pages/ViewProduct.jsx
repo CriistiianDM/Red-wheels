@@ -5,6 +5,7 @@ import DestailsPrimary from '../viewproduct/DestailsPrimary';
 import Characteristics from '../viewproduct/Characteristics';
 import Personalization from '../viewproduct/Personalization';
 import Hr from '../viewproduct/Hr';
+import Navbar from '../menu/Navbar';
 import {  
     useLocation,
     useNavigate
@@ -78,6 +79,7 @@ const ViewProduct = () => {
     return (
         <>
           <Header />
+          <Navbar />
           <nav className="_container_product_view">
             <DestailsPrimary data_product={data_product} data_img={___image} />
             <Hr name_product="CARACTERISTICAS" />

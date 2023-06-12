@@ -24,8 +24,8 @@ const FormLogin = () => {
                     <label>
                         Tipo de usuario
                     </label>
-                    <select>
-                        <option disabled selected value="0"></option>
+                    <select defaultValue={"0"}>
+                        <option disabled value="0"></option>
                         <option value="1">Administrador</option>
                         <option value="2">Estudiante</option>
                     </select>
