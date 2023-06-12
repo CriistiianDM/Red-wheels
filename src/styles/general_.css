@@ -21,7 +21,6 @@ html,body {
     display: grid;
     grid-auto-rows: auto;
     grid-template-columns: 100%;
-    grid-gap: 1em;
     height: auto;
     width: 100%;
     overflow: hidden;
