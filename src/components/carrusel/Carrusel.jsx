@@ -1,27 +1,27 @@
 import React , { useState, useEffect, useRef } from 'react';
 import arrow_left from '../../assets/icon/arrow_left.svg';
 import arrow_right from '../../assets/icon/arrow_right.svg';
-const imgUrl = new URL('/src/assets/carrusel_img/1.png', import.meta.url).href
+
 
 //RUTE IMG
 const IMAGES = Object.freeze([
     {
-        img_: '/src/assets/carrusel_img/1.png',
+        img_: '/public/assets/carrusel_img/1.png',
         alt_: '1',
         haveLabel_: true,
     },
     {
-        img_: '/src/assets/carrusel_img/2.png',
+        img_: '/public/assets/carrusel_img/2.png',
         alt_: '2',
         haveLabel_: false,
     },
     {
-        img_: '/src/assets/carrusel_img/3.png',
+        img_: '/public/assets/carrusel_img/3.png',
         alt_: '3',
         haveLabel_: false,
     },
     {
-        img_: '/src/assets/carrusel_img/4.png',
+        img_: '/public/assets/carrusel_img/4.png',
         alt_: '4',
         haveLabel_: false,
     }
