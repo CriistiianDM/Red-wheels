@@ -5,14 +5,11 @@ import Carrusel from '../carrusel/Carrusel';
 import Footer from '../footer/footer';
 import Products from '../products/Products';
 import Navbar from '../menu/Navbar';
-
 // const product = {
 //    price: 100,
 // }
-//prueba
-
 // product.filter((item) => item.price > 100)
-
+//blah blah blah 
 export default function Home() {
   return (
     <>
