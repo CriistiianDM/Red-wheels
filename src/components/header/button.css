@@ -3,7 +3,7 @@
   background: transparent;
   padding: 30px 30px;
   color: white;
-  background-image: url("/src/assets/icon/profile.svg");
+  background-image: url("/assets/icon/profile.svg");
   background-repeat: no-repeat;
   background-size: 30px 30px; /* Ajusta el tamaño de la imagen según tus necesidades */
   background-position: center;

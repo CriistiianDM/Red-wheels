@@ -1,6 +1,6 @@
 import React , { useState, useEffect, useRef } from 'react';
-import arrow_left from '../../assets/icon/arrow_left.svg';
-import arrow_right from '../../assets/icon/arrow_right.svg';
+import arrow_left from '/assets/icon/arrow_left.svg';
+import arrow_right from '/assets/icon/arrow_right.svg';
 
 
 //RUTE IMG

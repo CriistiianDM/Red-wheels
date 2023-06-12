@@ -7,21 +7,21 @@ const VEHICLES = [
         name: "DACIA SPRIING ",
         price: 100,
         description: "Dacia Spring se distingue por su estilo SUV con motor 100% eléctrico. Fiel a los códigos de la marca Dacia, este vehículo urbano te ofrece un nuevo placer de conducción durante tus trayectos diarios.",
-        img: "/src/assets/pvehicles_img/pvehicle1.svg"
+        img: "/assets/pvehicles_img/pvehicle1.svg"
     },
     {
         id: 2,
         name: "TESLA MODEL 3",
         price: 100,
         description: "se caracteriza por contar con una gran batería de iones de litio que le proporciona una autonomía entre 415 y 544 kilómetros, dependiendo de la versión",
-        img: "/src/assets/pvehicles_img/pvehicle2.svg"
+        img: "/assets/pvehicles_img/pvehicle2.svg"
     },
     {
         id: 3,
         name: "Mazda MX-30",
         price: 100,
         description: "Mazda MX-30.Vive la evolución en la experiencia de conducción y disfruta de su interior diseñado con materiales amigables con el medio ambiente. Abre sus innovadoras puertas freestyle y deja que empiece una nueva historia.",
-        img: "/src/assets/pvehicles_img/pvehicle3.svg"
+        img: "/assets/pvehicles_img/pvehicle3.svg"
     }
 ]
 
@@ -38,7 +38,7 @@ const PVehicles = () => {
                 name: "FIAT 500 “Edición 1957”",
                 price: 100,
                 description: "holi", 
-                img: "/src/assets/product_img/producto2.svg"
+                img: "/assets/product_img/producto2.svg"
             }
         ])
     }
@@ -84,9 +84,6 @@ const PVehicles = () => {
                 ))  
             }
           </div>
-          <a onClick={addProducts}>
-            add products
-          </a>
         </>
     )
 
