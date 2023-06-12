@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import './navbar.css';
 import Dropdown from './Dropdown';
 import { MenuItems } from './NavItems';
+import arrowDonw from '/assets/icon/arrowDonw.svg';
+import arrowUp from '/assets/icon/arrowUp.svg';
+
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -25,7 +28,7 @@ function Navbar() {
 
   useEffect(() => {
     const navbar = document.querySelector('.navbar');
-
+   
     navbar.addEventListener('mouseleave', onMouseLeave);
 
     return () => {
@@ -58,7 +61,9 @@ function Navbar() {
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                {item.title} <i className='fas fa-caret-down' />
+              {item.title} 
+              <img className='_down_img' src={arrowDonw} alt="down" />
+              <img className="_up_img" src={arrowUp} alt="up" />
               </Link>
               {activeMenu === item.title.toLowerCase() && (
                 <Dropdown options={item.dropdownItems} />

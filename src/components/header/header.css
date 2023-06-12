@@ -3,8 +3,7 @@
 }
 
 .header{
-    background-color: #070426;
-
+    background-color: var(--color-bg-header);
 }
 
 .sb_header{
