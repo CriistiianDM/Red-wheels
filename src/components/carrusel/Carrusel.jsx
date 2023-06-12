@@ -1,6 +1,7 @@
 import React , { useState, useEffect, useRef } from 'react';
 import arrow_left from '../../assets/icon/arrow_left.svg';
 import arrow_right from '../../assets/icon/arrow_right.svg';
+const imgUrl = new URL('/src/assets/carrusel_img/1.png', import.meta.url).href
 
 //RUTE IMG
 const IMAGES = Object.freeze([
@@ -158,7 +159,7 @@ const Carrusel = ({
                     _images.map((image, index) => {
                         return (
                             <div data-key={index}  key={index} className='_container_img_carusel'>
-                                <img src={image.img_} alt={index} />
+                                <img src={ new URL(image.img_, import.meta.url).href} alt={index} />
                             </div>
                         );
                     })
