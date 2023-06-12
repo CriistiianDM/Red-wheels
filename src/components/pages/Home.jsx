@@ -4,7 +4,7 @@ import Header from '../header/Header';
 import Carrusel from '../carrusel/Carrusel';
 import Footer from '../footer/footer';
 import Products from '../products/Products';
-
+import Navbar from '../menu/Navbar';
 
 // const product = {
 //    price: 100,
@@ -16,6 +16,7 @@ export default function Home() {
   return (
     <>
       <Header />
+      <Navbar />
       <Carrusel />
       <Products />
       <Footer  />
