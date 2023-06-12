@@ -6,7 +6,7 @@ const HeaderLogin = () => {
 
             <>
                 <header className="_container_header_login">
-                    <img src="/src/assets/icon/logotipo.png" alt="logo" />
+                    <img src="/assets/icon/logotipo.png" alt="logo" />
                 </header>
             </>
      )

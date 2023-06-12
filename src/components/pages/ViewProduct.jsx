@@ -13,42 +13,22 @@ import {
 //RUTE IMG
 const IMAGES = ([
     {
-        img_: '/src/assets/carrusel_img/view_product/1.svg',
+        img_: '/assets/carrusel_img/view_product/1.svg',
         alt_: '1_',
         haveLabel_: true,
     },
     {
-        img_: '/src/assets/carrusel_img/view_product/2.svg',
+        img_: '/assets/carrusel_img/view_product/2.svg',
         alt_: '2_',
         haveLabel_: false,
     },
     {
-        img_: '/src/assets/carrusel_img/view_product/3.svg',
+        img_: '/assets/carrusel_img/view_product/3.svg',
         alt_: '3_',
         haveLabel_: false,
     }
 ]);
 
-
-const characteristics = [
-    '1 motor eléctrico (eje trasero)',
-    'POTENCIA TOTAL 208 kW (283 CV)',
-    'BATERÍA 60 kWh',
-    'VELOCIDAD MÁXIMA 225 km/h',
-    'ACELERACIÓN 6,1',
-    'AUTONOMÍA (WLTP) 491 km',
-    'DIMENSIONES (LARGO / ANCHO/ ALTO) 4.694 mm / 1.849 mm / 1.443 mm',
-    'MALETERO TRASERO / DELANTERO 425 litros / 117 litros',
-    'BATALLA 2.875 mm',
-]
-
-const data_color_ext = [
-    '#FFFFFF',
-    '#454343',
-    '#242BC2',
-    '#000000',
-    '#FF0707',
-]
 
 
 /**
