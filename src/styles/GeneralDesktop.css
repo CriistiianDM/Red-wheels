@@ -574,6 +574,22 @@ div ._circle_color {
     border-radius: 50%;
 }
 
+.container-no-buy {
+    display: grid;
+    place-items: center;
+    height: 30em;
+    width: 100%;
+    margin: 2em 0 2em 0;
+}
+
+.container-no-buy div {
+    width: 700px;
+    height: 100%;
+    background: var(--color-background-product);
+    border-radius: 30px;
+}
+
+
 /*
    Variables Css
 */
