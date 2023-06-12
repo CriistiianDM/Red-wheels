@@ -344,7 +344,7 @@ div._img_circle img {
     border-radius: 30px;
     margin-bottom: 6em;
     overflow: hidden;
-    margin: 4em 0 4em 0;
+    margin: 2em 0 4em 0;
 }
 
 ._container_details_product {
@@ -573,6 +573,22 @@ div ._circle_color {
     width: 2em;
     border-radius: 50%;
 }
+
+.container-no-buy {
+    display: grid;
+    place-items: center;
+    height: 30em;
+    width: 100%;
+    margin: 2em 0 2em 0;
+}
+
+.container-no-buy div {
+    width: 700px;
+    height: 100%;
+    background: var(--color-background-product);
+    border-radius: 30px;
+}
+
 
 /*
    Variables Css
