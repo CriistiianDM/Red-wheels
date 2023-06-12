@@ -9,7 +9,6 @@ import Navbar from '../menu/Navbar';
 //    price: 100,
 // }
 // product.filter((item) => item.price > 100)
-//blah blah blah 
 export default function Home() {
   return (
     <>
