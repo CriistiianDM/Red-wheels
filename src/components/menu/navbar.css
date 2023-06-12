@@ -1,5 +1,5 @@
 .navbar {
-  background: #070426;
+  background: var(--background-generl-primary);
   height: 60px;
   display: flex;
   justify-content: center;

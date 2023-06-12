@@ -214,6 +214,7 @@ div._img_circle img {
     grid-auto-rows: auto;
     gap: 2em;
     margin: 4em 0 4em 0;
+    background-color: var(--background-generl-primary);
 }
 
 ._container_root_products
@@ -588,4 +589,5 @@ div ._circle_color {
     --color-background-product: rgba(28, 43, 50, 0.54);
     --color-separate-line: #A5ABAE;
     --color-white: #fff;
+    --color-bg-header: #0A1821;
 }
