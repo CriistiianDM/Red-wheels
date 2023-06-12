@@ -9,6 +9,7 @@ import Navbar from '../menu/Navbar';
 // const product = {
 //    price: 100,
 // }
+//prueba
 
 // product.filter((item) => item.price > 100)
 
