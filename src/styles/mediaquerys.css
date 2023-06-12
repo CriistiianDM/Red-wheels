@@ -1,0 +1,12 @@
+
+/*
+   Mobile Stanard
+*/
+@media screen and (max-width: 1000px) {
+    
+    ._container_form_login form {
+        max-width: unset;
+        width: 70%;
+    }
+
+}
