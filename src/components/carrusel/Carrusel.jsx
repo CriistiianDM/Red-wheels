@@ -6,22 +6,22 @@ import arrow_right from '../../assets/icon/arrow_right.svg';
 //RUTE IMG
 const IMAGES = Object.freeze([
     {
-        img_: '/public/assets/carrusel_img/1.png',
+        img_: '/assets/carrusel_img/1.png',
         alt_: '1',
         haveLabel_: true,
     },
     {
-        img_: '/public/assets/carrusel_img/2.png',
+        img_: '/assets/carrusel_img/2.png',
         alt_: '2',
         haveLabel_: false,
     },
     {
-        img_: '/public/assets/carrusel_img/3.png',
+        img_: '/assets/carrusel_img/3.png',
         alt_: '3',
         haveLabel_: false,
     },
     {
-        img_: '/public/assets/carrusel_img/4.png',
+        img_: '/assets/carrusel_img/4.png',
         alt_: '4',
         haveLabel_: false,
     }
@@ -159,7 +159,7 @@ const Carrusel = ({
                     _images.map((image, index) => {
                         return (
                             <div data-key={index}  key={index} className='_container_img_carusel'>
-                                <img src={ new URL(image.img_, import.meta.url).href} alt={index} />
+                                <img src={new URL(image.img_, import.meta.url).href} alt={index} />
                             </div>
                         );
                     })
