@@ -345,3 +345,7 @@ a {
     bottom: 40%;
     right: 30%;
 }
+
+._active_btn {
+    background: #740C18 !important;
+}
