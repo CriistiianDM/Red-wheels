@@ -1,0 +1,91 @@
+{
+    "0": [
+        {
+            "img": "/assets/repuestos/carros/1.svg",
+            "title": "Hart Brakes",
+            "precio": "144"
+        },
+        {
+            "img": "/assets/repuestos/carros/2.svg",
+            "title": "Detroit Axle",
+            "precio": "100.000"
+        },
+        {
+            "img": "/assets/repuestos/carros/3.svg",
+            "title": "R1 Concepts Kit",
+            "precio": "100.000"
+        },
+        {
+            "img": "/assets/repuestos/carros/4.svg",
+            "title": "Kia Soul Goodyear",
+            "precio": "100.000"
+        },
+        {
+            "img": "/assets/repuestos/carros/1.svg",
+            "title": "Bomba de freno",
+            "precio": "100.000"
+        },
+        {
+            "img": "/assets/repuestos/carros/2.svg",
+            "title": "Bomba de freno",
+            "precio": "100.000"
+        },
+        {
+            "img": "/assets/repuestos/carros/1.svg",
+            "title": "Hart Brakes",
+            "precio": "144"
+        },
+        {
+            "img": "/assets/repuestos/carros/2.svg",
+            "title": "Detroit Axle",
+            "precio": "100.000"
+        }
+    ],
+    "1": [
+        {
+            "title": "Ride it Forever",
+            "img": "/assets/repuestos/motos/1.svg",
+            "precio": "34.99"
+        },
+        {
+            "title": "MRELC",
+            "img": "/assets/repuestos/motos/2.svg",
+            "precio": "34.99"
+        },
+        {
+            "title": "Sporacingrts",
+            "img": "/assets/repuestos/motos/3.svg",
+            "precio": "34.99"
+        },
+        {
+            "title": "Ride it Forever",
+            "img": "/assets/repuestos/motos/1.svg",
+            "precio": "34.99"
+        },
+        {
+            "title": "MRELC",
+            "img": "/assets/repuestos/motos/2.svg",
+            "precio": "34.99"
+        },
+        {
+            "title": "Sporacingrts",
+            "img": "/assets/repuestos/motos/3.svg",
+            "precio": "34.99"
+        },
+        {
+            "title": "Ride it Forever",
+            "img": "/assets/repuestos/motos/1.svg",
+            "precio": "34.99"
+        },
+        {
+            "title": "MRELC",
+            "img": "/assets/repuestos/motos/2.svg",
+            "precio": "34.99"
+        },
+        {
+            "title": "Sporacingrts",
+            "img": "/assets/repuestos/motos/3.svg",
+            "precio": "34.99"
+        }
+    ]
+}
