@@ -13,6 +13,7 @@ import {
 
 import ViewProduct from './components/pages/ViewProduct';
 import SpareParts from './components/pages/SpareParts';
+import DiagnosisRepair from './components/pages/DiagnosisRepair';
 
 export default function RenderApp() {
   return (
@@ -25,6 +26,7 @@ export default function RenderApp() {
           <Route path="/view-product" element={<ViewProduct />} />
           <Route path="/no-login-product" element={<NoLoginBuy />} />
           <Route path="/respuestos" element={<SpareParts />} />
+          <Route path="/diagnostico-carros" element={<DiagnosisRepair />} />
           <Route path="*" element={<><h1>No Found Route</h1></>} />
         </Routes>
       </Router>
