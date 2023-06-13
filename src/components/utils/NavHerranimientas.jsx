@@ -4,7 +4,8 @@ import React from 'react';
 
 
 const NavHerranimientas = ({
-    data_
+    data_,
+    handleClick
 }) => {
 
     const [data, setData] = React.useState([]);
@@ -22,11 +23,17 @@ const NavHerranimientas = ({
                         data.map((item, index) => {
                             
                             return (
-                                <a className="_card_herramientas" key={index}>
+                                <a 
+                                   onClick={handleClick}  
+                                   id={`btn-hr-all-${index}`} 
+                                   className="_card_herramientas" 
+                                   key={index}>
+
                                     <div className="_card_herramientas__img">
                                         <img src={item.img} alt="img" />
                                     </div>
                                     <h1>{item.title}</h1>
+
                                 </a>
                             )
                         })
