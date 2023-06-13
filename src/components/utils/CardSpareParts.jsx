@@ -1,12 +1,17 @@
 //import libraries
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 
 const CardSpareParts = ({
     data_respuestos
 }) => {
 
     const [data, setData] = React.useState([]);
+    const navigate = useNavigate();
+
+    const handleDetails = (target) => {
+        navigate('/diagnostico-carros');
+    }
     
     //actualizar los productos
     React.useEffect(() => {
@@ -28,7 +33,7 @@ const CardSpareParts = ({
                                     <h1>{item.title}</h1>
                                     <p>$ {item.precio}</p>
                                 </span>
-                                <a>
+                                <a onClick={handleDetails}>
                                      DETALLES
                                 </a>
                             </div>  
