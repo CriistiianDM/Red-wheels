@@ -1,0 +1,13 @@
+.container-no-buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta esto según el tamaño deseado */
+  }
+  
+  .content {
+    
+    text-align: center ;
+    color: white;
+  }
+  

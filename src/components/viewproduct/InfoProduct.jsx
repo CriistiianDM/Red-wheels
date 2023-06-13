@@ -1,5 +1,6 @@
 //import library
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 const InfoProduct = ({
@@ -15,7 +16,7 @@ const InfoProduct = ({
         top_speed: '',
         acceleration: ''
     });
-
+    const navigate =useNavigate();
     //useEffect
     React.useEffect(() => {
 
@@ -62,7 +63,7 @@ const InfoProduct = ({
                     </div>
 
                     <div className='__actions'>
-                        <a>COMPRAR</a>
+                    <a onClick={() => {navigate("/no-login-product")}}>COMPRAR</a>
                     </div>
             </div>
         </>
