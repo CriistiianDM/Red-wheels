@@ -1,0 +1,45 @@
+//import libraries
+import React from "react";
+
+
+const CardSpareParts = ({
+    data_respuestos
+}) => {
+
+    const [data, setData] = React.useState([]);
+    
+    //actualizar los productos
+    React.useEffect(() => {
+        setData(data_respuestos);
+    }, [data_respuestos]);
+
+    //renderizar los productos
+    return (
+        <>
+            <section className="_container-card-spareparts">
+                {
+                    data.map((item, index) => {
+                        return (
+                            <div className="_card-spareparts" key={index}>
+                                <div className="_card-spareparts__img">
+                                    <img src={item.img} alt="img" />
+                                </div>
+                                <span>
+                                    <h1>{item.title}</h1>
+                                    <p>$ {item.precio}</p>
+                                </span>
+                                <a>
+                                     DETALLES
+                                </a>
+                            </div>  
+                        )
+                    })
+                }
+            </section> 
+        </>
+    )
+
+}
+
+
+export default CardSpareParts;
