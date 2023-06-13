@@ -5,7 +5,8 @@ import React from "react";
 const CardViewVh = ({
     data_vehicles,
     src_img,
-    handleClick
+    handleClick,
+    type
 }) => {
 
     const [ img_ , setImg ] = React.useState('/assets/herramientas/car_pd.svg')
@@ -35,7 +36,7 @@ const CardViewVh = ({
                     {
                         data_.map((item, index) => {
                             return (
-                                <a className="_container_hr_vh__item" 
+                                <a className={`_container_hr_vh__item ${type === 'moto' ? '_vh__item_moto' : ''}`} 
                                    id={`btn-hr-all-${index}`} 
                                    onClick={handleClick}
                                    key={index}>

@@ -34,15 +34,18 @@ const UTILS = [
 ]
 
 
-const DiagnosisRepair = () => {
+const DiagnosisRepair = ({
+    url_img,
+    type
+}) => {
 
-    const [ data_select, setDataSelect ] = React.useState([]);
 
     const handleClick = (e) => {
         e.preventDefault();
 
         //obtener la clase del elemento que se le dio click
-        const class_name = e.currentTarget.className;
+        const class_name = (e.currentTarget.className).split(' ')[0];
+
 
         const object_ = {
             '_card_herramientas': '_container_hr_vh__item',
@@ -70,8 +73,15 @@ const DiagnosisRepair = () => {
         <>
           <Header />
           <Navbar />
-          <NavHerranimientas handleClick={handleClick} data_={UTILS} />
-          <CardViewVh handleClick={handleClick} data_vehicles={UTILS}  />
+          <NavHerranimientas 
+                handleClick={handleClick} 
+                data_={UTILS} />
+          <CardViewVh 
+                src_img={url_img}
+                handleClick={handleClick} 
+                data_vehicles={UTILS}  
+                type={type}
+           />
           <Footer  />
         </>
     )

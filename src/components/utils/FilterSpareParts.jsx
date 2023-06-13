@@ -6,16 +6,19 @@ import json from './data.json'
 
 
 const FilterSpareParts = ({
-    setDataSelect
+    setDataSelect,
+    setTarget
 }) => {
 
     const handleSelect = (e) => {
         let value = e.target.value;
         setDataSelect(json[value])
+        setTarget(value === 0? '/diagnostico-carros' : '/diagnostico-motos')
     }
 
     React.useEffect( () => {
         setDataSelect(json[0])
+        setTarget('/diagnostico-carros')
     }, [])
 
     return (
