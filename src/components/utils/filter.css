@@ -171,6 +171,9 @@ p {
     padding-top: 0.5em;
 }
 
+
+._container_hr_vh
+._actions a ,
 ._container-card-spareparts  
 div._card-spareparts
 a {
@@ -255,6 +258,7 @@ a {
     height: auto;
     min-height: 30em;
     overflow: hidden;
+    user-select: none;
 }
 
 ._container_hr_vh 
@@ -288,6 +292,14 @@ a {
    height: 4em;
    border-radius: 100%;
    cursor: pointer;
+}
+
+._container_hr_vh
+._actions {
+    display: flex;
+    justify-content: center;
+    margin: 3.5em 0 3.5em 0;
+    width: 30%;
 }
 
 ._absolute_conatiner_hr_all 

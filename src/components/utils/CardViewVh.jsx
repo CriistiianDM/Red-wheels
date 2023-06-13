@@ -42,6 +42,9 @@ const CardViewVh = ({
                     }
                 </div>
               </div>
+              <div className="_actions">
+                    <a>DETALLES</a>
+              </div>
            </section>
         </>
     )
