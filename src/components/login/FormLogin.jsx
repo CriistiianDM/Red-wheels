@@ -1,12 +1,20 @@
 import React, { useState } from "react";
+import { login } from "../../services/user";
 
 const FormLogin = () => {
     const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [user_type, setUserType] = useState(null);
+    const [contraseña, setContraseña] = useState("");
+    const [rolId, setUserType] = useState(null);
 
-    const handleForm = (e) => {
+    const handleForm = async (e) => {
         e.preventDefault();
+
+        try {
+            const res = await login({ username, contraseña, id_rol: rolId });
+            console.log(res);
+        } catch (error) {
+            console.log(error.response.data);
+        }
     };
 
     /**
@@ -17,10 +25,10 @@ const FormLogin = () => {
             case "username":
                 setUsername(e.target.value);
                 break;
-            case "password":
-                setPassword(e.target.value);
+            case "contraseña":
+                setContraseña(e.target.value);
                 break;
-            case "user_type":
+            case "rolId":
                 setUserType(e.target.value);
             default:
         }
@@ -37,14 +45,16 @@ const FormLogin = () => {
                 <input name="username" type="text" placeholder="" onChange={handleChange} />
 
                 <label>Tipo de usuario</label>
-                <select name="user_type" defaultValue={"0"} onChange={handleChange}>
+                <select name="rolId" defaultValue={"0"} onChange={handleChange}>
                     <option disabled value="0"></option>
-                    <option value="1">Administrador</option>
-                    <option value="2">Estudiante</option>
+                    <option value="1">Gerente</option>
+                    <option value="2">Vendedor</option>
+                    <option value="3">Jefe de taller</option>
+                    <option value="4">Cliente</option>
                 </select>
 
                 <label>Contraseña</label>
-                <input name="password" type="password" placeholder="" onChange={handleChange} />
+                <input name="contraseña" type="password" placeholder="" onChange={handleChange} />
 
                 <button type="submit">Ingresar</button>
                 <a>Registrarse</a>
