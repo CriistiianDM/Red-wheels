@@ -13,6 +13,7 @@ import {
 
 import ViewProduct from './components/pages/ViewProduct';
 import SpareParts from './components/pages/SpareParts';
+import NoLoginRepar from './components/pages/NoLoginRepar';
 import DiagnosisRepairCar from './components/pages/DiagnosisRepairCar';
 import DiagnosisRepairMoto from './components/pages/DiagnosisRepairMoto';
 
@@ -26,6 +27,7 @@ export default function RenderApp() {
           <Route path="/vehicles" element={<Vehicles />} />
           <Route path="/view-product" element={<ViewProduct />} />
           <Route path="/no-login-product" element={<NoLoginBuy />} />
+          <Route path="/no-login-repair" element={<NoLoginRepar />} />
           <Route path="/respuestos" element={<SpareParts />} />
           <Route path="/diagnostico-carros" element={<DiagnosisRepairCar />} />
           <Route path="/diagnostico-motos" element={<DiagnosisRepairMoto />} />
