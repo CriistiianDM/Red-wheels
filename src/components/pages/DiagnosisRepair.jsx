@@ -34,14 +34,54 @@ const UTILS = [
 ]
 
 
-const DiagnosisRepair = () => {
+const DiagnosisRepair = ({
+    url_img,
+    type
+}) => {
+
+
+    const handleClick = (e) => {
+        e.preventDefault();
+
+        //obtener la clase del elemento que se le dio click
+        const class_name = (e.currentTarget.className).split(' ')[0];
+
+
+        const object_ = {
+            '_card_herramientas': '_container_hr_vh__item',
+            '_container_hr_vh__item': '_card_herramientas'
+        }
+
+        //sacar todos los elementos que tengan la clase 
+        const elements_1 = document.querySelectorAll(`.${class_name}`);
+        const elements_2 = document.querySelectorAll(`.${object_[class_name]}`);
+
+        elements_1.forEach((element, index) => {
+            elements_2[index].classList.remove('_active_btn');
+            element.classList.remove('_active_btn');
+        });
+
+
+        const elements_3 = document.querySelectorAll(`#${e.currentTarget.id}`);
+        elements_3.forEach((element) => {
+                element.classList.add('_active_btn');
+        });
+
+    }
 
     return (
         <>
           <Header />
           <Navbar />
-          <NavHerranimientas data_={UTILS} />
-          <CardViewVh data_vehicles={UTILS}  />
+          <NavHerranimientas 
+                handleClick={handleClick} 
+                data_={UTILS} />
+          <CardViewVh 
+                src_img={url_img}
+                handleClick={handleClick} 
+                data_vehicles={UTILS}  
+                type={type}
+           />
           <Footer  />
         </>
     )

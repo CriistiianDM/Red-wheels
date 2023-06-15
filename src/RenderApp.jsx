@@ -13,8 +13,9 @@ import {
 
 import ViewProduct from './components/pages/ViewProduct';
 import SpareParts from './components/pages/SpareParts';
-import DiagnosisRepair from './components/pages/DiagnosisRepair';
 import NoLoginRepar from './components/pages/NoLoginRepar';
+import DiagnosisRepairCar from './components/pages/DiagnosisRepairCar';
+import DiagnosisRepairMoto from './components/pages/DiagnosisRepairMoto';
 
 export default function RenderApp() {
   return (
@@ -28,7 +29,8 @@ export default function RenderApp() {
           <Route path="/no-login-product" element={<NoLoginBuy />} />
           <Route path="/no-login-repair" element={<NoLoginRepar />} />
           <Route path="/respuestos" element={<SpareParts />} />
-          <Route path="/diagnostico-carros" element={<DiagnosisRepair />} />
+          <Route path="/diagnostico-carros" element={<DiagnosisRepairCar />} />
+          <Route path="/diagnostico-motos" element={<DiagnosisRepairMoto />} />
           <Route path="*" element={<><h1>No Found Route</h1></>} />
         </Routes>
       </Router>
