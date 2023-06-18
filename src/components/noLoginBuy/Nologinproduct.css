@@ -1,0 +1,38 @@
+.container-no-buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta esto según el tamaño deseado */
+  }
+  
+  .content {
+    
+    text-align: center ;
+    color: white;
+  }
+
+  .buy-button {
+    margin-top: 10px; 
+    display: inline-block;
+    padding: 20px 60px;
+    background-color: #ff3950;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .IMG{
+    margin-top: 25px; 
+  }
+
+  .titulo{
+    font-size: 30px;
+  }
+
+  .texto_1,
+  .texto_2 {
+    margin-left: 50px;
+    margin-right: 50px;
+    font-weight: 200;
+    font-size: 20px;
+  }
