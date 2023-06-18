@@ -21,7 +21,6 @@ const CardViewVh = ({
 
 
     React.useEffect(() => {
-        data_vehicles !== [] &&
         data_vehicles !== undefined &&
         data_vehicles !== null &&
         setData(data_vehicles)

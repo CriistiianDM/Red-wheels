@@ -209,6 +209,8 @@ div._img_circle img {
 
 
 ._container_root_products {
+    justify-self: center;
+    max-width: 1200px;
     display: grid;
     grid-template-columns: 100%;
     grid-auto-rows: auto;
