@@ -1,6 +1,7 @@
 //import libraries
 import React from "react";
-
+import PopReparacion from "./PopReparacion";
+import data_pop_reparacion from "./dataPopUp";
 
 const CardViewVh = ({
     data_vehicles,
@@ -11,6 +12,12 @@ const CardViewVh = ({
 
     const [ img_ , setImg ] = React.useState('/assets/herramientas/car_pd.svg')
     const [ data_ , setData ] = React.useState([])
+    const [ active_pop, setActivePop ] = React.useState(false);
+    const dataPopUp = data_pop_reparacion[type? type : 'car']
+
+    const handleClickPop = () => {
+        setActivePop(!active_pop);
+    }
 
     React.useEffect(() => {
         src_img !== "" && 
@@ -47,7 +54,14 @@ const CardViewVh = ({
                 </div>
               </div>
               <div className="_actions">
-                    <a>DETALLES</a>
+                    <a onClick={handleClickPop}>DETALLES</a>
+                    {
+                        active_pop &&
+                        <PopReparacion 
+                            changeClose={handleClickPop}
+                            {...dataPopUp}
+                        />
+                    }
               </div>
            </section>
         </>

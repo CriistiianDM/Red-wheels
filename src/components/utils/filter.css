@@ -192,6 +192,11 @@ a {
     cursor: pointer;
 }
 
+._container_hr_vh
+._actions a {
+    background: var(--color-bg-button-secondary);
+}
+
 ._container_herramientas {
     justify-self: center;
     max-width: 1200px;
