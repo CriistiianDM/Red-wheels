@@ -1,0 +1,35 @@
+
+._container_form_profile,
+._container_profile_actions {
+    display: grid;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    margin-top: 3em;
+}
+
+._container_profile_actions h1._name_profile {
+    font-family: 'Quicksand', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+    color: var(--color-white);
+}
+
+
+._container_form_profile__item {
+    display: flex;
+    width: calc(-webkit-fill-available - 2em);
+    padding: 0 6em;
+    margin-bottom: 7em;
+}
+
+
+._container_form_profile__item form {
+    width: -webkit-fill-available;
+}
+
+._container_form_profile__item form 
+div._container_form_inpust {
+    display: flex;
+}

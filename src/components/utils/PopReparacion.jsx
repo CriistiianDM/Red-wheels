@@ -66,6 +66,7 @@ const PopReparacion = ({
                     <div onClick={handleClick} className="_eventoClose" />
                     <div className="_container_rp_content">
                         <section className="_content_text_rp">
+
                             <h1>{title}</h1>
                             <p>{description}</p>
                             <ol>
@@ -80,8 +81,10 @@ const PopReparacion = ({
                             <div className="_actions">
                                 <a onClick={handleEventClick}>RESERVE SU CITA</a>
                             </div>
+                            
                         </section>
                         <section className="_container_precios_rp">
+
                             <h1>{titleReparacion}</h1>
                             <div className="_container_precios_rp__item">
                                 {
@@ -95,6 +98,7 @@ const PopReparacion = ({
                                     })
                                 }
                             </div>
+
                         </section>
                     </div>
                 </main>
