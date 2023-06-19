@@ -9,7 +9,7 @@ import { getUserFullName, getUsername } from "../../services/user";
  * @param {object} {children}
  * @returns {JSX.Element} - UserContext.Provider.
  */
-function AuthState({ children }) {
+function UserState({ children }) {
     const [state, dispatch] = useReducer(userReducer, userInitialState);
 
     const setAuth = (boolean) => {
@@ -135,4 +135,4 @@ function AuthState({ children }) {
     return <UserContext.Provider value={valueProps}>{children}</UserContext.Provider>;
 }
 
-export default AuthState;
+export default UserState;
