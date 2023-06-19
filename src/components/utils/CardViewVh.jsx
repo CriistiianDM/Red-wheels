@@ -13,10 +13,20 @@ const CardViewVh = ({
     const [ img_ , setImg ] = React.useState('/assets/herramientas/car_pd.svg')
     const [ data_ , setData ] = React.useState([])
     const [ active_pop, setActivePop ] = React.useState(false);
+    const [ img__ , setImg_ ] = React.useState('')
     const dataPopUp = data_pop_reparacion[type? type : 'car']
 
     const handleClickPop = () => {
-        setActivePop(!active_pop);
+        //sacar el src de la imagen del que tiene la clase active
+        const src_img = document.querySelector('._container_hr_vh__item._active_btn')?.querySelector('img').src;
+        setImg_(src_img);
+
+        if ( src_img !== undefined && 
+             src_img !== null && 
+             src_img !== "") {
+            setActivePop(!active_pop);
+        }   
+
     }
 
     React.useEffect(() => {
@@ -59,6 +69,7 @@ const CardViewVh = ({
                         active_pop &&
                         <PopReparacion 
                             changeClose={handleClickPop}
+                            src_img={img__}
                             {...dataPopUp}
                         />
                     }
