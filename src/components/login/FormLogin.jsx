@@ -42,7 +42,13 @@ const FormLogin = () => {
                 </div>
 
                 <label>Nombre de usuario</label>
-                <input name="username" type="text" placeholder="" onChange={handleChange} />
+                <input
+                    name="username"
+                    type="text"
+                    placeholder=""
+                    onChange={handleChange}
+                    value={username}
+                />
 
                 <label>Tipo de usuario</label>
                 <select name="rolId" defaultValue={"0"} onChange={handleChange}>
@@ -54,7 +60,13 @@ const FormLogin = () => {
                 </select>
 
                 <label>Contraseña</label>
-                <input name="contraseña" type="password" placeholder="" onChange={handleChange} />
+                <input
+                    name="contraseña"
+                    type="password"
+                    placeholder=""
+                    onChange={handleChange}
+                    value={contraseña}
+                />
 
                 <button type="submit">Ingresar</button>
                 <a>Registrarse</a>
