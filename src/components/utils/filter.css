@@ -171,6 +171,9 @@ p {
     padding-top: 0.5em;
 }
 
+
+._container_hr_vh
+._actions a ,
 ._container-card-spareparts  
 div._card-spareparts
 a {
@@ -187,4 +190,211 @@ a {
     text-align: center;
     background: var(--color-red-primary);
     cursor: pointer;
+}
+
+._container_hr_vh
+._actions a {
+    background: var(--color-bg-button-secondary);
+}
+
+._container_herramientas {
+    justify-self: center;
+    max-width: 1200px;
+    margin: 3em 0 4em 0;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 6em;
+}
+
+._sub_container_hrr { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    border-radius: 30px;
+    padding: 2em;
+    background: var(--color-blue-page-primary);
+    overflow: hidden;
+}
+
+._sub_container_hrr
+._card_herramientas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 8em;
+    height: 90%;
+    background: var(--color-bg-menu-item);
+    border-radius: 15px;
+    padding: 1em;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+}
+
+._card_herramientas__img {
+    display: grid;
+    place-items: center;
+    width: 80%;
+    height: 80%;
+}
+
+._card_herramientas__img img {
+    width: -webkit-fill-available;
+    height: 80%;
+    object-fit: scale-down;
+}
+
+._sub_container_hrr
+._card_herramientas h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--color-white);
+}
+
+._container_hr_vh {
+    max-width: 1200px;
+    justify-self: center;
+    margin-top: 3em;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: auto;
+    min-height: 30em;
+    overflow: hidden;
+    user-select: none;
+}
+
+._container_hr_vh 
+._container_vh_all {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 95%;
+    height: 100%;
+}
+
+._container_hr_vh 
+._container_vh_all img {
+    width: calc(-webkit-fill-available - 2em);
+    height: 90%;
+    object-fit: cover;
+}
+
+._absolute_conatiner_hr_all {
+    width: 100%;
+    height: 100%;
+}
+
+._absolute_conatiner_hr_all 
+._container_hr_vh__item {
+   display: grid;
+   place-items: center;
+   position: absolute;
+   background: var(--color-white);
+   width: 4em;
+   height: 4em;
+   border-radius: 100%;
+   cursor: pointer;
+}
+
+._container_hr_vh
+._actions {
+    display: flex;
+    justify-content: center;
+    margin: 3.5em 0 3.5em 0;
+    width: 30%;
+}
+
+._absolute_conatiner_hr_all 
+._container_hr_vh__item img {
+    width: 80%;
+    height: 80%;
+    object-fit: scale-down;
+}
+
+._absolute_conatiner_hr_all 
+._container_hr_vh__item:first-child {
+    top: 43%;
+    left: 33%;
+}
+
+._absolute_conatiner_hr_all 
+._container_hr_vh__item._vh__item_moto:first-child {
+    top: 24%;
+    left: unset;
+    right: 37%;
+}
+
+._absolute_conatiner_hr_all 
+._container_hr_vh__item:nth-child(2) {
+    top: 40%;
+    left: 13%;
+}
+
+._absolute_conatiner_hr_all 
+._container_hr_vh__item._vh__item_moto:nth-child(2) {
+    top: unset;
+    left: unset;
+    right: 45%;
+    bottom: 20%;
+}
+
+._absolute_conatiner_hr_all 
+._container_hr_vh__item:nth-child(3) {
+    top: 30%;
+    left: 20%;
+}
+
+._absolute_conatiner_hr_all 
+._container_hr_vh__item._vh__item_moto:nth-child(3) {
+    top: unset;
+    left: 30%;
+    bottom: 20%;
+}
+
+._absolute_conatiner_hr_all 
+._container_hr_vh__item:nth-child(6) {
+    top: 30%;
+    left: 28%;
+}
+
+._absolute_conatiner_hr_all 
+._container_hr_vh__item._vh__item_moto:nth-child(6) {
+    top: 30%;
+    left: 40%;
+}
+
+
+._absolute_conatiner_hr_all 
+._container_hr_vh__item:nth-child(5) {
+    bottom: 20%;
+    left: 45%;
+}
+
+._absolute_conatiner_hr_all 
+._container_hr_vh__item._vh__item_moto:nth-child(5) {
+    bottom: 30%;
+    left: 40%;
+}
+
+._absolute_conatiner_hr_all 
+._container_hr_vh__item:nth-child(4) {
+    bottom: 40%;
+    right: 30%;
+}
+
+._absolute_conatiner_hr_all 
+._container_hr_vh__item._vh__item_moto:nth-child(4) {
+    bottom: 25%;
+    right: 28%;
+}
+
+._active_btn {
+    background: #740C18 !important;
 }

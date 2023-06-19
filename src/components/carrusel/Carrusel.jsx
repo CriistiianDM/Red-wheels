@@ -78,16 +78,16 @@ const Carrusel = ({
         container.addEventListener('scroll', handleScroll);
       }
 
-      var div_ = document.getElementById('__container_primary_carusel');
+      //var div_ = document.getElementById('__container_primary_carusel');
 
-      div_.addEventListener('wheel', function(event) {
-        event.preventDefault();
-        //dar el scroll a window
-        window.scrollBy({
-          top: event.deltaY * 0.5,
-          behavior: 'smooth',
-        });
-      }, { passive: false });
+      // div_.addEventListener('wheel', function(event) {
+      //   event.preventDefault();
+      //   //dar el scroll a window
+      //   window.scrollBy({
+      //     top: event.deltaY * 0.5,
+      //     behavior: 'smooth',
+      //   });
+      // }, { passive: false });
 
   
       return () => {

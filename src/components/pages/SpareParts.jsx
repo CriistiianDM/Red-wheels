@@ -1,5 +1,5 @@
 //import libraries
-import React, { Component } from "react";
+import React from "react";
 import Header from '../header/Header';
 import Navbar from '../menu/Navbar';
 import Footer from '../footer/footer';
@@ -9,13 +9,14 @@ import CardSpareParts from '../utils/CardSpareParts';
 const SpareParts = () => {
 
     const [ data_select, setDataSelect ] = React.useState([]);
+    const [ target, setTarget ] = React.useState([]);
 
      return (
         <>
           <Header />
           <Navbar />
-          <FilterSpareParts setDataSelect={setDataSelect} />
-          <CardSpareParts data_respuestos={data_select} />
+          <FilterSpareParts setTarget={setTarget} setDataSelect={setDataSelect} />
+          <CardSpareParts target={target} data_respuestos={data_select} />
           <Footer  />
         </>
      )
