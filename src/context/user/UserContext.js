@@ -3,6 +3,6 @@ import { createContext } from "react";
 /**
  * Global context for authentication.
  */
-const AuthContext = createContext();
+const UserContext = createContext();
 
-export default AuthContext;
+export default UserContext;
