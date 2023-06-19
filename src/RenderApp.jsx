@@ -10,7 +10,7 @@ import {
     Route
   } from 'react-router-dom';
 
-
+import UserState from "./context/user/UserState";
 import ViewProduct from './components/pages/ViewProduct';
 import SpareParts from './components/pages/SpareParts';
 import NoLoginRepar from './components/pages/NoLoginRepar';
@@ -21,6 +21,7 @@ import Profile from './components/pages/Profile';
 export default function RenderApp() {
   return (
     <>
+    <UserState>
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -36,6 +37,7 @@ export default function RenderApp() {
           <Route path="*" element={<><h1>No Found Route</h1></>} />
         </Routes>
       </Router>
+    </UserState>
     </>
   );
 }

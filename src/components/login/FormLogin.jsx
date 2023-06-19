@@ -1,19 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { login } from "../../services/user";
+import UserContext from "../../context/user/UserContext";
 
 const FormLogin = () => {
     const [username, setUsername] = useState("");
     const [contraseña, setContraseña] = useState("");
     const [rolId, setUserType] = useState(null);
 
+    const { setAuth, setUserId, setUser } = useContext(UserContext);
+
     const handleForm = async (e) => {
         e.preventDefault();
 
         try {
-            const res = await login({ username, contraseña, id_rol: rolId });
-            console.log(res);
+            const data = await login({ username, contraseña, id_rol: rolId });
+
+            setAuth(data.isAuth);
+            setUserId(data.id);
+            setUser(data.username);
+            setUsername("");
+            setContraseña("");
+
+            // Saves the token to the local storage.
+            window.localStorage.setItem("logged", JSON.stringify(data));
         } catch (error) {
-            console.log(error.response.data);
+            throw new Error(error.response.data.message);
         }
     };
 
@@ -42,7 +53,13 @@ const FormLogin = () => {
                 </div>
 
                 <label>Nombre de usuario</label>
-                <input name="username" type="text" placeholder="" onChange={handleChange} />
+                <input
+                    name="username"
+                    type="text"
+                    placeholder=""
+                    onChange={handleChange}
+                    value={username}
+                />
 
                 <label>Tipo de usuario</label>
                 <select name="rolId" defaultValue={"0"} onChange={handleChange}>
@@ -54,7 +71,13 @@ const FormLogin = () => {
                 </select>
 
                 <label>Contraseña</label>
-                <input name="contraseña" type="password" placeholder="" onChange={handleChange} />
+                <input
+                    name="contraseña"
+                    type="password"
+                    placeholder=""
+                    onChange={handleChange}
+                    value={contraseña}
+                />
 
                 <button type="submit">Ingresar</button>
                 <a>Registrarse</a>
