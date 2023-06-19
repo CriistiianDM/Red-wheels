@@ -1,8 +1,8 @@
+import React from "react";
 import { useReducer, useMemo } from "react";
 import UserContext from "./UserContext";
 import { userInitialState, userReducer } from "./userReducer";
 import { userActions } from "../../actions/userActions";
-import { getUserFullName, getUsername } from "../../services/user";
 
 /**
  * States and dispatches for the auth context.
@@ -22,41 +22,6 @@ function UserState({ children }) {
 
     const setUser = (user) => {
         dispatch({ type: userActions.SET_USER, payload: user });
-    };
-
-    const setUserFullName = async (token) => {
-        try {
-            const response = await getUserFullName(token);
-
-            const { data } = response;
-
-            dispatch({ type: userActions.SET_USER_FULL_NAME, payload: data });
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-    /**
-     * When the user logs in or signs up, the token is going to be the username,
-     * otherwise is going to be fetched.
-     * @param {string} token - Token or username.
-     * @param {boolean} isFetch - If the username must be fetched.
-     */
-    const setUsername = async (token, isFetch = false) => {
-        if (isFetch) {
-            try {
-                const response = await getUsername(token);
-
-                const { data } = response;
-
-                dispatch({ type: userActions.SET_USERNAME, payload: data.username });
-            } catch (error) {
-                console.log(error);
-            }
-        } else {
-            // The token could be the name as well.
-            dispatch({ type: userActions.SET_USERNAME, payload: token });
-        }
     };
 
     const setUserName = (name) => {
@@ -101,10 +66,7 @@ function UserState({ children }) {
             setUserId,
             user: state.user,
             setUser,
-            userFullName: state.userFullName,
-            setUserFullName,
             username: state.username,
-            setUsername,
             userName: state.userName,
             setUserName,
             userLastname: state.userLastname,
