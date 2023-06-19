@@ -1,26 +1,27 @@
 import React , { useState, useEffect, useRef } from 'react';
-import arrow_left from '../../assets/icon/arrow_left.svg';
-import arrow_right from '../../assets/icon/arrow_right.svg';
+import arrow_left from '/assets/icon/arrow_left.svg';
+import arrow_right from '/assets/icon/arrow_right.svg';
+
 
 //RUTE IMG
 const IMAGES = Object.freeze([
     {
-        img_: '/src/assets/carrusel_img/1.png',
+        img_: '/assets/carrusel_img/1.png',
         alt_: '1',
         haveLabel_: true,
     },
     {
-        img_: '/src/assets/carrusel_img/2.png',
+        img_: '/assets/carrusel_img/2.png',
         alt_: '2',
         haveLabel_: false,
     },
     {
-        img_: '/src/assets/carrusel_img/3.png',
+        img_: '/assets/carrusel_img/3.png',
         alt_: '3',
         haveLabel_: false,
     },
     {
-        img_: '/src/assets/carrusel_img/4.png',
+        img_: '/assets/carrusel_img/4.png',
         alt_: '4',
         haveLabel_: false,
     }
@@ -32,11 +33,16 @@ const IMAGES = Object.freeze([
  * @author <cristian.machado@correounivalle.edu.co>
  * @returns COMPONENTE Carrusel
 */
-const Carrusel = () => {
-
+const Carrusel = ({
+  images_,
+  class_primary_,
+}) => {
+    // console.log(images_, class_primary_);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const containerRef = useRef(null);
-  
+    const _images = images_ || IMAGES;
+    const class_primary = class_primary_ || '';
+    
     useEffect(() => {
 
       //al primer elemento _action_cirlcle ._circle le agrega la clase _active
@@ -45,7 +51,7 @@ const Carrusel = () => {
       _circle.classList.add('_active');
 
       const handleScroll = () => {
-        console.log('handleScroll');
+        // console.log('handleScroll');
         const container = containerRef.current;
 
         if (container) {
@@ -59,8 +65,9 @@ const Carrusel = () => {
             return scrollPosition >= imageOffset && scrollPosition < imageOffset + containerWidth;
           });
 
-          setCurrentImageIndex(imageIndex);
           handleCircle(imageIndex);
+          setCurrentImageIndex(imageIndex);
+          
 
         }
 
@@ -70,6 +77,18 @@ const Carrusel = () => {
       if (container) {
         container.addEventListener('scroll', handleScroll);
       }
+
+      var div_ = document.getElementById('__container_primary_carusel');
+
+      div_.addEventListener('wheel', function(event) {
+        event.preventDefault();
+        //dar el scroll a window
+        window.scrollBy({
+          top: event.deltaY * 0.5,
+          behavior: 'smooth',
+        });
+      }, { passive: false });
+
   
       return () => {
         if (container) {
@@ -113,16 +132,19 @@ const Carrusel = () => {
     };
 
     const handleCircle = (index) => {
-
-        if (currentImageIndex !== index) {
+        
+        if (currentImageIndex !== index && 
+            index >= 0 && index < _images.length) {
             //quita la clase _active al elemento que la tenga
             const _action_cirlcle = document.getElementsByClassName('_action_cirlcle')[0];
             const _circle = _action_cirlcle.getElementsByClassName('_circle')[currentImageIndex];
-            _circle.classList.remove('_active');
+            console.log(_circle);
+            _circle.classList?.remove('_active');
 
             //agrega la clase _active al elemento que se le dio click
             const _circle_ = _action_cirlcle.getElementsByClassName('_circle')[index];
-            _circle_.classList.add('_active');
+            console.log(_circle_,index);
+            _circle_.classList?.add('_active');
 
         }
 
@@ -130,12 +152,14 @@ const Carrusel = () => {
 
      return (
         <>
-            <div ref={containerRef} className='_container_primary_carusel'>
+            <div ref={containerRef} 
+                id="__container_primary_carusel"
+                 className={`_container_primary_carusel ${class_primary}`}>
                 {
-                    IMAGES.map((image, index) => {
+                    _images.map((image, index) => {
                         return (
                             <div data-key={index}  key={index} className='_container_img_carusel'>
-                                <img src={image.img_} alt={index} />
+                                <img src={new URL(image.img_, import.meta.url).href} alt={index} />
                             </div>
                         );
                     })
@@ -152,7 +176,7 @@ const Carrusel = () => {
 
                 <div className='_action_cirlcle'>
                     {
-                        IMAGES.map((image, index) => {
+                        _images.map((image, index) => {
                             return (
                                 <div key={index} className='_circle'>
                                     <a></a>

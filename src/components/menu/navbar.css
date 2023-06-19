@@ -1,0 +1,160 @@
+.navbar {
+  background: var(--background-generl-primary);
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.fa-firstdraft {
+  margin-left: 0.5rem;
+  font-size: 1.6rem;
+}
+
+.nav-menu {
+  display: flex;
+  grid-gap: 10px;
+  list-style: none;
+  text-align: center;
+  width: 75vw;
+  justify-content: center; /* Cambio a "center" para centrar horizontalmente */
+  margin-right: auto; /* Cambio a "auto" para centrar horizontalmente */
+  margin-left: auto; /* Cambio a "auto" para centrar horizontalmente */
+  z-index: 1; /* Añadido para colocar el menú al frente de todo */
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30px;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.9em;
+  text-align: left;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background: var(--color-bg-menu-item);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.nav-links img {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.nav-links img._up_img {
+  display: none;
+}
+
+.nav-links:hover img._up_img {
+  display: block;
+}
+
+.nav-links:hover img._down_img {
+  display: none;
+}
+
+.nav-links:hover {
+  background-color: #740C18;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+  border-radius: 15px;
+}
+
+.fa-bars {
+  color: #fff;
+}
+
+.nav-links-mobile {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  .NavbarItems {
+    position: relative;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    align-items: center; /* Añadido para centrar verticalmente */
+    justify-content: center; /* Añadido para centrar horizontalmente */
+    z-index: 2; /* Aumentado el valor de z-index para que esté al frente de todo */
+  }
+
+  .nav-menu.active {
+    background: #242222;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 2; /* Aumentado el valor de z-index para que esté al frente de todo */
+  }
+
+  .nav-links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+
+  .nav-links:hover {
+    background-color: #740C18;
+    border-radius: 0;
+  }
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .fa-times {
+    color: #fff;
+    font-size: 2rem;
+  }
+
+  .nav-links-mobile {
+    display: block;
+    text-align: center;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    border-radius: 4px;
+    width: 80%;
+    background: #740C18;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+  }
+
+  .nav-links-mobile:hover {
+    background: #fff;
+    color: #1888ff;
+    transition: 250ms;
+  }
+}
