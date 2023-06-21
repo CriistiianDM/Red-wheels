@@ -14,7 +14,7 @@ const FormLogin = () => {
         e.preventDefault();
 
         try {
-            const data = await login({ nombre, email, contraseña, id_rol: rolId });
+            const data = await register({ nombre, email, contraseña, id_rol: rolId });
 
             setAuth(data.isAuth);
             setUserId(data.id);
