@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../services/user";
 import UserContext from "../../context/user/UserContext";
 
@@ -6,6 +7,8 @@ const FormLogin = () => {
     const [email, setEmail] = useState("");
     const [contraseña, setContraseña] = useState("");
     const [rolId, setUserType] = useState(null);
+
+    const navigate = useNavigate();
 
     const { setAuth, setUserId, setUser } = useContext(UserContext);
 
@@ -15,14 +18,17 @@ const FormLogin = () => {
         try {
             const data = await login({ email, contraseña, id_rol: rolId });
 
-            setAuth(data.isAuth);
-            setUserId(data.id);
-            setUser(data.email);
-            setEmail("");
-            setContraseña("");
+            if (data.status === 200 || data.status === 201) {
+                setAuth(data.isAuth);
+                setUserId(data.id);
+                setUser(data.email);
+                setEmail("");
+                setContraseña("");
+                navigate("/");
 
-            // Saves the token to the local storage.
-            window.localStorage.setItem("logged", JSON.stringify(data));
+                // Saves the token to the local storage.
+                window.localStorage.setItem("logged", JSON.stringify(data));
+            }
         } catch (error) {
             throw new Error(error.response.data.message);
         }
@@ -80,7 +86,7 @@ const FormLogin = () => {
                 />
 
                 <button type="submit">Ingresar</button>
-                <a>Registrarse</a>
+                <Link to="/register">Registrarse</Link>
             </form>
         </div>
     );
