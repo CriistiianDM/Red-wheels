@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { login } from "../../services/user";
+import { register } from "../../services/user";
 import UserContext from "../../context/user/UserContext";
 
 const FormLogin = () => {
@@ -14,11 +14,11 @@ const FormLogin = () => {
         e.preventDefault();
 
         try {
-            const data = await register({ nombre, email, contraseña, id_rol: rolId });
+            const data = await register({ rol: rolId, nombre, email, contraseña });
 
             setAuth(data.isAuth);
             setUserId(data.id);
-            setUser(data.username);
+            setUser(data.email);
             setNombre("");
             setEmail("");
             setContraseña("");
@@ -66,25 +66,19 @@ const FormLogin = () => {
                     <option value="4">Cliente</option>
                 </select>
 
-                <label for="nombre">Nombre</label>
+                <label htmlFor="nombre">Nombre</label>
                 <input
                     id="nombre"
-                    name="email"
+                    name="nombre"
                     type="text"
                     onChange={handleChange}
                     value={nombre}
                 />
 
-                <label for="email">Email</label>
-                <input
-                    id="email"
-                    name="email"
-                    type="text"
-                    onChange={handleChange}
-                    value={username}
-                />
+                <label htmlFor="email">Email</label>
+                <input id="email" name="email" type="text" onChange={handleChange} value={email} />
 
-                <label for="contraseña">Contraseña</label>
+                <label htmlFor="contraseña">Contraseña</label>
                 <input
                     id="contraseña"
                     name="contraseña"

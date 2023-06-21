@@ -17,7 +17,7 @@ const FormLogin = () => {
 
             setAuth(data.isAuth);
             setUserId(data.id);
-            setUser(data.username);
+            setUser(data.email);
             setEmail("");
             setContraseña("");
 
