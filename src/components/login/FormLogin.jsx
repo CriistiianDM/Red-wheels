@@ -18,7 +18,7 @@ const FormLogin = () => {
             setAuth(data.isAuth);
             setUserId(data.id);
             setUser(data.username);
-            setUsername("");
+            setEmail("");
             setContraseña("");
 
             // Saves the token to the local storage.
@@ -67,7 +67,7 @@ const FormLogin = () => {
                     type="text"
                     placeholder=""
                     onChange={handleChange}
-                    value={username}
+                    value={email}
                 />
 
                 <label>Contraseña</label>

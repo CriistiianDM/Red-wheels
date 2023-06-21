@@ -14,12 +14,13 @@ const FormLogin = () => {
         e.preventDefault();
 
         try {
-            const data = await login({ email, contraseña, id_rol: rolId });
+            const data = await login({ nombre, email, contraseña, id_rol: rolId });
 
             setAuth(data.isAuth);
             setUserId(data.id);
             setUser(data.username);
-            setUsername("");
+            setNombre("");
+            setEmail("");
             setContraseña("");
 
             // Saves the token to the local storage.
@@ -71,7 +72,7 @@ const FormLogin = () => {
                     name="email"
                     type="text"
                     onChange={handleChange}
-                    value={username}
+                    value={nombre}
                 />
 
                 <label for="email">Email</label>
