@@ -3,6 +3,7 @@ import { login } from "../../services/user";
 import UserContext from "../../context/user/UserContext";
 
 const FormLogin = () => {
+    const [nombre, setNombre] = useState("");
     const [email, setEmail] = useState("");
     const [contraseña, setContraseña] = useState("");
     const [rolId, setUserType] = useState(null);
@@ -33,6 +34,9 @@ const FormLogin = () => {
      */
     const handleChange = (e) => {
         switch (e.target.name) {
+            case "nombre":
+                setNombre(e.target.value);
+                break;
             case "email":
                 setEmail(e.target.value);
                 break;
@@ -61,20 +65,29 @@ const FormLogin = () => {
                     <option value="4">Cliente</option>
                 </select>
 
-                <label>Email</label>
+                <label for="nombre">Nombre</label>
                 <input
+                    id="nombre"
                     name="email"
                     type="text"
-                    placeholder=""
                     onChange={handleChange}
                     value={username}
                 />
 
-                <label>Contraseña</label>
+                <label for="email">Email</label>
                 <input
+                    id="email"
+                    name="email"
+                    type="text"
+                    onChange={handleChange}
+                    value={username}
+                />
+
+                <label for="contraseña">Contraseña</label>
+                <input
+                    id="contraseña"
                     name="contraseña"
                     type="password"
-                    placeholder=""
                     onChange={handleChange}
                     value={contraseña}
                 />
