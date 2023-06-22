@@ -1,9 +1,10 @@
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { login } from "../../services/user";
+import { register } from "../../services/user";
 import UserContext from "../../context/user/UserContext";
 
 const FormLogin = () => {
+    const [nombre, setNombre] = useState("");
     const [email, setEmail] = useState("");
     const [contraseña, setContraseña] = useState("");
     const [rolId, setUserType] = useState(null);
@@ -16,12 +17,13 @@ const FormLogin = () => {
         e.preventDefault();
 
         try {
-            const data = await login({ email, contraseña, id_rol: rolId });
+            const data = await register({ rol: rolId, nombre, email, contraseña });
 
             if (data.status === 200 || data.status === 201) {
                 setAuth(data.isAuth);
                 setUserId(data.id);
                 setUser(data.email);
+                setNombre("");
                 setEmail("");
                 setContraseña("");
                 navigate("/");
@@ -30,7 +32,7 @@ const FormLogin = () => {
                 window.localStorage.setItem("logged", JSON.stringify(data));
             }
         } catch (error) {
-            throw new Error(error.response.data.message);
+            throw new Error(error.response.data);
         }
     };
 
@@ -39,6 +41,9 @@ const FormLogin = () => {
      */
     const handleChange = (e) => {
         switch (e.target.name) {
+            case "nombre":
+                setNombre(e.target.value);
+                break;
             case "email":
                 setEmail(e.target.value);
                 break;
@@ -67,26 +72,29 @@ const FormLogin = () => {
                     <option value="4">Cliente</option>
                 </select>
 
-                <label>Email</label>
+                <label htmlFor="nombre">Nombre</label>
                 <input
-                    name="email"
+                    id="nombre"
+                    name="nombre"
                     type="text"
-                    placeholder=""
                     onChange={handleChange}
-                    value={email}
+                    value={nombre}
                 />
 
-                <label>Contraseña</label>
+                <label htmlFor="email">Email</label>
+                <input id="email" name="email" type="text" onChange={handleChange} value={email} />
+
+                <label htmlFor="contraseña">Contraseña</label>
                 <input
+                    id="contraseña"
                     name="contraseña"
                     type="password"
-                    placeholder=""
                     onChange={handleChange}
                     value={contraseña}
                 />
 
                 <button type="submit">Ingresar</button>
-                <Link to="/register">Registrarse</Link>
+                <Link to="/login">Iniciar sesión</Link>
             </form>
         </div>
     );
