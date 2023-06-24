@@ -192,7 +192,14 @@ a {
     cursor: pointer;
 }
 
+._container_hr_vh
+._actions a {
+    background: var(--color-bg-button-secondary);
+}
+
 ._container_herramientas {
+    justify-self: center;
+    max-width: 1200px;
     margin: 3em 0 4em 0;
     display: grid;
     place-items: center;
@@ -251,6 +258,8 @@ a {
 }
 
 ._container_hr_vh {
+    max-width: 1200px;
+    justify-self: center;
     margin-top: 3em;
     display: grid;
     place-items: center;
