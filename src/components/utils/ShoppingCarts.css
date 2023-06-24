@@ -29,7 +29,7 @@
     font-weight: 700;
 }
 
-.container-productos{
+.container-producto{
     background-color: #18272E;
     display: flex;
     flex-direction: row;
@@ -67,7 +67,7 @@
     padding: 1rem 1rem;
     display: flex;
     flex-direction: row;
-    gap: 100px;
+    gap: 50px;
 }
 
 .pago{
@@ -156,3 +156,8 @@
     margin-left: 4rem;
 }
 
+.boton-eliminar button {
+    background: none;
+    border: none;
+    padding: 0;
+  }
