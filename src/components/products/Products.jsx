@@ -204,10 +204,19 @@ const Products = () => {
                             </div>
 
                             <div className="_container-info">
-                                <h1>{item.stock}</h1>
+                                <h1>{item?.nombre}</h1>
                                 {/* <div className="_description"> */}
-                                <p>{item.precio}</p>
+                                <p>{item?.descripcion}</p>
                                 {/* </div> */}
+                                <div className="_actions">
+                                    <a
+                                        onClick={() => {
+                                            handleViewDetails(item);
+                                        }}
+                                    >
+                                        DETALLES
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
