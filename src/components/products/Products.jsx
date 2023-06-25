@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { vehicles } from "../../services/product";
+import { subsidiaries } from "../../services/subsidiary";
 
 const PRODUCTS = [
     {
@@ -128,18 +129,28 @@ const PRODUCTS = [
 const Products = () => {
     const navigate = useNavigate();
     const [products_, setProducts] = React.useState([]);
+    const [subsidiariesList, setSubsidiariesList] = React.useState([]);
     const [subsidiary, setSubsidiary] = React.useState(0);
 
     const getVehicles = async () => {
         try {
-            const vehicules = await vehicles({ sucursal: subsidiary });
+            const vehicleList = await vehicles({ sucursal: subsidiary });
 
             //maximo 20 productos
-            if (vehicules.data.length > 20) {
-                setProducts(products_.slice(0, 20));
+            if (vehicleList.data.length > 20) {
+                setProducts(vehicleList.slice(0, 20));
             } else {
-                setProducts(vehicules.data);
+                setProducts(vehicleList.data);
             }
+        } catch (error) {
+            throw new Error(error);
+        }
+    };
+
+    const getSubsidiaries = async () => {
+        try {
+            const subsidiarieList = await subsidiaries();
+            setSubsidiariesList(subsidiarieList.data);
         } catch (error) {
             throw new Error(error);
         }
@@ -170,15 +181,18 @@ const Products = () => {
         getVehicles();
     }, [subsidiary]);
 
+    React.useEffect(() => {
+        getSubsidiaries();
+    }, []);
+
     return (
         <>
-            <h1>VEHICULOS</h1>
             <select name="sucursal" defaultValue={"0"} onChange={handleChange}>
-                <option disabled value="0"></option>
-                <option value="1">Gerente</option>
-                <option value="2">Vendedor</option>
-                <option value="3">Jefe de taller</option>
-                <option value="4">Cliente</option>
+                {subsidiariesList?.map((item, index) => (
+                    <option key={index} value={item.id}>
+                        {item.nombre}
+                    </option>
+                ))}
             </select>
 
             <div className="_container_root_products">
