@@ -209,6 +209,8 @@ div._img_circle img {
 
 
 ._container_root_products {
+    justify-self: center;
+    max-width: 1200px;
     display: grid;
     grid-template-columns: 100%;
     grid-auto-rows: auto;
@@ -608,4 +610,7 @@ div ._circle_color {
     --color-bg-header: #0A1821;
     --color-bg-menu-item: #E4394675;
     --color-bg-img-product: #1D333D;
+    --color-bg-button-secondary: #740C18;
+    --color-bg-popup: #1D272C;
+    --color-bg-conatiner-primary: #69232E;
 }
