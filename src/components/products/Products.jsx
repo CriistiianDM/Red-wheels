@@ -190,7 +190,7 @@ const Products = () => {
             <select name="sucursal" defaultValue={"0"} onChange={handleChange}>
                 {subsidiariesList?.map((item, index) => (
                     <option key={index} value={item.id}>
-                        {item.nombre}
+                        {item.nombre.split("-").join(" ")}
                     </option>
                 ))}
             </select>
