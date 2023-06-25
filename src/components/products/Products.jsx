@@ -131,8 +131,18 @@ const Products = () => {
     const [subsidiary, setSubsidiary] = React.useState(0);
 
     const getVehicles = async () => {
-        const vehicules = await vehicles({ sucursal: subsidiary });
-        Array.isArray(vehicules.data) && setProducts(vehicules.data);
+        try {
+            const vehicules = await vehicles({ sucursal: subsidiary });
+
+            //maximo 20 productos
+            if (vehicules.data.length > 20) {
+                setProducts(products_.slice(0, 20));
+            } else {
+                setProducts(vehicules.data);
+            }
+        } catch (error) {
+            throw new Error(error);
+        }
     };
 
     const addProducts = () => {
@@ -158,11 +168,6 @@ const Products = () => {
 
     React.useEffect(() => {
         getVehicles();
-
-        //maximo 20 productos
-        if (products_.length > 20) {
-            setProducts(products_.slice(0, 20));
-        }
     }, [subsidiary]);
 
     return (
