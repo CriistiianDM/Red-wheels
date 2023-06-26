@@ -1,14 +1,16 @@
 //import libraries
-import React from "react";
+import React, { useState } from "react";
 import "./filter.css";
 import arrowDonw from "/assets/icon/arrowDonw.svg";
 import { replacements } from "../../services/replacement";
 import json from "./data.json";
 
-const FilterSpareParts = ({ setDataSelect, target, setTarget }) => {
+const FilterSpareParts = ({ setDataSelect, setTarget }) => {
+    const [vehicleType, setvehicleType] = useState(1);
+
     const getReplacements = async () => {
         try {
-            const replacementList = await replacements();
+            const replacementList = await replacements({ id: vehicleType });
             setDataSelect(replacementList.data);
         } catch (error) {
             throw new Error(error);
@@ -16,14 +18,13 @@ const FilterSpareParts = ({ setDataSelect, target, setTarget }) => {
     };
 
     const handleSelect = (e) => {
-        let value = e.target.value;
-        setDataSelect(json[value]);
-        setTarget(value === 1 ? "/diagnostico-carros" : "/diagnostico-motos");
+        setvehicleType(e.target.value);
+        setTarget(vehicleType === 1 ? "/diagnostico-carros" : "/diagnostico-motos");
     };
 
     React.useEffect(() => {
         getReplacements();
-    }, [target]);
+    }, [vehicleType]);
 
     return (
         <>
