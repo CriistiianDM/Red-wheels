@@ -23,7 +23,12 @@ function Header() {
     if (!window.sessionStorage.hasOwnProperty("logged")) {
       setIsLogged(false);
     } else {
-      setIsLogged(true);
+      const logged = (JSON.parse(window.sessionStorage.getItem("logged"))).data;
+
+      if (logged.isAuth) {
+        setIsLogged(true);
+      }
+
     } 
 
   }, []);

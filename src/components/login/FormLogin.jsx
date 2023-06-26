@@ -28,7 +28,7 @@ const FormLogin = () => {
                 // Saves the token to the local storage.
                 window.sessionStorage.setItem("logged", JSON.stringify(data));
 
-                navigate("/");
+                navigate("/profile");
 
             }
         } catch (error) {

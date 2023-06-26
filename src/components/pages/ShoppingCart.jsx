@@ -42,6 +42,17 @@ const Cart = () => {
 
     React.useEffect(() => {
 
+        if (!window.sessionStorage.hasOwnProperty("logged")) {
+          navigate('/login');
+        } else {
+          const logged = (JSON.parse(window.sessionStorage.getItem("logged"))).data;
+    
+          if (!logged.isAuth) {
+            navigate('/login');
+          }
+    
+        }
+
     },  []);
 
     return (
