@@ -13,6 +13,10 @@ import NoLoginRepar from "./components/pages/NoLoginRepar";
 import DiagnosisRepairCar from "./components/pages/DiagnosisRepairCar";
 import DiagnosisRepairMoto from "./components/pages/DiagnosisRepairMoto";
 import Profile from "./components/pages/Profile";
+import ShoppingCart from './components/pages/ShoppingCart';
+import Pago from './components/pages/Pago';
+import Agradecimiento from './components/pages/Agradecimiento';
+import Moto from './components/pages/Motos';
 
 export default function RenderApp() {
   return (
@@ -31,6 +35,10 @@ export default function RenderApp() {
             <Route path="/diagnostico-carros" element={<DiagnosisRepairCar />} />
             <Route path="/diagnostico-motos" element={<DiagnosisRepairMoto />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/carrito" element={<ShoppingCart/>} /> 
+            <Route path="/pago" element={<Pago/>} /> 
+            <Route path="/gracias" element={<Agradecimiento/>} />
+            <Route path="/Motos" element={<Moto/>} />
             <Route
               path="*"
               element={

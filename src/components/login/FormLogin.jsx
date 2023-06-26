@@ -14,7 +14,7 @@ const FormLogin = () => {
 
     const handleForm = async (e) => {
         e.preventDefault();
-
+        console.log(email, contraseña, rolId);
         try {
             const data = await login({ email, contraseña, rol: rolId });
 
@@ -24,10 +24,12 @@ const FormLogin = () => {
                 setUser(data.email);
                 setEmail("");
                 setContraseña("");
-                navigate("/");
 
                 // Saves the token to the local storage.
-                window.localStorage.setItem("logged", JSON.stringify(data));
+                window.sessionStorage.setItem("logged", JSON.stringify(data));
+
+                navigate("/profile");
+
             }
         } catch (error) {
             throw new Error(error.response.data.message);

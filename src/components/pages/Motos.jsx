@@ -2,7 +2,7 @@
 import React from 'react';
 import Header from '../header/Header';
 import Footer from '../footer/footer';
-import PVehicles from '../vehicles/PVehicles';
+import MOTOS from '../motos/Motos';
 import Navbar from '../menu/Navbar';
 import FilterSpareParts from '../utils/FilterSpareParts';
 // const product = {
@@ -19,7 +19,7 @@ export default function Home() {
       <Header />
       <Navbar />
       <FilterSpareParts setTarget={setTarget} setDataSelect={setDataSelect} />
-      <PVehicles />
+      <MOTOS />
       <Footer  />
     </>
   );

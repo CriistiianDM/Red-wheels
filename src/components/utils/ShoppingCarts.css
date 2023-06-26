@@ -1,0 +1,163 @@
+.container{
+    background-color: transparent;
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.container-carrito{
+    padding: 1rem 2rem;
+    background-color: #18272E;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 1rem;
+    width: 600px;
+    height: 80px;
+    border-radius: 30px;
+    margin-left: 3rem;
+}
+
+
+.Titulo{
+    color: white;
+    font-size: 34px;
+    font-family: 'Quicksand' , sans-serif;
+    font-style:normal;
+    font-weight: 700;
+}
+
+.container-producto{
+    background-color: #18272E;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 1rem;
+    width: 664px;
+    height: 212px;
+    border-radius: 30px;
+    margin-left: 2rem;
+}
+
+.container-summary{
+    background-color: #18272E;
+    display: flex;
+    margin-bottom: 1rem;
+    width: 550px;
+    height: 200px;
+    border-radius: 30px;
+    margin-left: 2rem;
+    flex-direction: column;
+}
+
+.Titulo2{
+    color: white;
+    font-size: 38px;
+    font-family: 'Quicksand' , sans-serif;
+    font-style:normal;
+    font-weight: 800;
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+.columnas-pago{
+    background-color: transparent;
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.pago{
+    color: white;
+    font-size: 20px;
+    font-family: 'Quicksand' , sans-serif;
+    font-style:normal;
+    font-weight: 400;
+    margin-left: 1rem;
+}
+
+.boton{
+    padding: 1rem 2rem;
+    background-color: #E43946;
+    align-items: center;
+    margin-left: 10rem;
+    margin-bottom: 1rem;
+    width: 150px;
+    height: 40px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.pago2{
+    color: white;
+    font-size: 22px;
+    font-family: 'Quicksand' , sans-serif;
+    font-style:normal;
+    font-weight: 400;
+}
+
+.product-image{
+    margin-left: 2rem;
+}
+
+.producto{
+    margin-top: 1.2rem;
+}
+
+.product-name{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    gap: 3.5rem;
+    font-size: 28px;
+    font-family: 'Quicksand' , sans-serif;
+    font-style:normal;
+    font-weight: 900;
+}
+
+.product-detalles{
+    color: white;
+    font-size: 20px;
+    font-family: 'Quicksand' , sans-serif;
+    font-style:normal;
+    font-weight: 700;
+    margin-top: 1.5rem;
+}
+
+.product-precio{
+    color: white;
+    font-size: 24px;
+    font-family: 'Quicksand' , sans-serif;
+    font-style:normal;
+    font-weight: 900;
+    margin-top: 0.2rem;
+}
+
+.product-cantidad{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 18px;
+    font-family: 'Quicksand' , sans-serif;
+    font-style:normal;
+    font-weight: 900;
+    margin-top: 1.5rem;
+}
+
+.product-amount-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1.2rem;
+    margin-left: 4rem;
+}
+
+.boton-eliminar button {
+    background: none;
+    border: none;
+    padding: 0;
+  }

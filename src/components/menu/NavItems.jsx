@@ -1,22 +1,17 @@
 export const MenuItems = [
   {
-    title: 'Marketing',
-    path: '/login',
-    cName: 'dropdown-link'
+    title: 'Vehículo',
+    cName: 'dropdown-link',
+    dropdownItems: ['Carros', 'Motos']
   },
   {
-    title: 'Consulting',
-    path: '/',
-    cName: 'dropdown-link'
+    title: 'Sucursal',
+    cName: 'dropdown-link',
+    dropdownItems: ['Unicentro', 'Llano grande', 'La flora']
   },
   {
-    title: 'Design',
-    path: '/',
-    cName: 'dropdown-link'
-  },
-  {
-    title: 'Development',
-    path: '/',
-    cName: 'dropdown-link'
+    title: 'Reparación',
+    cName: 'dropdown-link',
+    dropdownItems: ['Reparacion carros', 'Reparacion motos']
   }
 ];
