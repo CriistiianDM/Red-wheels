@@ -2,6 +2,7 @@
 import React from 'react';
 import FormProfile from './FormProfile';
 import './profile.css'
+import FooterLogin from '../login/FooterLogin';
 
 //create a component
 const ProfileActions = ({
@@ -33,6 +34,7 @@ const ProfileActions = ({
                </div>
                <h1 className='_name_profile'>{data.name}</h1>
                <FormProfile />
+               <FooterLogin />
            </main>
         </>
      )
