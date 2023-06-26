@@ -16,7 +16,7 @@ const FormLogin = () => {
         e.preventDefault();
         console.log(email, contraseña, rolId);
         try {
-            const data = await login({ email, contraseña, id_rol: rolId });
+            const data = await login({ email, contraseña, rol: rolId });
 
             if (data.status === 200 || data.status === 201) {
                 setAuth(data.isAuth);
