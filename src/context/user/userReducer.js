@@ -28,16 +28,15 @@ export function userReducer(state, action) {
             return {
                 ...state,
                 auth: false,
-                user: "",
-                username: "",
-                token: "",
                 userId: "",
+                userRole: "",
+                username: "",
+                userEmail: "",
             };
         case userActions.RESET_FORM:
             return {
                 ...state,
                 userName: "",
-                userLastname: "",
                 userEmail: "",
                 userPassword: "",
             };
