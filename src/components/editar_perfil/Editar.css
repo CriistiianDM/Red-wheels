@@ -1,0 +1,25 @@
+._container_form_inpust__item#actualizar_perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh; /* Ajusta esta altura según tus necesidades */
+    padding: 3em;
+    max-width: 300px;
+
+}
+.buy-button#BotonActualizar {
+    margin-top: 10px; 
+    display: inline-block;
+    padding: 20px 60px;
+    background-color: #ff3950;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    align-items: center;
+ 
+  }
+
+  form#Actualizar {
+    display: grid;
+    place-items: center;
+}

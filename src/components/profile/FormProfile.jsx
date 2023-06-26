@@ -1,5 +1,6 @@
 //import libs
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 //Here is the component
@@ -21,6 +22,7 @@ const FormProfile = ({
         })
     }, [first_content, second_content])
 
+    const navigate =useNavigate();
     return (
         <>
             <main className="_container_form_profile">
@@ -74,8 +76,10 @@ const FormProfile = ({
                                                 name="tipo_usuario"
                                                 id="tipo_usuario" />
                                         </div>
+                                        </div>
+                                <div className='ParaEditar' >
+                                <a onClick={() => navigate("/Editar")} className="buy-button" id='BotonEditar'>EDITAR</a> 
                                 </div>
-
                         </div>
                     </form>
                 </div>
