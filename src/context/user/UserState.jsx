@@ -20,16 +20,12 @@ function UserState({ children }) {
         dispatch({ type: userActions.SET_USER_ID, payload: id });
     };
 
-    const setUser = (user) => {
-        dispatch({ type: userActions.SET_USER, payload: user });
+    const setUserRole = (role) => {
+        dispatch({ type: userActions.SET_USER_ROLE, payload: role });
     };
 
-    const setUserName = (name) => {
-        dispatch({ type: userActions.SET_USER_NAME, payload: name });
-    };
-
-    const setUserLastname = (lastname) => {
-        dispatch({ type: userActions.SET_LASTNAME, payload: lastname });
+    const setUsername = (user) => {
+        dispatch({ type: userActions.SET_USERNAME, payload: user });
     };
 
     const setUserEmail = (email) => {
@@ -38,10 +34,6 @@ function UserState({ children }) {
 
     const setUserPassword = (password) => {
         dispatch({ type: userActions.SET_PASSWORD, payload: password });
-    };
-
-    const setToken = (token) => {
-        dispatch({ type: userActions.SET_TOKEN, payload: token });
     };
 
     /**
@@ -62,36 +54,18 @@ function UserState({ children }) {
         () => ({
             auth: state.auth,
             setAuth,
+            userRole: state.userRole,
+            setUserRole,
             userId: state.userId,
             setUserId,
-            user: state.user,
-            setUser,
             username: state.username,
-            userName: state.userName,
-            setUserName,
-            userLastname: state.userLastname,
-            setUserLastname,
+            setUsername,
             userEmail: state.userEmail,
             setUserEmail,
-            userPassword: state.userPassword,
-            setUserPassword,
-            token: state.token,
-            setToken,
             resetSession,
             resetForm,
         }),
-        [
-            state.auth,
-            state.userId,
-            state.user,
-            state.userFullName,
-            state.username,
-            state.userName,
-            state.userLastname,
-            state.userEmail,
-            state.userPassword,
-            state.token,
-        ],
+        [state.auth, state.userRole, state.userId, state.username, state.userEmail],
     );
 
     return <UserContext.Provider value={valueProps}>{children}</UserContext.Provider>;
