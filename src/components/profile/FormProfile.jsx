@@ -75,7 +75,6 @@ const FormProfile = ({
                                                 id="tipo_usuario" />
                                         </div>
                                 </div>
-
                         </div>
                     </form>
                 </div>

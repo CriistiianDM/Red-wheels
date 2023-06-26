@@ -17,6 +17,7 @@ import ShoppingCart from './components/pages/ShoppingCart';
 import Pago from './components/pages/Pago';
 import Agradecimiento from './components/pages/Agradecimiento';
 import Moto from './components/pages/Motos';
+import GestionUsuarios from "./components/pages/GestionUsuarios";
 
 export default function RenderApp() {
   return (
@@ -39,6 +40,7 @@ export default function RenderApp() {
             <Route path="/pago" element={<Pago/>} /> 
             <Route path="/gracias" element={<Agradecimiento/>} />
             <Route path="/Motos" element={<Moto/>} />
+            <Route path="/gestionUsuarios" element={<GestionUsuarios/>} />
             <Route
               path="*"
               element={
