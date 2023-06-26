@@ -20,11 +20,11 @@ function Header() {
   }
 
   React.useEffect(() => {
-
-    if (!window.sessionStorage.hasOwnProperty("logged")) {
+  
+    if (!window.localStorage.hasOwnProperty("logged")) {
       setIsLogged(false);
     } else {
-      const logged = (JSON.parse(window.sessionStorage.getItem("logged"))).data;
+      const logged = (JSON.parse(window.localStorage.getItem("logged"))).data;
 
       if (logged.isAuth) {
         setIsLogged(true);
@@ -42,8 +42,7 @@ function Header() {
             isLogged && 
             <div onClick={handleClickOption}>
               <img src={herramienta} width="100" height="70" alt="logo" />
-            </div> &&
-            <Sidebar />
+            </div>
           }
           <a style={{ cursor: 'pointer' }} onClick={ () => { navigate('/')}}>
               <img src={logo} width="300" height="70" alt="logo" />

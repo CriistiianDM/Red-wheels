@@ -21,11 +21,11 @@ const InfoProduct = ({
 
     const handleViewDetails = () => {
 
-        if (!window.sessionStorage.hasOwnProperty("logged")) {
+        if (!window.localStorage.hasOwnProperty("logged")) {
             navigate("/no-login-product");
         } else {
 
-            const logged = (JSON.parse(window.sessionStorage.getItem("logged"))).data;
+            const logged = (JSON.parse(window.localStorage.getItem("logged"))).data;
 
             if (logged.isAuth) {
                //queda pendiente hacer la logica de add cart
