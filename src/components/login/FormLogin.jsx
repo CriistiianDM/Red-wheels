@@ -10,7 +10,7 @@ const FormLogin = () => {
 
     const navigate = useNavigate();
 
-    const { setAuth, setUserId, setUser } = useContext(UserContext);
+    const { setAuth, setUserId, setUserRole, setUserEmail, setUsername } = useContext(UserContext);
 
     const handleForm = async (e) => {
         e.preventDefault();
@@ -21,12 +21,14 @@ const FormLogin = () => {
             if (data.status === 200 || data.status === 201) {
                 setAuth(data.isAuth);
                 setUserId(data.id);
-                setUser(data.email);
+                setUserRole(data.tipoUsuario);
+                setUsername(data.username);
+                setUserEmail(data.email);
                 setEmail("");
                 setContraseña("");
 
                 // Saves the token to the local storage.
-                window.sessionStorage.setItem("logged", JSON.stringify(data));
+                window.localStorage.setItem("logged", JSON.stringify(data));
 
                 navigate("/");
 
