@@ -6,8 +6,6 @@ import { MenuItems } from './NavItems';
 import arrowDonw from '/assets/icon/arrowDonw.svg';
 import arrowUp from '/assets/icon/arrowUp.svg';
 
-
-
 function Navbar() {
   const [click, setClick] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
@@ -62,9 +60,9 @@ function Navbar() {
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-              {item.title} 
-              <img className='_down_img' src={arrowDonw} alt="down" />
-              <img className="_up_img" src={arrowUp} alt="up" />
+                {item.title} 
+                <img className='_down_img' src={arrowDonw} alt="down" />
+                <img className="_up_img" src={arrowUp} alt="up" />
               </Link>
               {activeMenu === item.title.toLowerCase() && (
                 <Dropdown options={item.dropdownItems} />
@@ -74,7 +72,7 @@ function Navbar() {
 
           <li className='nav-item'>
             <Link to='/respuestos' className='nav-links' onClick={closeMobileMenu}>
-              Reparacion
+              Repuestos
             </Link>
           </li>
 
@@ -86,7 +84,10 @@ function Navbar() {
             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
               Idioma <i className='fas fa-caret-down' />
             </Link>
-            {activeMenu === 'idioma' && <Dropdown />}
+            {activeMenu === 'idioma' && (
+              <Dropdown options={['Inglés', 'Español', 'Portugués']} />
+            
+            )}
           </li>
         </ul>
       </nav>
