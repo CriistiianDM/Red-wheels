@@ -34,7 +34,17 @@ function Header() {
 
 const handleChange=e=>{
   setBusqueda(e.target.value);
-  console.log("Búsqueda: "+e.target.value);
+  filtrar("Búsqueda: "+e.target.value);
+}
+
+const filtrar=(terminoBusqueda)=>{
+  var ResultadosBusqueda=tablaUsuarios.filter((elemento)=>{
+    if(elemento.name.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+    ||elemento.company.name.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())){
+      return elemento;
+    }
+  })
+  setUsuarios(ResultadosBusqueda);
 }
 
  useEffect(()=>{
