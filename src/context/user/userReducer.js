@@ -1,7 +1,8 @@
 import { userActions } from "../../actions/userActions";
 
 const loggedJSON = window.localStorage.getItem("logged");
-const user = JSON.parse(loggedJSON);
+const userJSON = JSON.parse(loggedJSON);
+const user = userJSON ? userJSON.data : null;
 
 export const userInitialState = {
     auth: user?.isAuth || false, // If the user is logged in.
