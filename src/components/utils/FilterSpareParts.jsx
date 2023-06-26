@@ -18,7 +18,8 @@ const FilterSpareParts = ({ setDataSelect, target, setTarget }) => {
     const handleSelect = (e) => {
         let value = e.target.value;
         setDataSelect(json[value]);
-        setTarget(value === 1 ? "/diagnostico-carros" : "/diagnostico-motos");
+        setTarget(value === 1 ? "/vehicles" : "/vehicles");
+        setTarget(value === 2 ? "/vehicles" : "/Motos");
     };
 
     React.useEffect(() => {
