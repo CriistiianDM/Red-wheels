@@ -12,12 +12,12 @@ const Sidebar = () => {
 
   return (
     <div>
-        <img
+        {/* <img
         src={sidebar}
         alt=""
         className={`menu-toggle ${isOpen ? 'open' : ''}`}
         onClick={toggleMenu}
-      />
+      /> */}
       <div className={`side-menu ${isOpen ? 'open' : ''}`}>
         <div className='container-items'>
             <div className='boton-menu'><Link to="/perfil">Perfil</Link></div>
