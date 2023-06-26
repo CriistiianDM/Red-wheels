@@ -24,10 +24,12 @@ const FormLogin = () => {
                 setUser(data.email);
                 setEmail("");
                 setContraseña("");
-                navigate("/");
 
                 // Saves the token to the local storage.
-                window.localStorage.setItem("logged", JSON.stringify(data));
+                window.sessionStorage.setItem("logged", JSON.stringify(data));
+
+                navigate("/");
+
             }
         } catch (error) {
             throw new Error(error.response.data.message);

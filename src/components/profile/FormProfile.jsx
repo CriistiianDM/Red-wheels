@@ -30,7 +30,7 @@ const FormProfile = ({
 
                                 <div className="_container_form_inpust__item">
 
-                                    <h1 htmlFor="name">Datos del vehiculo</h1>
+                                    <h1 htmlFor="name">Datos Personales</h1>
                                     <div className="_all_input">
                                         <label htmlFor="name">Marca de vehiculo</label>
                                         <input 
@@ -41,6 +41,12 @@ const FormProfile = ({
                                         <label htmlFor="name">Matricula de vehiculo</label>
                                         <input 
                                             placeholder="IRO110"
+                                            type="text" 
+                                            name="_matricula" 
+                                            id="_matricula" />
+                                        <label htmlFor="name">Identificasion</label>
+                                        <input 
+                                            placeholder="Identificasion"
                                             type="text" 
                                             name="_matricula" 
                                             id="_matricula" />
