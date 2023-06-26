@@ -1,0 +1,203 @@
+
+.container-pago{
+    position:relative;
+    width: 875px;
+    height: 760px;
+    margin-left: 13rem;
+    margin-top: 2rem;
+}
+
+
+.container-rectangulo{
+    position:absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    background: rgba(28, 43, 50, 0.95);
+    border-radius: 30px;
+    margin-bottom: 4rem;
+}
+
+.titulo{
+    margin-top: 1rem;
+    color: white;
+    font-size: 34px;
+    font-family: 'Quicksand' , sans-serif;
+    font-style:normal;
+    font-weight: 700;
+    text-align: center;
+}
+/* Datos de la tarjeta */
+
+.datos-tarjeta{
+    position: absolute;
+    left: 10rem;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 100px;
+    display: flex;
+    color: #FFFFFF;
+}
+
+.nombre-titular{
+    position: absolute;
+    left: 12rem;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 180px;
+    display: flex;
+    color: #FFFFFF;
+}
+
+.container-pago .nombre-titular input[type="text"] {
+    /* Estilos personalizados aquí */
+    width: 100%;
+    padding: 6px 3px;
+    font-size: 15px;
+    border-radius: 4px;
+    margin-top: 6rem;
+    margin-left: -8rem;
+    margin-right: 9rem;
+    border-color:#EB4D4D;
+    outline: none;
+    background-color: #A03038;
+  }
+  
+.container-pago .nombre-titular input[type="text"]:focus {
+    /* Estilos cuando el input está enfocado */
+    border-color:#FFFFFF;
+    background-color: #A03038;
+}
+  
+.num-tarjeta{
+    position: absolute;
+    left: 12rem;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 340px;
+    display: flex;
+    color: #FFFFFF;
+}
+
+.container-pago .num-tarjeta input[type="text"] {
+    /* Estilos personalizados aquí */
+    width: 100%;
+    padding: 6px 3px;
+    font-size: 15px;
+    border-radius: 4px;
+    margin-top: 11rem;
+    margin-left: -8.2rem;
+    margin-right: 9rem;
+    border-color:#EB4D4D;
+    outline: none;
+    background-color: #A03038;
+  }
+  
+.container-pago .num-tarjeta input[type="text"]:focus {
+    /* Estilos cuando el input está enfocado */
+    border-color:#FFFFFF;
+    background-color: #A03038;
+}
+
+.fecha{
+    position: absolute;
+    left: 12rem;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 500px;
+    display: flex;
+    color: #FFFFFF;
+}
+
+.container-pago .fecha input[type="text"] {
+    /* Estilos personalizados aquí */
+    width: 100%;
+    padding: 6px 3px;
+    font-size: 15px;
+    border-radius: 4px;
+    margin-top: 16rem;
+    margin-left: -3.7rem;
+    margin-right: 4.5rem;
+    border-color:#EB4D4D;
+    outline: none;
+    background-color: #A03038;
+  }
+  
+.container-pago .fecha input[type="text"]:focus {
+    /* Estilos cuando el input está enfocado */
+    border-color:#FFFFFF;
+    background-color: #A03038;
+}
+
+.cvv{
+    position: absolute;
+    left: 12rem;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 660px;
+    display: flex;
+    color: #FFFFFF;
+}
+
+.container-pago .cvv input[type="text"] {
+    /* Estilos personalizados aquí */
+    width: 100%;
+    padding: 6px 3px;
+    font-size: 15px;
+    border-radius: 4px;
+    margin-top: 21rem;
+    margin-left: -2.2rem;
+    margin-right: 3rem;
+    border-color:#EB4D4D;
+    outline: none;
+    background-color: #A03038;
+  }
+  
+.container-pago .cvv input[type="text"]:focus {
+    /* Estilos cuando el input está enfocado */
+    border-color:#FFFFFF;
+    background-color: #A03038;
+}
+
+.boton2{
+    padding: 1rem 2rem;
+    background-color: #E43946;
+    align-items: center;
+    margin-left: 16rem;
+    margin-top: 26rem;
+    width: 300px;
+    height: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.finalizar-compra{
+    color: white;
+    font-size: 22px;
+    font-family: 'Quicksand' , sans-serif;
+    font-style:normal;
+    font-weight: 400;
+}
+
+.imagenes{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;;
+    margin-left: 20rem;
+}
+
+.imagenes img {
+    width: 100%;
+}
