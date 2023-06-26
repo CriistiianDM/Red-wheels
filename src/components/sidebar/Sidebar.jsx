@@ -3,15 +3,28 @@ import React, { useState } from 'react';
 import './Sidebar.css';
 import sidebar from '/assets/icon/sidebar.svg';
 
-const Sidebar = () => {
+const Sidebar = ({
+  open_,
+  setIsLogged_
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    setIsLogged_(false);
   };
 
+  React.useEffect(() => {
+
+    if (open_) {
+      console.log('open_:', open_);
+      setIsOpen(true);
+    }
+
+  }, [open_])
+
   return (
-    <div>
+    <div style={{zIndex: 99}}>
         {/* <img
         src={sidebar}
         alt=""
