@@ -22,10 +22,17 @@ const InfoProduct = ({
     const handleViewDetails = () => {
 
         if (!window.sessionStorage.hasOwnProperty("logged")) {
-            navigate("/no-login-product")
+            navigate("/no-login-product");
         } else {
-            //queda pendiente hacer la logica de add cart
+
+            const logged = (JSON.parse(window.sessionStorage.getItem("logged"))).data;
+
+            if (logged.isAuth) {
+               //queda pendiente hacer la logica de add cart
+            }
+            
         } 
+
     }
 
     //useEffect
