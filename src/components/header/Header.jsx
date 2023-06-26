@@ -14,9 +14,12 @@ function Header() {
 
  const navigate = useNavigate();
  const [isLogged, setIsLogged] = React.useState(true);
+ const [isLogged_, setIsLogged_] = React.useState(false);
 
   const handleClickOption = () => {
-    setIsLogged(!isLogged);
+    //setIsLogged(!isLogged);
+    console.log('isLogged_:', isLogged_);
+    setIsLogged_(true);
   }
 
   React.useEffect(() => {
@@ -42,7 +45,12 @@ function Header() {
             isLogged && 
             <div onClick={handleClickOption}>
               <img src={herramienta} width="100" height="70" alt="logo" />
-            </div>
+            </div> 
+          }
+          {
+            isLogged_ &&
+            <Sidebar open_={isLogged_} 
+                    setIsLogged_={setIsLogged_} />
           }
           <a style={{ cursor: 'pointer' }} onClick={ () => { navigate('/')}}>
               <img src={logo} width="300" height="70" alt="logo" />
