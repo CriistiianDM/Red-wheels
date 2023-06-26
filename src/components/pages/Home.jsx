@@ -5,6 +5,7 @@ import Carrusel from '../carrusel/Carrusel';
 import Footer from '../footer/footer';
 import Products from '../products/Products';
 import Navbar from '../menu/Navbar';
+import Sidebar from '../sidebar/Sidebar'
 // const product = {
 //    price: 100,
 // }
