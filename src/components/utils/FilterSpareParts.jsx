@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import "./filter.css";
 import arrowDonw from "/assets/icon/arrowDonw.svg";
 import { replacements } from "../../services/replacement";
-import json from "./data.json";
 
 const FilterSpareParts = ({ setDataSelect, setTarget }) => {
     const [vehicleType, setvehicleType] = useState(1);
