@@ -30,59 +30,61 @@ const FormProfile = ({
 
                                 <div className="_container_form_inpust__item">
 
-                                    <h1 htmlFor="name">Datos del vehiculo</h1>
+                                    <h1 htmlFor="name">Datos de Cuenta</h1>
                                     <div className="_all_input">
-                                        <label htmlFor="name">Marca de vehiculo</label>
+                                        <label htmlFor="name">Nombre usuario</label>
                                         <input 
-                                            placeholder="Tesla model 3" 
+                                            placeholder="CristianK" 
                                             type="text" 
-                                            name="marca" 
-                                            id="marca" />
-                                        <label htmlFor="name">Matricula de vehiculo</label>
+                                            name="usuario" 
+                                            id="usuario" />
+                                        <label htmlFor="name">Correo electrónico</label>
                                         <input 
-                                            placeholder="IRO110"
+                                            placeholder="cristiank@gmail.com"
                                             type="text" 
-                                            name="_matricula" 
-                                            id="_matricula" />
+                                            name="correo" 
+                                            id="correo" />
                                     </div>
 
-                                    <h1 htmlFor="name">Fecha y hora</h1>
+                                    <h1 htmlFor="name">Seguridad</h1>
                                     <div className="_all_input">
                                         <input 
-                                                placeholder="Fecha"
-                                                type="date"
-                                                name="date"
-                                                id="date" />
+                                                placeholder="Contraseña"
+                                                type="password"
+                                                name="contra"
+                                                id="contra" />
                                     </div>
 
                                 </div>
 
                                 <div className="_container_form_inpust__item">
                                     
-                                    <h1 htmlFor="name">Datos del vehiculo</h1>
+                                    <h1 htmlFor="name">Datos Personales</h1>
                                         <div className="_all_input">
-                                            <label htmlFor="name">Diagnostico automotriz</label>
+                                            <label htmlFor="name">Nombre</label>
                                             <input
-                                                placeholder="$49.99"
+                                                placeholder="Cristian"
                                                 type="text"
-                                                name="automotriz"
-                                                id="_automotriz" />
-                                            <label htmlFor="name">Diagnostico automotriz</label>
+                                                name="nombre"
+                                                id="nombre" />
+                                            <label htmlFor="name">Apellido</label>
                                             <input
-                                                placeholder="$49.99"
+                                                placeholder="Machado"
                                                 type="text"
-                                                name="automotriz"
-                                                id="_automotriz" />
-                                            <label htmlFor="name">IVA</label>
+                                                name="apellido"
+                                                id="apellido" />
+                                            <label htmlFor="name">Identificación</label>
                                             <input
-                                                placeholder="19% x MONTO TOTAL"
+                                                placeholder="111122223"
                                                 type="text"
-                                                name="automotriz"
-                                                id="_automotriz" />
-                                            <p>
-                                                <span>Total:</span>
-                                                <span>$$$$$$</span>
-                                            </p>
+                                                name="identidad"
+                                                id="identidad" />
+                                            <label htmlFor="name">Celular</label>
+                                            <input
+                                                placeholder="3004582269"
+                                                type="text"
+                                                name="celular"
+                                                id="celular" />
                                         </div>
                                 </div>
 

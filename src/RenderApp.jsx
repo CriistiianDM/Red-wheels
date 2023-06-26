@@ -16,7 +16,7 @@ import Profile from "./components/pages/Profile";
 import ShoppingCart from './components/pages/ShoppingCart';
 import Pago from './components/pages/Pago';
 import Agradecimiento from './components/pages/Agradecimiento';
-
+import Moto from './components/pages/Motos';
 
 export default function RenderApp() {
   return (
@@ -37,7 +37,8 @@ export default function RenderApp() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/carrito" element={<ShoppingCart/>} /> 
             <Route path="/pago" element={<Pago/>} /> 
-            <Route path="/gracias" element={<Agradecimiento/>} /> 
+            <Route path="/gracias" element={<Agradecimiento/>} />
+            <Route path="/Motos" element={<Moto/>} />
             <Route
               path="*"
               element={
