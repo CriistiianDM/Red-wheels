@@ -41,7 +41,7 @@ const FormProfile = ({
                                         <label htmlFor="name">Correo electrónico</label>
                                         <input 
                                             placeholder="cristiank@gmail.com"
-                                            type="text" 
+                                            type="email" 
                                             name="correo" 
                                             id="correo" />
                                     </div>
@@ -61,30 +61,18 @@ const FormProfile = ({
                                     
                                     <h1 htmlFor="name">Datos Personales</h1>
                                         <div className="_all_input">
-                                            <label htmlFor="name">Nombre</label>
+                                            <label htmlFor="name">Nombre Completo</label>
                                             <input
                                                 placeholder="Cristian"
                                                 type="text"
                                                 name="nombre"
                                                 id="nombre" />
-                                            <label htmlFor="name">Apellido</label>
+                                            <label htmlFor="name">Tipo de usuario</label>
                                             <input
-                                                placeholder="Machado"
+                                                placeholder="Usuario"
                                                 type="text"
-                                                name="apellido"
-                                                id="apellido" />
-                                            <label htmlFor="name">Identificación</label>
-                                            <input
-                                                placeholder="111122223"
-                                                type="text"
-                                                name="identidad"
-                                                id="identidad" />
-                                            <label htmlFor="name">Celular</label>
-                                            <input
-                                                placeholder="3004582269"
-                                                type="text"
-                                                name="celular"
-                                                id="celular" />
+                                                name="tipo_usuario"
+                                                id="tipo_usuario" />
                                         </div>
                                 </div>
 
