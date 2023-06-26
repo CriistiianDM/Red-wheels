@@ -67,7 +67,7 @@ const FormProfile = ({
                                         </div>
                                 </div>
                                 <div className="_actions">
-                                <a onClick={() => navigate("/login")} className="buy-button">AGREGAR</a> 
+                                <a onClick={() => navigate("/login")} className="buy-button" id='BotonAgregar'>AGREGAR</a> 
                                 </div>
                     </form>
         
