@@ -14,7 +14,7 @@ const SpareParts = () => {
         <>
             <Header />
             <Navbar />
-            <FilterSpareParts target={target} setTarget={setTarget} setDataSelect={setDataSelect} />
+            <FilterSpareParts setTarget={setTarget} setDataSelect={setDataSelect} />
             <CardSpareParts target={target} data_respuestos={data_select} />
             <Footer />
         </>

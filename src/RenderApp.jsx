@@ -18,6 +18,7 @@ import Pago from './components/pages/Pago';
 import Agradecimiento from './components/pages/Agradecimiento';
 import Moto from './components/pages/Motos';
 import GestionUsuarios from "./components/pages/GestionUsuarios";
+import Add from "./components/pages/Add";
 import Inventario from "./components/pages/Inventario";
 import Cotizaciones_consultas from "./components/pages/Cotiazaciones_consultas";
 import VehiculosVendidos from "./components/pages/VehiculosVendidos";
@@ -46,6 +47,7 @@ export default function RenderApp() {
             <Route path="/gestionUsuarios" element={<GestionUsuarios/>} />
             <Route path="/cotizacion-consultas" element={<Cotizaciones_consultas/>} />
             <Route path="/vehiculos-vendidos" element={<VehiculosVendidos/>} />
+            <Route path="/Add" element={<Add/>} />
             <Route
               path="*"
               element={
