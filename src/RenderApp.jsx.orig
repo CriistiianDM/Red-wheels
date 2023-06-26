@@ -22,7 +22,6 @@ import Add from "./components/pages/Add";
 import Inventario from "./components/pages/Inventario";
 import Cotizaciones_consultas from "./components/pages/Cotiazaciones_consultas";
 import VehiculosVendidos from "./components/pages/VehiculosVendidos";
-import Editar from "./components/pages/Editar";
 export default function RenderApp() {
   return (
     <>
@@ -49,7 +48,6 @@ export default function RenderApp() {
             <Route path="/cotizacion-consultas" element={<Cotizaciones_consultas/>} />
             <Route path="/vehiculos-vendidos" element={<VehiculosVendidos/>} />
             <Route path="/Add" element={<Add/>} />
-            <Route path="/Editar" element={<Editar/>} />
             <Route
               path="*"
               element={

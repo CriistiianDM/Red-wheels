@@ -33,3 +33,22 @@
 div._container_form_inpust {
     display: flex;
 }
+
+.buy-button#BotonEditar {
+    margin-top: 10px; 
+    display: inline-block;
+    padding: 20px 60px;
+    background-color: #ff3950;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    align-items: center;
+ 
+  }
+
+.ParaEditar{
+    display: grid;
+    place-items: center;
+    align-items: end;
+
+}
