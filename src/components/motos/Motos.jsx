@@ -1,38 +1,39 @@
 import React from "react";
-const VEHICLES = [
+
+const MOTOS = [
     {
-        id: 1,
-        name: "DACIA SPRIING ",
-        price: 100,
-        description: "Dacia Spring se distingue por su estilo SUV con motor 100% eléctrico. Fiel a los códigos de la marca Dacia, este vehículo urbano te ofrece un nuevo placer de conducción durante tus trayectos diarios.",
-        img: "/assets/pvehicles_img/pvehicle1.svg"
+        id: 4,
+        name: "VESPA ELETTRICA L3",
+        price: 6790,
+        description: "La  Vespa Elettrica L3 del mítico grupo Piaggio es una opción ideal para moverse por la ciudad con el estilazo de una mítica de diseño italiano",
+        img: "/assets/pvehicles_img/VESPA.svg"
     },
     {
-        id: 2,
-        name: "TESLA MODEL 3",
-        price: 100,
-        description: "se caracteriza por contar con una gran batería de iones de litio que le proporciona una autonomía entre 415 y 544 kilómetros, dependiendo de la versión",
-        img: "/assets/pvehicles_img/pvehicle2.svg"
+        id: 5,
+        name: "SILENCE PLUS 01",
+        price: 6250,
+        description: "La factoría española lanza ahora la Plus 01 con un mayor rendimiento y autonomía de 133 kilómetros. Su aceptación tiene mucho que ver con el cómodo sistema de batería extraíble",
+        img: "/assets/pvehicles_img/SILENCE.svg"
     },
     {
-        id: 3,
-        name: "Mazda MX-30",
-        price: 100,
-        description: "Mazda MX-30.Vive la evolución en la experiencia de conducción y disfruta de su interior diseñado con materiales amigables con el medio ambiente. Abre sus innovadoras puertas freestyle y deja que empiece una nueva historia.",
-        img: "/assets/pvehicles_img/pvehicle3.svg"
+        id: 6,
+        name: "OX MOTORCYCLES PATAGONIA",
+        price: 6900,
+        description: "La marca española OX Motorcycles, tras el gran éxito que supuso su modelo One con su autonomía de 100 kilómetros a velocidades de hasta 110km/h, lanza la espectacular Patagonia, un modelo con más potencia, tracción y un diseño tan robusto como compacto",
+        img: "/assets/pvehicles_img/MOTOR.svg"
     }
 ]
 
 
-const PVehicles = () => {
-    const [ products_, setProducts ] = React.useState(VEHICLES);
+const Motos = () => {
+    const [ products_, setProducts ] = React.useState(MOTOS);
 
     const addProducts = () => {
     
          setProducts([
             ...products_,
             {
-                id: 3,
+                id: 6,
                 name: "FIAT 500 “Edición 1957”",
                 price: 100,
                 description: "holi", 
@@ -86,4 +87,4 @@ const PVehicles = () => {
 
 }
 
-export default PVehicles;
+export default Motos;

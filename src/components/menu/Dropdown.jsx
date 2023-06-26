@@ -61,7 +61,7 @@ function getOptionLink(option) {
   if (option === 'Carros') {
     return '/vehicles';
   } else if (option === 'Motos') {
-    return '/vehicles';
+    return '/Motos';
   }else if (option === 'Reparacion carros') {
     return '/diagnostico-carros';
   }else if (option === 'Reparacion motos') {
