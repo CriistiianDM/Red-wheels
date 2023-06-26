@@ -33,7 +33,14 @@
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-     margin-top: 1rem;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.btn-container 
+._img_circle {
+    width: 4em;
+    height: 4em;
 }
 
   @media screen and (max-width: 960px) {

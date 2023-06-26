@@ -26,7 +26,7 @@ const CardSpareParts = ({ data_respuestos, target }) => {
                                 <img src={item.img} alt="img" />
                             </div>
                             <span>
-                                <h1>{item.title}</h1>
+                                <h1>{item.nombre}</h1>
                                 <p>$ {item.precio}</p>
                             </span>
                             <a onClick={handleDetails}>DETALLES</a>

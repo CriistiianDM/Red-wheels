@@ -18,6 +18,7 @@ import Pago from './components/pages/Pago';
 import Agradecimiento from './components/pages/Agradecimiento';
 import Moto from './components/pages/Motos';
 import GestionUsuarios from "./components/pages/GestionUsuarios";
+import Add from "./components/pages/Add";
 
 export default function RenderApp() {
   return (
@@ -41,6 +42,7 @@ export default function RenderApp() {
             <Route path="/gracias" element={<Agradecimiento/>} />
             <Route path="/Motos" element={<Moto/>} />
             <Route path="/gestionUsuarios" element={<GestionUsuarios/>} />
+            <Route path="/Add" element={<Add/>} />
             <Route
               path="*"
               element={

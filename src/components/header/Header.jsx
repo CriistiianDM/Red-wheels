@@ -4,6 +4,7 @@ import "./header.css";
 import Button from "./Button";
 import logo from "/assets/icon/logotipo.png";
 import herramienta from "/assets/icon/home.svg";
+import Sidebar from '../sidebar/Sidebar';
 import { 
     useNavigate 
 } 
@@ -19,11 +20,11 @@ function Header() {
   }
 
   React.useEffect(() => {
-
-    if (!window.sessionStorage.hasOwnProperty("logged")) {
+  
+    if (!window.localStorage.hasOwnProperty("logged")) {
       setIsLogged(false);
     } else {
-      const logged = (JSON.parse(window.sessionStorage.getItem("logged"))).data;
+      const logged = (JSON.parse(window.localStorage.getItem("logged"))).data;
 
       if (logged.isAuth) {
         setIsLogged(true);
@@ -50,8 +51,10 @@ function Header() {
         <div className="_container_search">
 
         </div>
-        <div className="btn-container">
-          <Button />
+        <div onClick={() => {navigate('/login')}} className="btn-container">
+              <div className="_img_circle">
+                    <img src="/assets/icon/profile.svg" alt="circle" />
+              </div>
         </div>
       </div>
     </div>
