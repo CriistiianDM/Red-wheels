@@ -8,11 +8,37 @@ import {
     useNavigate 
 } 
 from "react-router-dom";
+import {useEffect, useState} from 'react';
+import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
 
  const navigate = useNavigate();
  const [isLogged, setIsLogged] = React.useState(true);
+ const [usuarios, setUsuarios]= useState([]);
+ const [tablaUsuarios, setTablaUsuarios]= useState([]);
+ const [busqueda, setBusqueda]= useState([]);
+
+ const peticionGet=async()=>{
+  await axios.get("")
+  .then(response=>{
+    setUsuarios(response.data);
+    setTablaUsuarios(response.data);
+  }).catch(error=>{
+    console.log(error);
+  })
+ }
+
+const handleChange=e=>{
+  console.log("Búsqueda: "+e.target.value);
+}
+
+ useEffect(()=>{
+  peticionGet();
+ },[])
 
   const handleClickOption = () => {
     setIsLogged(!isLogged);
@@ -35,6 +61,7 @@ function Header() {
 
   return (
     <div className="header">
+      
       <div className="sb_header-links_div">
         <div className="_conatiner_utils_logged">
           {
@@ -48,7 +75,17 @@ function Header() {
           </a>
         </div>
         <div className="_container_search">
-
+        <div className="containerInput"  style={{display:"flex", position:"relative"}}>
+        <input style={{paddingRight:"2em"}}
+          className="form-control input buscar"
+          value={busqueda}
+          placeholder="Busqueda por componente o vehículo"
+          onChange={handleChange}
+        />
+        <button className="btn btn-success" style={{position:"absolute", right:"0"}}>
+          <FontAwesomeIcon icon={faSearch}/>
+        </button>
+      </div>
         </div>
         <div className="btn-container">
           <Button />
