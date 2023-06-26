@@ -16,7 +16,18 @@ const InfoProduct = ({
         top_speed: '',
         acceleration: ''
     });
+
     const navigate =useNavigate();
+
+    const handleViewDetails = () => {
+
+        if (!window.sessionStorage.hasOwnProperty("logged")) {
+            navigate("/no-login-product")
+        } else {
+            //queda pendiente hacer la logica de add cart
+        } 
+    }
+
     //useEffect
     React.useEffect(() => {
 
@@ -63,7 +74,7 @@ const InfoProduct = ({
                     </div>
 
                     <div className='__actions'>
-                    <a onClick={() => {navigate("/no-login-product")}}>COMPRAR</a>
+                        <a onClick={handleViewDetails}>COMPRAR</a>
                     </div>
             </div>
         </>

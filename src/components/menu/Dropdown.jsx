@@ -1,15 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './dropdown.css';
 
 function Dropdown({ options }) {
   const [click, setClick] = useState(false);
+  const navigate = useNavigate();
 
   const handleClick = () => setClick(!click);
 
   const handleMouseLeave = () => {
     setClick(false);
   };
+
+  const handleVerification = (option) => {
+
+    if (option === 'Reparacion carros' || 
+        option === 'Reparacion motos') {
+      navigate('/no-login-repair');
+    }
+  }
 
   useEffect(() => {
     const dropdownMenu = document.querySelector('.dropdown-menu');
@@ -26,7 +36,7 @@ function Dropdown({ options }) {
       <nav className="navbar">
         <ul className={click ? 'dropdown-menu active' : 'dropdown-menu'}>
           {options.map((option, index) => (
-            <li key={index}>
+            <li onClick={() => {handleVerification(option)}} key={index}>
               <Link
                 className="dropdown-link"
                 to={getOptionLink(option)}

@@ -14,7 +14,7 @@ const FormLogin = () => {
 
     const handleForm = async (e) => {
         e.preventDefault();
-
+        console.log(email, contraseña, rolId);
         try {
             const data = await login({ email, contraseña, id_rol: rolId });
 
