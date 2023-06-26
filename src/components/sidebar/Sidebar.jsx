@@ -1,18 +1,91 @@
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import './Sidebar.css';
-import sidebar from '/assets/icon/sidebar.svg';
+import UserContext from "../../context/user/UserContext";
+
+const options_ = {
+     'gerente': [
+         {
+              'name': 'Perfil',
+              'link': '/profile'
+         },
+         {
+              'name': 'Vehículo en reparación',
+              'link': '/reparacion'
+         },
+         {
+              'name': 'Carrito de compras',
+              'link': '/carrito'
+         },
+         {
+              'name': 'Registrar usuario',
+              'link': '/register'
+         }
+     ],
+     'cliente': [
+         {
+              'name': 'Perfil',
+              'link': '/profile'
+         },
+         {
+              'name': 'Vehículo en reparación',
+              'link': '/reparacion'
+         },
+         {
+              'name': 'Carrito de compras',
+              'link': '/carrito'
+         }
+     ],
+     'vendedor': [
+         {
+              'name': 'Perfil',
+              'link': '/profile'
+         },
+         {
+              'name': 'Vehículo en reparación',
+              'link': '/reparacion'
+         },
+         {
+              'name': 'Carrito de compras',
+              'link': '/carrito'
+         }
+     ],
+     'jefe-taller': [
+         {
+              'name': 'Perfil',
+              'link': '/profile'
+         },
+         {
+              'name': 'Vehículo en reparación',
+              'link': '/reparacion'
+         },
+         {
+              'name': 'Carrito de compras',
+              'link': '/carrito'
+         }
+     ],
+}
 
 const Sidebar = ({
   open_,
   setIsLogged_
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isRol, setRol] = useState(false);
+  const { userRole , resetSession  } = React.useContext(UserContext);
+  console.log('user:', React.useContext(UserContext));
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
     setIsLogged_(false);
   };
+
+  const handleCloseSession = () => {
+      //remove localstorage
+      window.localStorage.removeItem('logged');
+      //recargar la pagina
+      window.location.reload();
+  }
 
   React.useEffect(() => {
 
@@ -23,20 +96,24 @@ const Sidebar = ({
 
   }, [open_])
 
+  React.useEffect(() => {
+      if (userRole !== '' || userRole !== null || userRole !== undefined) {
+          setRol(true);
+      }
+      console.log('userRole:', userRole);
+  }, [userRole])
+
   return (
     <div style={{zIndex: 99}}>
-        {/* <img
-        src={sidebar}
-        alt=""
-        className={`menu-toggle ${isOpen ? 'open' : ''}`}
-        onClick={toggleMenu}
-      /> */}
       <div className={`side-menu ${isOpen ? 'open' : ''}`}>
         <div className='container-items'>
-            <div className='boton-menu'><Link to="/perfil">Perfil</Link></div>
-            <div className='boton-menu'><Link to="/reparacion">Vehículo en reparación</Link></div>
-            <div className='boton-menu'><Link to="/carrito">Carrito de compras</Link></div>
-            <div className='boton-menu'><Link to="/cerrar">Cerrar sesión</Link></div>
+            {
+                isRol &&
+                (options_[userRole])?.map((item, index) => (
+                    <div key={index} className='boton-menu'><Link to={item.link}>{item.name}</Link></div>
+                ))
+            }
+            <div className='boton-menu'><a onClick={handleCloseSession} >Cerrar sesión</a></div>
         </div>
       </div>
       {isOpen && <div className="backdrop" onClick={toggleMenu}></div>}
