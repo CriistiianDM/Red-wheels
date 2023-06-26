@@ -18,7 +18,7 @@ function Dropdown({ options }) {
     if (option === 'Reparacion carros' || 
         option === 'Reparacion motos') {
 
-        if (!window.sessionStorage.hasOwnProperty("logged")) {
+        if (!window.localStorage.hasOwnProperty("logged")) {
           navigate('/no-login-repair');
         }
      
