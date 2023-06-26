@@ -33,6 +33,7 @@ function Header() {
  }
 
 const handleChange=e=>{
+  setBusqueda(e.target.value);
   console.log("Búsqueda: "+e.target.value);
 }
 
