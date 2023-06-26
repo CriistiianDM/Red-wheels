@@ -8,6 +8,7 @@ import add from '/assets/icon/add.svg';
 import remove from '/assets/icon/remove.svg';
 import eliminar from '/assets/icon/delete.svg';
 import '../utils/ShoppingCarts.css';
+import { useNavigate } from "react-router-dom";
 
 
 const Cart = () => {
@@ -38,6 +39,10 @@ const Cart = () => {
         const newTotal = price * newAmount;
         setTotal(newTotal);
     };
+
+    React.useEffect(() => {
+
+    },  []);
 
     return (
         <div>
