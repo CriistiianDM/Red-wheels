@@ -5,6 +5,7 @@ import Button from "./Button";
 import logo from "/assets/icon/logotipo.png";
 import herramienta from "/assets/icon/home.svg";
 import Sidebar from '../sidebar/Sidebar';
+import Barra from './barra';
 import { 
     useNavigate 
 } 
@@ -18,7 +19,6 @@ function Header() {
 
   const handleClickOption = () => {
     //setIsLogged(!isLogged);
-    console.log('isLogged_:', isLogged_);
     setIsLogged_(true);
   }
 
@@ -59,6 +59,7 @@ function Header() {
         <div className="_container_search">
 
         </div>
+        <Barra/>
         <div onClick={() => {navigate('/login')}} className="btn-container">
               <div className="_img_circle">
                     <img src="/assets/icon/profile.svg" alt="circle" />

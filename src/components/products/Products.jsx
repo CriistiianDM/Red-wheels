@@ -1,8 +1,6 @@
 import React , { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { vehicles } from "../../services/product";
-import UserContext from "../../context/user/UserContext";
-
 
 const Products = ({
     sucursal
@@ -11,20 +9,33 @@ const Products = ({
     const [products_, setProducts] = React.useState([]);
     const [subsidiary, setSubsidiary] = React.useState(sucursal);
     const [isLoad , setLoad ] = React.useState(false)
-    const { sucursalId } = useContext(UserContext);
+    const [isNoFound , setNoFound ] = React.useState(false)
 
     const getVehicles = async () => {
         try {
             setLoad(false)
+            setNoFound(false)
             const vehicleList = await vehicles({ sucursal: subsidiary });
-
+            console.log(vehicleList)
             //maximo 20 productos
+
             if (vehicleList.data.length > 20) {
                 setProducts(vehicleList.slice(0, 20));
+                setLoad(true)
             } else {
-                setProducts(vehicleList.data);
+
+                if (vehicleList.data.length !== 0) {
+                    setProducts(vehicleList.data);
+                    setLoad(true)
+                }
+                else {
+                    console.log("no hay productos")
+                    setNoFound(true)
+                    setLoad(false)
+                }
+
             }
-            setLoad(true)
+
         } catch (error) {
             throw new Error(error);
         }
@@ -54,9 +65,9 @@ const Products = ({
 
                             <div className="_container-info">
                                 <h1>{item?.nombre}</h1>
-                                {/* <div className="_description"> */}
-                                <p>{item?.descripcion}</p>
-                                {/* </div> */}
+                                <div className="_description">
+                                    <p>{item?.descripcion}</p>
+                                </div>
                                 <div className="_actions">
                                     <a
                                         onClick={() => {
@@ -72,7 +83,11 @@ const Products = ({
                 ))}
             </div> :
             <div className="_loader_data">
-                <h1>Cargando</h1>
+                {
+                    isNoFound?
+                    <h2> No Se Encontraron productos En la sucursal </h2>
+                    : <h1>Cargando</h1>
+                }
             </div>
             }
         </>
