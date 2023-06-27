@@ -16,7 +16,7 @@ const Cotizaciones_consultas = () => {
         <div>
             <Header />
             <div className="container-titulo-botones">
-              <Link to="/ingresar"><button className="boton-ingresar">Ingresar</button></Link>
+              <Link to="/Cotizaciones"><button className="boton-ingresar">Ingresar</button></Link>
               <Link to="/cotizacion-consultas"><button className="boton-consultar">Consultar</button></Link>
               <div className="container-titulo">
                   <img src={cotizaciones} alt="" />
