@@ -1,7 +1,7 @@
 //import libs
-import React from 'react';
+import React , { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import UserContext from "../../context/user/UserContext";
 
 //Here is the component
 const FormProfile = ({
@@ -9,6 +9,12 @@ const FormProfile = ({
     second_content,
 }) => {
 
+    const {  userEmail ,
+             username,
+             userRole   
+    } = useContext(UserContext);
+
+    console.log(useContext(UserContext));
     const [ data, setData ] = React.useState({
         first_content: [],
         second_content: []
@@ -36,13 +42,13 @@ const FormProfile = ({
                                     <div className="_all_input">
                                         <label htmlFor="name">Nombre usuario</label>
                                         <input 
-                                            placeholder="CristianK" 
+                                            placeholder={username} 
                                             type="text" 
                                             name="usuario" 
                                             id="usuario" />
                                         <label htmlFor="name">Correo electrónico</label>
                                         <input 
-                                            placeholder="cristiank@gmail.com"
+                                            placeholder={userEmail}
                                             type="email" 
                                             name="correo" 
                                             id="correo" />
@@ -51,7 +57,7 @@ const FormProfile = ({
                                     <h1 htmlFor="name">Seguridad</h1>
                                     <div className="_all_input">
                                         <input 
-                                                placeholder="Contraseña"
+                                                placeholder="**************"
                                                 type="password"
                                                 name="contra"
                                                 id="contra" />
@@ -65,13 +71,13 @@ const FormProfile = ({
                                         <div className="_all_input">
                                             <label htmlFor="name">Nombre Completo</label>
                                             <input
-                                                placeholder="Cristian"
+                                                placeholder={username}
                                                 type="text"
                                                 name="nombre"
                                                 id="nombre" />
                                             <label htmlFor="name">Tipo de usuario</label>
                                             <input
-                                                placeholder="Usuario"
+                                                placeholder={userRole}
                                                 type="text"
                                                 name="tipo_usuario"
                                                 id="tipo_usuario" />

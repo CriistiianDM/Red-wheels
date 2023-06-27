@@ -58,9 +58,6 @@ function Header() {
               <img src={logo} width="300" height="70" alt="logo" />
           </a>
         </div>
-        <div className="_container_search">
-
-        </div>
         <Barra/>
         <div className="_conatainer_saludo">
           {
