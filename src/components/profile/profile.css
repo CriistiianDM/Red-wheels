@@ -59,6 +59,8 @@ div._container_form_inpust {
     width: 100%;
 }
 
+
+._loader_data h2,
 ._loader_data h1 {
     font-size: 52px;
     color: var(--color-white);

@@ -18,7 +18,6 @@ function Header() {
 
   const handleClickOption = () => {
     //setIsLogged(!isLogged);
-    console.log('isLogged_:', isLogged_);
     setIsLogged_(true);
   }
 
