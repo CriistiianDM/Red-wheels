@@ -1,26 +1,17 @@
 //import Libs
-import React from 'react';
-import Header from '../header/Header';
-import Footer from '../footer/footer';
-import MOTOS from '../motos/Motos';
-import Navbar from '../menu/Navbar';
-import FilterSpareParts from '../utils/FilterSpareParts';
-// const product = {
-//    price: 100,
-// }
-
-// product.filter((item) => item.price > 100)
+import React from "react";
+import Header from "../header/Header";
+import Footer from "../footer/footer";
+import Motos from "../motos/Motos";
+import Navbar from "../menu/Navbar";
 
 export default function Home() {
-  const [ data_select, setDataSelect ] = React.useState([]);
-  const [ target, setTarget ] = React.useState([]);
-  return (
-    <>
-      <Header />
-      <Navbar />
-      <FilterSpareParts setTarget={setTarget} setDataSelect={setDataSelect} />
-      <MOTOS />
-      <Footer  />
-    </>
-  );
+    return (
+        <>
+            <Header />
+            <Navbar />
+            <Motos />
+            <Footer />
+        </>
+    );
 }
