@@ -23,6 +23,8 @@ import Inventario from "./components/pages/Inventario";
 import Cotizaciones_consultas from "./components/pages/Cotiazaciones_consultas";
 import VehiculosVendidos from "./components/pages/VehiculosVendidos";
 import Editar from "./components/pages/Editar";
+import Reparacion from "./components/pages/Reparacion";
+import Cotizaciones from "./components/pages/Cotizaciones";
 export default function RenderApp() {
   return (
     <>
@@ -49,7 +51,9 @@ export default function RenderApp() {
             <Route path="/cotizacion-consultas" element={<Cotizaciones_consultas/>} />
             <Route path="/vehiculos-vendidos" element={<VehiculosVendidos/>} />
             <Route path="/Add" element={<Add/>} />
+            <Route path="/EstadoReparacion" element={<Reparacion/>} />
             <Route path="/Editar" element={<Editar/>} />
+            <Route path="/Cotizaciones" element={<Cotizaciones/>} />
             <Route
               path="*"
               element={

@@ -1,0 +1,75 @@
+.container-no-buy#paralareparacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: auto; /* Ajusta el ancho del contenedor principal según tus necesidades */
+  margin: 0 auto; /* Centra horizontalmente el contenedor */
+  padding: 2em; /* Ajusta el padding del contenedor según tus necesidades */
+}
+
+.content#lacaja{
+  margin-top: 2em;
+  margin-left: 2em;
+  margin-right: 2em;
+  height: auto;
+  width: 65%; 
+}
+.IMG#imagenreparacion {
+  float: left;
+  margin-top: 25px;
+  margin-right: 20px; /* Ajusta este margen según tus necesidades */
+  margin-left: 2em;
+  margin-bottom: 2em;
+}
+
+.titulo#tituloreparacion {
+  font-size: 30px;
+  height: auto;
+  width: auto;
+  margin-top: 5%;
+
+}
+
+.texto_1#textoreparacion{
+  font-size: 20px;
+  height: auto;
+  width: auto;
+}
+
+.titulo#estadotitulo{
+  font-size: 30px;
+  height: auto;
+  width: auto;
+  margin-top: 5%;
+  float: left;
+  margin-left: 5%;
+}
+
+.cuadro-en-proceso {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 75px;
+  background-color: rgb(87, 25, 25);
+  border-radius: 10px;
+  margin-left: 70%;
+  margin-top: 5%;
+  font-size: 24px;
+}
+
+.Frase#tituloreparacion{
+  float: left;
+  color: white;
+  margin-left: 2%;
+}
+
+.iconoreparacion{
+  float: left;
+  margin-top: 10;
+  margin-right: 20px; /* Ajusta este margen según tus necesidades */
+  margin-left: 5%;
+  margin-bottom: 0.5%;
+
+}
