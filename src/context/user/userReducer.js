@@ -1,6 +1,7 @@
 import { userActions } from "../../actions/userActions";
 
 const loggedJSON = window.localStorage.getItem("logged");
+const sucursalId = window.localStorage.getItem("surcursalId");
 const userJSON = JSON.parse(loggedJSON);
 const user = userJSON ? userJSON.data : null;
 
@@ -10,6 +11,7 @@ export const userInitialState = {
     userRole: user?.tipoUsuario || "", // Role of the user.
     username: user?.username || "", // Username of the user.
     userEmail: user?.email, // Input value of the user's email.
+    surcursalId: sucursalId || "",
 };
 
 export function userReducer(state, action) {
@@ -24,6 +26,8 @@ export function userReducer(state, action) {
             return { ...state, username: action.payload };
         case userActions.SET_EMAIL:
             return { ...state, userEmail: action.payload };
+        case userActions.SET_SURCURSAL_ID:
+            return { ...state, surcursalId: action.payload };
         case userActions.RESET_SESSION:
             return {
                 ...state,
@@ -32,6 +36,7 @@ export function userReducer(state, action) {
                 userRole: "",
                 username: "",
                 userEmail: "",
+                surcursalId: 0,
             };
         case userActions.RESET_FORM:
             return {

@@ -36,6 +36,10 @@ function UserState({ children }) {
         dispatch({ type: userActions.SET_PASSWORD, payload: password });
     };
 
+    const setSucursalId = (sucursalId) => {
+        dispatch({ type: userActions.SET_SURCURSAL_ID, payload: sucursalId });
+    };
+
     /**
      * Resets the session.
      */
@@ -61,11 +65,13 @@ function UserState({ children }) {
             username: state.username,
             setUsername,
             userEmail: state.userEmail,
+            surcursalId: state.surcursalId,
+            setSucursalId,
             setUserEmail,
             resetSession,
             resetForm,
         }),
-        [state.auth, state.userRole, state.userId, state.username, state.userEmail],
+        [state.auth, state.userRole, state.userId, state.username, state.userEmail , state.sucursalId],
     );
 
     return <UserContext.Provider value={valueProps}>{children}</UserContext.Provider>;

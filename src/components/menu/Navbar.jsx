@@ -6,7 +6,9 @@ import { MenuItems } from './NavItems';
 import arrowDonw from '/assets/icon/arrowDonw.svg';
 import arrowUp from '/assets/icon/arrowUp.svg';
 
-function Navbar() {
+function Navbar({
+  setSucursal
+}) {
   const [click, setClick] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
 
@@ -65,7 +67,8 @@ function Navbar() {
                 <img className="_up_img" src={arrowUp} alt="up" />
               </Link>
               {activeMenu === item.title.toLowerCase() && (
-                <Dropdown options={item.dropdownItems} />
+                <Dropdown setSucursal={setSucursal} 
+                          options={item.dropdownItems} />
               )}
             </li>
           ))}

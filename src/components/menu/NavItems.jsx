@@ -7,7 +7,12 @@ export const MenuItems = [
   {
     title: 'Sucursal',
     cName: 'dropdown-link',
-    dropdownItems: ['Unicentro', 'Llano grande', 'La flora']
+    dropdownItems: ['red-wheels-cosmocentro', 
+                     'red-wheels-pance', 
+                     'red-wheels-florida',
+                     'red-wheels-ciudad-jardin',
+                     'Sucursal-Pance',
+                    ]
   },
   {
     title: 'Reparación',

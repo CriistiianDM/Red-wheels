@@ -98,7 +98,10 @@ const Sidebar = ({
 
   React.useEffect(() => {
       if (userRole !== '' || userRole !== null || userRole !== undefined) {
-          setRol(true);
+          setRol(JSON.parse(localStorage.getItem('logged')).data.tipoUsuario);
+      }
+      else {
+          setRol(userRole);
       }
       console.log('userRole:', userRole);
   }, [userRole])
@@ -108,8 +111,7 @@ const Sidebar = ({
       <div className={`side-menu ${isOpen ? 'open' : ''}`}>
         <div className='container-items'>
             {
-                isRol &&
-                (options_[userRole])?.map((item, index) => (
+                (options_[isRol])?.map((item, index) => (
                     <div key={index} className='boton-menu'><Link to={item.link}>{item.name}</Link></div>
                 ))
             }
