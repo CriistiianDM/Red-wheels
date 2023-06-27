@@ -21,6 +21,7 @@ const Products = ({
 
             if (vehicleList.data.length > 20) {
                 setProducts(vehicleList.slice(0, 20));
+                setLoad(true)
             } else {
 
                 if (vehicleList.data.length !== 0) {
