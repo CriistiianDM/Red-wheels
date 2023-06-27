@@ -1,19 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect ,  useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import UserContext from "../../context/user/UserContext";
 import './dropdown.css';
 
-function Dropdown({ options }) {
+function Dropdown({ options , setSucursal }) {
   const [click, setClick] = useState(false);
   const navigate = useNavigate();
-
-  const handleClick = () => setClick(!click);
+  const { setSucursalId } = useContext(UserContext);
+  
+  const menuSucursal = [
+        'red-wheels-cosmocentro', 
+        'red-wheels-pance', 
+        'red-wheels-florida',
+        'red-wheels-ciudad-jardin',
+        'Sucursal-Pance',
+ ]
 
   const handleMouseLeave = () => {
     setClick(false);
   };
 
-  const handleVerification = (option) => {
+  const handleVerification = (option,index) => {
 
     if (option === 'Reparacion carros' || 
         option === 'Reparacion motos') {
@@ -23,11 +31,18 @@ function Dropdown({ options }) {
         }
      
     }
+
+    if (menuSucursal.includes(option) ) {
+      window.localStorage.setItem('surcursalId', index+1);
+      setSucursalId(index+1);
+      setSucursal(index+1)
+    }
+
   }
 
   useEffect(() => {
     const dropdownMenu = document.querySelector('.dropdown-menu');
-
+    
     dropdownMenu.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
@@ -40,7 +55,7 @@ function Dropdown({ options }) {
       <nav className="navbar">
         <ul className={click ? 'dropdown-menu active' : 'dropdown-menu'}>
           {options.map((option, index) => (
-            <li onClick={() => {handleVerification(option)}} key={index}>
+            <li onClick={() => {handleVerification(option, index)}} key={index}>
               <Link
                 className="dropdown-link"
                 to={getOptionLink(option)}
@@ -67,10 +82,10 @@ function getOptionLink(option) {
   }else if (option === 'Reparacion motos') {
     return '/diagnostico-motos';
   }else if (option === 'Unicentro') {
-    return '/login';
+    return 1;
   }else if (option === 'Llano grande') {
-    return '/login';
+    return 2;
   }else if (option === 'La flora') {
-    return '/login';
+    return 3;
   }
 }

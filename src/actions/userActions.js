@@ -9,4 +9,5 @@ export const userActions = {
     SET_EMAIL: "SET_EMAIL",
     RESET_SESSION: "RESET_SESSION",
     RESET_FORM: "RESET_FORM",
+    SET_SURCURSAL_ID: "SET_SURCURSAL_ID",
 };
