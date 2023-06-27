@@ -16,6 +16,7 @@ function Header() {
  const navigate = useNavigate();
  const [isLogged, setIsLogged] = React.useState(true);
  const [isLogged_, setIsLogged_] = React.useState(false);
+ const [name_, setname_] = React.useState('');
 
   const handleClickOption = () => {
     //setIsLogged(!isLogged);
@@ -31,6 +32,7 @@ function Header() {
 
       if (logged.isAuth) {
         setIsLogged(true);
+        setname_(logged.tipoUsuario);
       }
 
     } 
@@ -60,10 +62,20 @@ function Header() {
 
         </div>
         <Barra/>
-        <div onClick={() => {navigate('/login')}} className="btn-container">
-              <div className="_img_circle">
-                    <img src="/assets/icon/profile.svg" alt="circle" />
-              </div>
+        <div className="_conatainer_saludo">
+          {
+          isLogged &&
+          <span>Hola, {name_} 
+          </span>
+          }
+          <div 
+                style={{ cursor: `${isLogged? 'default': 'pointer'}` }}
+                onClick={() => {!isLogged && navigate('/login')}} 
+                className="btn-container">
+                <div className="_img_circle">
+                      <img src="/assets/icon/profile.svg" alt="circle" />
+                </div>
+          </div>
         </div>
       </div>
     </div>
