@@ -1,72 +1,47 @@
 import React from "react";
 import { specificVehicle } from "../../services/product";
 
-const MOTOS = [
-    {
-        id: 4,
-        name: "VESPA ELETTRICA L3",
-        price: 6790,
-        description:
-            "La  Vespa Elettrica L3 del mítico grupo Piaggio es una opción ideal para moverse por la ciudad con el estilazo de una mítica de diseño italiano",
-        img: "/assets/pvehicles_img/VESPA.svg",
-    },
-    {
-        id: 5,
-        name: "SILENCE PLUS 01",
-        price: 6250,
-        description:
-            "La factoría española lanza ahora la Plus 01 con un mayor rendimiento y autonomía de 133 kilómetros. Su aceptación tiene mucho que ver con el cómodo sistema de batería extraíble",
-        img: "/assets/pvehicles_img/SILENCE.svg",
-    },
-    {
-        id: 6,
-        name: "OX MOTORCYCLES PATAGONIA",
-        price: 6900,
-        description:
-            "La marca española OX Motorcycles, tras el gran éxito que supuso su modelo One con su autonomía de 100 kilómetros a velocidades de hasta 110km/h, lanza la espectacular Patagonia, un modelo con más potencia, tracción y un diseño tan robusto como compacto",
-        img: "/assets/pvehicles_img/MOTOR.svg",
-    },
-];
 
 const Motos = () => {
     const [products_, setProducts] = React.useState([]);
+    const [isLoad , setLoad ] = React.useState(false)
+    const [isNoFound , setNoFound ] = React.useState(false)
 
     const getMotos = async () => {
+        setLoad(false)
         const data = await specificVehicle({ type: 2 });
 
         //maximo 20 productos
         if (data.length > 20) {
             setProducts(data.data.slice(0, 20));
+            setLoad(true)
         } else {
-            setProducts(data.data);
+            
+            if (data.data.length !== 0) {
+                setProducts(data.data);
+                   setLoad(true)
+               }
+               else {
+                   setNoFound(true)
+               }
         }
     };
 
-    const addProducts = () => {
-        setProducts([
-            ...products_,
-            {
-                id: 6,
-                name: "FIAT 500 “Edición 1957”",
-                price: 100,
-                description: "holi",
-                img: "/assets/product_img/producto2.svg",
-            },
-        ]);
-    };
 
     React.useEffect(() => {
         getMotos();
-    }, [products_]);
+    }, []);
 
     return (
         <>
+         {
+             isLoad?
             <div className="_container_root_products">
                 {products_?.map((item, index) => (
                     <div product-key={item.id} key={index} className="_container_products_view">
                         <div className="_container_secundary_product">
                             <div className="_container-img">
-                                <img src={item.img} alt="img" />
+                                <img src={item.img || '/assets/pvehicles_img/VESPA.svg'} alt="img" />
                             </div>
 
                             <div className="_container-info">
@@ -81,7 +56,15 @@ const Motos = () => {
                         </div>
                     </div>
                 ))}
+            </div> :
+            <div className="_loader_data">
+                {
+                    isNoFound?
+                    <h2> No Se Encontraron productos :3 </h2>
+                    : <h1>Cargando</h1>
+                }
             </div>
+         }
         </>
     );
 };
