@@ -1,0 +1,22 @@
+.barradebusqueda{
+    background-color:#18272E;
+    width: 30%;
+    border-radius: 1em;
+
+}
+
+.busqueda{
+    all: unset;
+    background-color:transparent;
+    border-color: transparent;
+    color: white;
+    height: 30px;
+    width: 390px;
+    margin-left: 1em;
+    margin-top: 0.2em;
+    
+}
+
+.imagenbusqueda{
+    float: right;
+}

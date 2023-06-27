@@ -10,17 +10,14 @@ const options_ = {
               'link': '/profile'
          },
          {
-              'name': 'Vehículo en reparación',
-              'link': '/reparacion'
+              'name': 'Gestion de Usuarios',
+              'link': '/gestionUsuarios'
          },
          {
-              'name': 'Carrito de compras',
-              'link': '/carrito'
-         },
-         {
-              'name': 'Registrar usuario',
-              'link': '/register'
+              'name': 'Inventario',
+              'link': '/inventario'
          }
+
      ],
      'cliente': [
          {
@@ -29,12 +26,13 @@ const options_ = {
          },
          {
               'name': 'Vehículo en reparación',
-              'link': '/reparacion'
+              'link': '/EstadoReparacion'
          },
          {
               'name': 'Carrito de compras',
               'link': '/carrito'
          }
+
      ],
      'vendedor': [
          {
@@ -42,12 +40,8 @@ const options_ = {
               'link': '/profile'
          },
          {
-              'name': 'Vehículo en reparación',
-              'link': '/reparacion'
-         },
-         {
-              'name': 'Carrito de compras',
-              'link': '/carrito'
+              'name': 'Cotizaciones',
+              'link': '/Cotizaciones'
          }
      ],
      'jefe-taller': [
@@ -56,12 +50,12 @@ const options_ = {
               'link': '/profile'
          },
          {
-              'name': 'Vehículo en reparación',
-              'link': '/reparacion'
+              'name': 'Ordenes de trabajo',
+              'link': '/ordenes-trabajo'
          },
          {
-              'name': 'Carrito de compras',
-              'link': '/carrito'
+              'name': 'Estado de ordenes',  
+              'link': '/estado-orden?'     
          }
      ],
 }

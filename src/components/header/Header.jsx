@@ -5,6 +5,7 @@ import Button from "./Button";
 import logo from "/assets/icon/logotipo.png";
 import herramienta from "/assets/icon/home.svg";
 import Sidebar from '../sidebar/Sidebar';
+import Barra from './barra';
 import { 
     useNavigate 
 } 
@@ -60,6 +61,7 @@ function Header() {
         <div className="_container_search">
 
         </div>
+        <Barra/>
         <div className="_conatainer_saludo">
           {
           isLogged &&
