@@ -25,6 +25,7 @@ import VehiculosVendidos from "./components/pages/VehiculosVendidos";
 import Editar from "./components/pages/Editar";
 import Reparacion from "./components/pages/Reparacion";
 import Ordenes_trabajo from "./components/pages/Ordenes_trabajo";
+import Cotizaciones from "./components/pages/Cotizaciones";
 export default function RenderApp() {
   return (
     <>
@@ -54,6 +55,7 @@ export default function RenderApp() {
             <Route path="/EstadoReparacion" element={<Reparacion/>} />
             <Route path="/Editar" element={<Editar/>} />
             <Route path="/ordenes-trabajo" element={<Ordenes_trabajo/>} />
+            <Route path="/Cotizaciones" element={<Cotizaciones/>} />
             <Route
               path="*"
               element={
