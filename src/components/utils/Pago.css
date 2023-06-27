@@ -55,7 +55,6 @@
 }
 
 .container-pago .nombre-titular input[type="text"] {
-    /* Estilos personalizados aquí */
     width: 100%;
     padding: 6px 3px;
     font-size: 15px;
@@ -87,7 +86,6 @@
 }
 
 .container-pago .num-tarjeta input[type="text"] {
-    /* Estilos personalizados aquí */
     width: 100%;
     padding: 6px 3px;
     font-size: 15px;
@@ -119,7 +117,6 @@
 }
 
 .container-pago .fecha input[type="text"] {
-    /* Estilos personalizados aquí */
     width: 100%;
     padding: 6px 3px;
     font-size: 15px;
@@ -151,7 +148,6 @@
 }
 
 .container-pago .cvv input[type="text"] {
-    /* Estilos personalizados aquí */
     width: 100%;
     padding: 6px 3px;
     font-size: 15px;
