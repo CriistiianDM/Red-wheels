@@ -20,6 +20,7 @@ import Moto from './components/pages/Motos';
 import GestionUsuarios from "./components/pages/GestionUsuarios";
 import Add from "./components/pages/Add";
 import Editar from "./components/pages/Editar";
+import Reparacion from "./components/pages/Reparacion";
 export default function RenderApp() {
   return (
     <>
@@ -43,6 +44,7 @@ export default function RenderApp() {
             <Route path="/Motos" element={<Moto/>} />
             <Route path="/gestionUsuarios" element={<GestionUsuarios/>} />
             <Route path="/Add" element={<Add/>} />
+            <Route path="/EstadoReparacion" element={<Reparacion/>} />
             <Route path="/Editar" element={<Editar/>} />
             <Route
               path="*"
