@@ -13,7 +13,7 @@ const FormProfile = ({
              username,
              userRole   
     } = useContext(UserContext);
-
+    const dataUser = JSON.parse(window.localStorage.getItem("logged"))?.data;
     console.log(useContext(UserContext));
     const [ data, setData ] = React.useState({
         first_content: [],
@@ -42,13 +42,13 @@ const FormProfile = ({
                                     <div className="_all_input">
                                         <label htmlFor="name">Nombre usuario</label>
                                         <input 
-                                            placeholder={username} 
+                                            placeholder={username || dataUser.username} 
                                             type="text" 
                                             name="usuario" 
                                             id="usuario" />
                                         <label htmlFor="name">Correo electrónico</label>
                                         <input 
-                                            placeholder={userEmail}
+                                            placeholder={userEmail || dataUser.email}
                                             type="email" 
                                             name="correo" 
                                             id="correo" />
@@ -71,13 +71,13 @@ const FormProfile = ({
                                         <div className="_all_input">
                                             <label htmlFor="name">Nombre Completo</label>
                                             <input
-                                                placeholder={username}
+                                                placeholder={username || dataUser.username}
                                                 type="text"
                                                 name="nombre"
                                                 id="nombre" />
                                             <label htmlFor="name">Tipo de usuario</label>
                                             <input
-                                                placeholder={userRole}
+                                                placeholder={userRole || dataUser.tipoUsuario}
                                                 type="text"
                                                 name="tipo_usuario"
                                                 id="tipo_usuario" />

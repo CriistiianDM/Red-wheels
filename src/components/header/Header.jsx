@@ -30,7 +30,7 @@ function Header() {
     } else {
       const logged = (JSON.parse(window.localStorage.getItem("logged"))).data;
 
-      if (logged.isAuth) {
+      if (logged && logged.isAuth) {
         setIsLogged(true);
         setname_(logged.tipoUsuario);
       }

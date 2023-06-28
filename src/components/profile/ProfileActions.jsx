@@ -15,6 +15,7 @@ const ProfileActions = ({
      const [isLogged, setIsLogged] = React.useState(false);
      const navigate = useNavigate();
      const {  username  } = useContext(UserContext);
+     const dataUser = JSON.parse(window.localStorage.getItem("logged"))?.data;
      
      const [ data, setData ] = React.useState({
             img_profile: 'CristianK',
@@ -36,12 +37,12 @@ const ProfileActions = ({
           setIsLogged(false);
           navigate('/');
         } else {
-          const logged = (JSON.parse(window.localStorage.getItem("logged"))).data;
-    
-          if (logged.isAuth) {
-            setIsLogged(true);
+          const logged = (JSON.parse(window.localStorage.getItem("logged")))?.data;
+         
+          if ( logged && logged.isAuth) {
+              setIsLogged(true);
           }
-    
+          
         } 
     
     }, []);
@@ -53,9 +54,8 @@ const ProfileActions = ({
             <main className="_container_profile_actions">
                 <div className="_container_profile_img _img_circle">
                         <img src="/assets/icon/profile.svg" alt='profile' />
-                    
                 </div>
-                <h1 className='_name_profile'>{username}</h1>
+                <h1 className='_name_profile'>{username || dataUser.username}</h1>
                 <FormProfile />
                 <FooterLogin />
             </main>
