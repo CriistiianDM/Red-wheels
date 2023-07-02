@@ -6,19 +6,10 @@ import Footer from "../footer/footer";
 import Products from "../products/Products";
 import Navbar from "../menu/Navbar";
 import UserContext from "../../context/user/UserContext";
-// const product = {
-//    price: 100,
-// }
-// product.filter((item) => item.price > 100)
 
-//prueba
 export default function Home() {
     const { userEmail } = React.useContext(UserContext);
-    const  [sucursal , setSucursal ] = React.useState(0)
-
-    React.useEffect(() => {
-        console.log(userEmail);
-    }, [userEmail]);
+    const [sucursal, setSucursal] = React.useState(0);
 
     React.useEffect(() => {
         //scroll to top
