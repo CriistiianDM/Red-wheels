@@ -1,22 +1,37 @@
 .barradebusqueda{
+    position: relative;
+    display: grid;
+    place-items: end;
     background-color:#18272E;
-    width: 30%;
+    width: 35%;
     border-radius: 1em;
-
+    height: 2.7em;
 }
 
-.busqueda{
+.busqueda {
     all: unset;
+    position: absolute;
+    top: 0;
+    left: 0;
     background-color:transparent;
     border-color: transparent;
     color: white;
-    height: 30px;
-    width: 390px;
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
     margin-left: 1em;
-    margin-top: 0.2em;
-    
 }
 
-.imagenbusqueda{
+.barradebusqueda a {
+    display: grid;
+    height: -webkit-fill-available;
+    width: 10%;
+    place-items: center;
+    z-index: 99;
+}
+
+.imagenbusqueda {
     float: right;
+    height: 70%;
+    width: 70%;
+    object-fit: scale-down;
 }

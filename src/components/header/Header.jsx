@@ -30,7 +30,7 @@ function Header() {
     } else {
       const logged = (JSON.parse(window.localStorage.getItem("logged"))).data;
 
-      if (logged.isAuth) {
+      if (logged && logged.isAuth) {
         setIsLogged(true);
         setname_(logged.tipoUsuario);
       }
@@ -57,9 +57,6 @@ function Header() {
           <a style={{ cursor: 'pointer' }} onClick={ () => { navigate('/')}}>
               <img src={logo} width="300" height="70" alt="logo" />
           </a>
-        </div>
-        <div className="_container_search">
-
         </div>
         <Barra/>
         <div className="_conatainer_saludo">

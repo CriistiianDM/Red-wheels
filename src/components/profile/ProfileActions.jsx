@@ -1,8 +1,10 @@
 //import libs
-import React from 'react';
+import React , { useContext } from 'react';
 import FormProfile from './FormProfile';
 import './profile.css'
 import FooterLogin from '../login/FooterLogin';
+import { useNavigate } from 'react-router-dom';
+import UserContext from "../../context/user/UserContext";
 
 //create a component
 const ProfileActions = ({
@@ -10,12 +12,16 @@ const ProfileActions = ({
     name,
 }) => {
 
-
+     const [isLogged, setIsLogged] = React.useState(false);
+     const navigate = useNavigate();
+     const {  username  } = useContext(UserContext);
+     const dataUser = JSON.parse(window.localStorage.getItem("logged"))?.data;
+     
      const [ data, setData ] = React.useState({
             img_profile: 'CristianK',
             name: ''
     })
-    
+
     //la magia ocurre aqui :v
     React.useEffect(() => {
         setData({
@@ -25,17 +31,35 @@ const ProfileActions = ({
 
     }, [img_profile, name])
 
+    React.useEffect(() => {
+  
+        if (!window.localStorage.hasOwnProperty("logged")) {
+          setIsLogged(false);
+          navigate('/');
+        } else {
+          const logged = (JSON.parse(window.localStorage.getItem("logged")))?.data;
+         
+          if ( logged && logged.isAuth) {
+              setIsLogged(true);
+          }
+          
+        } 
+    
+    }, []);
+
      return (
         <>
-           <main className="_container_profile_actions">
-               <div className="_container_profile_img _img_circle">
-                    <img src="/assets/icon/profile.svg" alt='profile' />
-                   
-               </div>
-               <h1 className='_name_profile'>{data.name}</h1>
-               <FormProfile />
-               <FooterLogin />
-           </main>
+         {
+             isLogged &&
+            <main className="_container_profile_actions">
+                <div className="_container_profile_img _img_circle">
+                        <img src="/assets/icon/profile.svg" alt='profile' />
+                </div>
+                <h1 className='_name_profile'>{username || dataUser.username}</h1>
+                <FormProfile />
+                <FooterLogin />
+            </main>
+         }
         </>
      )
 
