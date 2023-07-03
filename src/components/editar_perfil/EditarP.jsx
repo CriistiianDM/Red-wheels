@@ -3,6 +3,7 @@ import React from 'react';
 import FormularioEditar from './FormularioEditar';
 import './Editar.css'
 import FooterLogin from '../login/FooterLogin';
+
 //create a component
 const EditarP = ({
     name
