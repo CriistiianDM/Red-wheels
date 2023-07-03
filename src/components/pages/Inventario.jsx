@@ -3,9 +3,9 @@ import Header from '../header/Header';
 import Footer from '../footer/footer';
 import inventario from '/assets/icon/inventario.svg';
 import '../utils/Inventario.css';
-import { specificVehicle , 
-         allReplacements 
-} from "../../services/product";
+import { specificVehicle } from "../../services/product";
+import { allReplacements } from "../../services/replacement";
+
 
 const Inventario = () => {
 
