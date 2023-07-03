@@ -7,3 +7,8 @@ import instance from "./api";
 export function getGestionUser() {
     return instance.get(`/api/v1/usuario`);
 }
+
+export function updateUser(credentials) {
+    console.log(credentials);
+    return instance.put(`/api/v1/usuario`, credentials);
+}
