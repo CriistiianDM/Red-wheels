@@ -43,11 +43,10 @@ const FormProfile = ({
                     'rol': data_id_type[logged.tipoUsuario],
                     'nombre': nombre,
                     'email': correo,
-                    'contraseña': contra,
-                    'id': logged.id
+                    'contraseña': contra
                 }
     
-                const response = await updateUser(dataUpdate);
+                const response = await updateUser(logged.id,dataUpdate);
                 console.log(response);
             }
             catch (error) {
