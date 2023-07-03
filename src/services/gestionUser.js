@@ -5,10 +5,10 @@ import instance from "./api";
  *  @description This function gets all the users from the database.
 */
 export function getGestionUser() {
-    return instance.get(`/api/v1/usuario`);
+    return instance.get(`/api/v1/usuario/`);
 }
 
 export function updateUser(credentials) {
     console.log(credentials);
-    return instance.put(`/api/v1/usuario`, credentials);
+    return instance.put(`/api/v1/usuario/`, credentials);
 }
