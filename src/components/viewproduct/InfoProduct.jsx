@@ -7,7 +7,8 @@ const InfoProduct = ({
     name_product,
     range,
     top_speed,
-    acceleration
+    acceleration,
+    allData
 }) => {
     
     const [ data_info_product, setDataInfoProduct ] = React.useState({
@@ -17,9 +18,11 @@ const InfoProduct = ({
         acceleration: ''
     });
 
+    const [ sendData , setSendData ] = React.useState({});
+
     const navigate =useNavigate();
 
-    const handleViewDetails = () => {
+    const handleViewDetails = (data_product) => {
 
         if (!window.localStorage.hasOwnProperty("logged")) {
             navigate("/no-login-product");
@@ -28,7 +31,21 @@ const InfoProduct = ({
             const logged = (JSON.parse(window.localStorage.getItem("logged"))).data;
 
             if (logged.isAuth) {
-               //queda pendiente hacer la logica de add cart
+
+                const data_mini_cart = [];
+
+                if (!sessionStorage.hasOwnProperty("mini-cart")) {
+                    data_mini_cart.push(sendData);
+                    sessionStorage.setItem("mini-cart", JSON.stringify(data_mini_cart));
+                }
+                else {
+                    const array_ = JSON.parse(sessionStorage.getItem("mini-cart"))
+                    data_mini_cart.push(sendData);
+                    const arregloCombinado = data_mini_cart.concat(array_);
+                    sessionStorage.setItem("mini-cart", JSON.stringify(arregloCombinado));
+                }
+                         
+                navigate("/carrito");
             }
             
         } 
@@ -53,6 +70,14 @@ const InfoProduct = ({
             top_speed,
             acceleration , 'data_info_product');
     }, [data_info_product])
+
+    React.useEffect(() => {
+        
+        if (sendData !== {}) {
+            setSendData(allData);
+        }
+
+    }, [allData])
 
         
     return (
