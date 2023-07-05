@@ -28,6 +28,7 @@ const DestailsPrimary = ({
                   range={data.range}
                   top_speed={data.top_speed}
                   acceleration={data.acceleration}
+                  allData={data}
             />
           </div>
         </>

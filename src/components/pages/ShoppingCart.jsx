@@ -12,13 +12,32 @@ import { useNavigate } from "react-router-dom";
 
 
 const Cart = () => {
-    const eliminarProducto = () => {
-        const containerProducto = document.querySelector('.container-producto');
-        containerProducto.remove();
+    const navigate = useNavigate();
+    const eliminarProducto = (name_product) => {
+        //const containerProducto = document.querySelector('.container-producto');
+        //containerProducto.remove();
+        const new_info = dataCart.filter((item) => {
+             return item.name_product !== name_product;
+        });
+
+        sessionStorage.setItem('mini-cart', JSON.stringify(new_info));
+        setDataCart(new_info);
+
       };
 
-    const [amount, setAmount] = useState(0);
+    const [amount, setAmount] = useState(1);
     const [total, setTotal] = useState(0); // Precio inicial del producto
+    const [ dataCart, setDataCart ] = useState([{
+        id: 1,
+        name_product: 'Tesla Model 3',
+        price: 40000,
+        amount: 1,
+        total: 40000,
+        img: '/assets/carro_icon/tesla.svg',
+        characteristics: [
+            'Autonomía: 448 km'
+        ]
+    }]);
     
     const increaseAmount = () => {
         if (amount < 10) {
@@ -50,6 +69,18 @@ const Cart = () => {
           if (!logged.isAuth) {
             navigate('/login');
           }
+          else {
+
+              if (sessionStorage.hasOwnProperty("mini-cart")) {
+                const miniCartData = JSON.parse(window.sessionStorage.getItem("mini-cart"));
+                setDataCart(miniCartData);
+                console.log(miniCartData, 'miniCartData');
+              }
+              else {
+                alert("No hay productos en el carrito");
+                navigate('/');
+              }
+          }
     
         }
 
@@ -68,31 +99,40 @@ const Cart = () => {
                     </div>
             </div>
             <div className="container">
-             <div className="container-producto">
-                    <div className="product-image"><p><img src={tesla} alt="" /></p></div>
-                    <div className="producto">
-                    <div className="product-name">
-                        <b>TESLA MODEL 3</b>
-                        <div className="boton-eliminar">
-                            <button onClick={eliminarProducto}><b><img src={eliminar} alt="" /></b></button>
-                        </div>
-                        </div>
-                    <div className="product-detalles">
-                        <a href="/detalles">
-                        <b>Detalles del prodcuto</b>
-                        </a>
-                        </div>
-                    <div className="product-precio"><b>40000 €</b></div>
-                    <div className="product-cantidad">
-                        <b>Cantidad</b>
-                        <div className="product-amount-container">
-                           <a onClick={increaseAmount}><img src={add} alt="" /></a>
-                           <div className="product-amount">{amount}</div>
-                           <a onClick={decreaseAmount}><img src={remove} alt="" /></a>
-                        </div>
-                        </div>
-                    </div>
-                </div>  
+             <div style={{
+                    display: 'grid',
+                    gap: '1rem',
+             }}>
+                {
+                    dataCart?.map((item, index) => (
+                        <div key={index} className="container-producto">
+                                <div className="product-image"><p><img src={item.img} alt="" /></p></div>
+                                <div className="producto">
+                                <div className="product-name">
+                                    <b>{item.name_product}</b>
+                                    <div className="boton-eliminar">
+                                        <button onClick={ () => {eliminarProducto(item.name_product) }}><b><img src={eliminar} alt="" /></b></button>
+                                    </div>
+                                    </div>
+                                <div className="product-detalles">
+                                    <a href="/detalles">
+                                    <b>Detalle del producto</b>
+                                    </a>
+                                    </div>
+                                <div className="product-precio"><b>{item.price} €</b></div>
+                                <div className="product-cantidad">
+                                    <b>Cantidad</b>
+                                    <div className="product-amount-container">
+                                    <a onClick={increaseAmount}><img src={add} alt="" /></a>
+                                    <div className="product-amount">{amount}</div>
+                                    <a onClick={decreaseAmount}><img src={remove} alt="" /></a>
+                                    </div>
+                                    </div>
+                                </div>
+                        </div> 
+                    ))
+                } 
+             </div>
              <div className="container-summary">
                 <div className="Titulo2">
                      <b>Resumen</b>
