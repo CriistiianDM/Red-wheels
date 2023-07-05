@@ -19,18 +19,27 @@ const FormLogin = () => {
         e.preventDefault();
 
         try {
+            console.log(rolId, nombre, email, contraseña);
             const data = await register({ rol: rolId, nombre, email, contraseña });
-
+            console.log(data.data , 'data', data.status === 201);
             if (data.status === 200 || data.status === 201) {
-                setAuth(data.isAuth);
-                setUserId(data.id);
-                setUser(data.email);
-                setNombre("");
-                setEmail("");
-                setContraseña("");
+                setAuth(true);
+                // setUserId((data.data).id);
+                // setUser((data.data).email);
+                // setNombre((data.data).nombre);
+                // setEmail((data.data).email);
+                // setContraseña((data.data).contraseña);
+                const data_send = {
+                    "data": {
+                        "id": (data.data).id,
+                        "isAuth": true,
+                        "tipoUsuario": ((data.data).rol).nombre,
+                        "username": (data.data).nombre,
+                        "email": (data.data).email,
+                    },
+                }
 
-                // Saves the token to the local storage.
-                window.localStorage.setItem("logged", JSON.stringify(data));
+                window.localStorage.setItem("logged", JSON.stringify(data_send));
 
                 navigate("/");
 
