@@ -1,14 +1,26 @@
 //import libs
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { vehicle } from "../../services/product";
 
 const FormProfile = ({ product }) => {
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        navigate("/inventario");
+
+        try {
+            const data = await vehicle();
+
+            if (data.statusText === "OK") {
+                navigate("/inventario");
+            }
+        } catch (error) {
+            console.log(error);
+        }
     };
+
+    const handleChange = (e) => {};
 
     return (
         <>
