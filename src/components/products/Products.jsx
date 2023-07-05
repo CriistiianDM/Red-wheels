@@ -35,8 +35,35 @@ const Products = ({ sucursal }) => {
         }
     };
 
-    const handleViewDetails = (data_product) => {
-        navigate("/view-product", { state: { data_product } });
+    const handleViewDetails = (data_product, img) => {
+        console.log(data_product , 'data_product');
+        const edad_ = {
+            id: data_product.id,
+            img: img,
+            name_product: data_product.nombre,
+            price: data_product.precio,
+            characteristics: [
+                data_product.descripcion,
+            ],
+            data_color_ext: [
+                '#FFFFFF',
+                '#454343',
+                '#242BC2',
+                '#000000',
+                '#FF0707',
+            ],
+            data_color_int: [
+                '#FFFFFF',
+                '#454343',
+                '#242BC2',
+                '#000000',
+                '#FF0707',
+            ],
+            range: '200',
+            top_speed: '400',
+            acceleration: '80'
+        };
+        navigate("/view-product", { state: { data_product: edad_ } });
     };
 
     React.useEffect(() => {
@@ -66,7 +93,7 @@ const Products = ({ sucursal }) => {
                                     <div className="_actions">
                                         <a
                                             onClick={() => {
-                                                handleViewDetails(item);
+                                                handleViewDetails(item , '/assets/pvehicles_img/pvehicle3.svg');
                                             }}
                                         >
                                             DETALLES
