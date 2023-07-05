@@ -5,11 +5,14 @@ import { vehicle } from "../../services/product";
 
 const FormProfile = ({ product }) => {
     const [newProduct, setNewProduct] = React.useState({
+        tipo: product === "carro" ? 1 : 2,
         nombre: "",
-        marca: "",
+        modelo: "",
+        marca: 0,
         descripcion: "",
         stock: 0,
         precio: 0,
+        sucursales: [],
     });
 
     const navigate = useNavigate();
@@ -18,10 +21,11 @@ const FormProfile = ({ product }) => {
         e.preventDefault();
 
         try {
-            const data = await vehicle();
+            const data = await vehicle(newProduct);
 
-            if (data.statusText === "OK") {
+            if (data.status === 201) {
                 navigate("/inventario");
+                console.log("Producto agregado");
             }
         } catch (error) {
             console.log(error);
@@ -29,10 +33,18 @@ const FormProfile = ({ product }) => {
     };
 
     const handleChange = (e) => {
-        setNewProduct({
-            ...newProduct,
-            [e.target.name]: e.target.value,
-        });
+        if (e.target.name === "sucursales") {
+            const arraySucursales = e.target.value.split(",");
+            setNewProduct({
+                ...newProduct,
+                [e.target.name]: arraySucursales,
+            });
+        } else {
+            setNewProduct({
+                ...newProduct,
+                [e.target.name]: e.target.value,
+            });
+        }
     };
 
     return (
@@ -48,6 +60,15 @@ const FormProfile = ({ product }) => {
                             id="nom_producto"
                             onChange={handleChange}
                             value={newProduct.nombre}
+                        />
+                        <label htmlFor="modelo">MODELO</label>
+                        <input
+                            placeholder="2023"
+                            type="text"
+                            name="modelo"
+                            id="modelo"
+                            onChange={handleChange}
+                            value={newProduct.modelo}
                         />
                         <label htmlFor="marca">MARCA</label>
                         <input
@@ -84,6 +105,15 @@ const FormProfile = ({ product }) => {
                             id="precio"
                             onChange={handleChange}
                             value={newProduct.precio}
+                        />
+                        <label htmlFor="sucursales">SUCURSALES</label>
+                        <input
+                            placeholder="1,2"
+                            type="number"
+                            name="sucursales"
+                            id="sucursales"
+                            onChange={handleChange}
+                            value={newProduct.sucursales}
                         />
                     </div>
                 </div>
