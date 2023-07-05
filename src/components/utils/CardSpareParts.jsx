@@ -10,6 +10,30 @@ const CardSpareParts = ({ data_respuestos, target }) => {
         navigate(target);
     };
 
+    const handleViewDetails = (data_product, img) => {
+        console.log(data_product , 'data_product');
+        const edad_ = {
+            id: data_product.id,
+            img: img,
+            name_product: data_product.nombre,
+            price: data_product.precio,
+            characteristics: [
+                data_product.descripcion,
+            ],
+            data_color_ext: [
+              
+            ],
+            data_color_int: [
+              
+            ],
+            range: '200',
+            top_speed: '400',
+            acceleration: '80'
+        };
+        navigate("/view-product", { state: { data_product: edad_ } });
+    };
+
+
     //actualizar los productos
     React.useEffect(() => {
         setData(data_respuestos);
@@ -35,7 +59,7 @@ const CardSpareParts = ({ data_respuestos, target }) => {
                                 <h1>{item.nombre}</h1>
                                 <p>$ {item.precio}</p>
                             </span>
-                            <a>DETALLES</a>
+                            <a onClick={ () => {handleViewDetails(item,'/assets/repuestos/motos/1.svg')}}>DETALLES</a>
                         </div>
                     );
                 })}
