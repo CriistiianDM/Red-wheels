@@ -1,7 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../services/user";
 import UserContext from "../../context/user/UserContext";
+import ReCAPTCHA from "react-google-recaptcha";
+
+//INSTALAR PARA EL CAPTCHA  "npm install --save react-google-recaptcha"
 
 const FormLogin = () => {
     const [email, setEmail] = useState("");
@@ -9,6 +12,21 @@ const FormLogin = () => {
     const [rolId, setUserType] = useState(null);
 
     const navigate = useNavigate();
+
+    const [ captchaValido,cambiarCaptchaValido] = useState(null);
+    const [usuarioValido, cambiarUsuarioValido] = useState(false);     
+    const captcha = useRef(null);
+
+    const onChange = async()  => {
+        console.log(captcha.current);
+        if (captcha.current.getValue()){
+            cambiarCaptchaValido(true);
+            cambiarUsuarioValido(true);
+        }else {
+            cambiarCaptchaValido(false);
+            cambiarUsuarioValido(false);
+        }
+    }
 
     const { setAuth, setUserId, setUserRole, setUserEmail, setUsername } = useContext(UserContext);
 
@@ -62,11 +80,12 @@ const FormLogin = () => {
                 setUserType(e.target.value);
             default:
         }
+        
     };
 
     return (
         <div className="_container_form_login">
-            <form onSubmit={handleForm} className="_form_login">
+            <form onSubmit={handleForm}  className="_form_login">
                 <div className="_img_circle">
                     <img src="/assets/icon/profile.svg" alt="circle" />
                 </div>
@@ -98,7 +117,16 @@ const FormLogin = () => {
                     value={contraseña}
                 />
 
-                <button style={{ cursor: 'pointer'}} type="submit">Ingresar</button>
+                <div className="recaptcha">
+                <ReCAPTCHA
+                    ref={captcha}
+                    sitekey="6LeaWPcmAAAAAHGmH2oRM_GGnc196BXhPfFsW0FH"
+                    onChange={onChange}
+                />
+                </div>
+
+                {usuarioValido == false && <div className="error-captcha">Por favor acepta el captcha</div>}
+                <button style={{ cursor: 'pointer'}} type="submit" disabled={!usuarioValido}>Ingresar</button>
                 <Link to="/register">Registrarse</Link>
             </form>
         </div>
