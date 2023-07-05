@@ -33,7 +33,16 @@ const FormLogin = () => {
                 navigate("/");
 
             }
+            else {
+                alert(`Revisa tus credenciales o tu tipo de usuario y vuelve a intentarlo. 
+                        Si el problema persiste, contacta con el administrador. O Crea una cuenta si no tienes una.`);
+            }
+
         } catch (error) {
+            alert(`Mensaje de error: ${error.response.data.message}
+                  \n Revisa tus credenciales o tu tipo de usuario y vuelve a intentarlo. 
+                  Si el problema persiste, contacta con el administrador. O Crea una cuenta si no tienes una.`);
+            
             throw new Error(error.response.data.message);
         }
     };
@@ -89,7 +98,7 @@ const FormLogin = () => {
                     value={contraseña}
                 />
 
-                <button type="submit">Ingresar</button>
+                <button style={{ cursor: 'pointer'}} type="submit">Ingresar</button>
                 <Link to="/register">Registrarse</Link>
             </form>
         </div>
