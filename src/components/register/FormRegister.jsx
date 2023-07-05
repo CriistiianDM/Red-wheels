@@ -28,12 +28,15 @@ const FormLogin = () => {
                 setNombre("");
                 setEmail("");
                 setContraseña("");
-                navigate("/");
 
                 // Saves the token to the local storage.
                 window.localStorage.setItem("logged", JSON.stringify(data));
+
+                navigate("/");
+
             }
         } catch (error) {
+            alert(`Mensaje de error: ${error.response.data}`);
             throw new Error(error.response.data);
         }
     };
@@ -113,12 +116,12 @@ const FormLogin = () => {
                         <option disabled value="0"></option>
                         <option value="4">Cliente</option>
                         {
-                        havePermission &&
-                        <>
-                            <option value="2">Vendedor</option>
-                            <option value="3">Jefe de taller</option>
-                            <option value="1">Gerente</option>
-                        </>
+                            havePermission &&
+                            <>
+                                <option value="2">Vendedor</option>
+                                <option value="3">Jefe de taller</option>
+                                <option value="1">Gerente</option>
+                            </>
                         }
                     </select>
 
