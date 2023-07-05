@@ -2,24 +2,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-//Here is the component
-const FormProfile = ({ first_content, second_content }) => {
-    const [data, setData] = React.useState({
-        first_content: [],
-        second_content: [],
-    });
-
-    React.useEffect(() => {
-        setData({
-            first_content: first_content ? first_content : [],
-            second_content: second_content ? second_content : [],
-        });
-    }, [first_content, second_content]);
-
+const FormProfile = ({ product }) => {
     const navigate = useNavigate();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        navigate("/inventario");
+    };
+
     return (
         <>
-            <form id="Agregarcentro">
+            <form id="Agregarcentro" onSubmit={handleSubmit}>
                 <div className="_container_form_inpust__item" id="Agrgar_producto">
                     <div className="_all_input">
                         <label htmlFor="name">ID</label>
@@ -42,9 +35,9 @@ const FormProfile = ({ first_content, second_content }) => {
                     </div>
                 </div>
                 <div className="_actions">
-                    <a onClick={() => navigate("/login")} className="buy-button" id="BotonAgregar">
+                    <button type="submit" className="buy-button" id="BotonAgregar">
                         AGREGAR
-                    </a>
+                    </button>
                 </div>
             </form>
         </>

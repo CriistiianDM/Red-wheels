@@ -15,7 +15,7 @@ const Acciones = ({ title }) => {
         <>
             <main className="_container_profile_actions">
                 <h1 className="_name_profile">{`AGREGAR ${newTitle}`}</h1>
-                <FormProfile />
+                <FormProfile product={title} />
                 <FooterLogin />
             </main>
         </>
