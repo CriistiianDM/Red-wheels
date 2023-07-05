@@ -28,7 +28,16 @@ const FormProfile = ({ product }) => {
             let data;
 
             if (product === "carro" || product === "moto") {
-                data = await vehicle(newProduct);
+                data = await vehicle({
+                    tipo: newProduct.tipo,
+                    nombre: newProduct.nombre,
+                    modelo: newProduct.modelo,
+                    marca: newProduct.marca,
+                    descripcion: newProduct.descripcion,
+                    stock: newProduct.stock,
+                    precio: newProduct.precio,
+                    sucursales: newProduct.sucursales,
+                });
             } else {
                 data = await replacement({
                     nombre: newProduct.nombre,
@@ -129,7 +138,7 @@ const FormProfile = ({ product }) => {
                             <label htmlFor="sucursales">SUCURSALES</label>
                             <input
                                 placeholder="1,2"
-                                type="number"
+                                type="text"
                                 name="sucursales"
                                 id="sucursales"
                                 onChange={handleChange}
@@ -186,7 +195,7 @@ const FormProfile = ({ product }) => {
                             <label htmlFor="sucursales">SUCURSALES</label>
                             <input
                                 placeholder="1,2"
-                                type="number"
+                                type="text"
                                 name="sucursales"
                                 id="sucursales"
                                 onChange={handleChange}
