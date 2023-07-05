@@ -1,36 +1,25 @@
 //import libs
-import React from 'react';
-import FormProfile from './Form';
-import './Prod.css'
-import FooterLogin from '../login/FooterLogin';
-//create a component
-const Acciones = ({
-    name
-}) => {
+import React from "react";
+import FormProfile from "./Form";
+import "./Prod.css";
+import FooterLogin from "../login/FooterLogin";
 
-     const [ data, setData ] = React.useState({
-            name: ''
-    })
-    
-    //la magia ocurre aqui :v
+const Acciones = ({ title }) => {
+    const [newTitle, setNewTitle] = React.useState("");
+
     React.useEffect(() => {
-        setData({
-            name: name? name : 'AGREGAR PRODUCTO'
-        })
+        setNewTitle(title.toUpperCase());
+    }, [newTitle]);
 
-    }, [ name])
-
-     return (
+    return (
         <>
-           <main className="_container_profile_actions">
-               <h1 className='_name_profile'>{data.name}</h1>
-               <FormProfile />
-               <FooterLogin />
-           </main>
+            <main className="_container_profile_actions">
+                <h1 className="_name_profile">{`AGREGAR ${newTitle}`}</h1>
+                <FormProfile />
+                <FooterLogin />
+            </main>
         </>
-     )
-
+    );
 };
-
 
 export default Acciones;

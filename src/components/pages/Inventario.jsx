@@ -83,7 +83,7 @@ const Inventario = () => {
                                 <a>Carros</a>
                             </div>
                             <div className="boton-agregar">
-                                <a href="/Add">Agregar</a>
+                                <a href="/Add/carro">Agregar</a>
                             </div>
                         </div>
                         <table className="table">
@@ -115,7 +115,7 @@ const Inventario = () => {
                                 <a>Motos</a>
                             </div>
                             <div className="boton-agregar">
-                                <a href="/Add">Agregar</a>
+                                <a href="/Add/moto">Agregar</a>
                             </div>
                         </div>
                         <table className="table">
@@ -147,7 +147,7 @@ const Inventario = () => {
                                 <h2>Repuestos</h2>
                             </div>
                             <div className="boton-agregar">
-                                <a href="/Add">Agregar</a>
+                                <a href="/Add/repuesto">Agregar</a>
                             </div>
                         </div>
                         <table className="table">
