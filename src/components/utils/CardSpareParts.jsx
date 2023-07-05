@@ -29,7 +29,7 @@ const CardSpareParts = ({ data_respuestos, target }) => {
                     return (
                         <div className="_card-spareparts" key={index}>
                             <div className="_card-spareparts__img">
-                                <img src={item.img} alt="img" />
+                                <img src={'/assets/repuestos/motos/1.svg'} alt="img" />
                             </div>
                             <span>
                                 <h1>{item.nombre}</h1>
