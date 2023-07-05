@@ -50,9 +50,9 @@ const PVehicles = () => {
                 '#454343',
                 '#242BC2',
             ],
-            range: '200',
-            top_speed: '400',
-            acceleration: '80'
+            range: Math.floor(Math.random() * (200 - 19 + 1)) + 19,
+            top_speed: Math.floor(Math.random() * (400 - 19 + 1)) + 19,
+            acceleration: Math.floor(Math.random() * (80 - 19 + 1)) + 19
         };
         navigate("/view-product", { state: { data_product: edad_ } });
     };
