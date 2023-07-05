@@ -9,7 +9,7 @@ import UserContext from "../../context/user/UserContext";
 
 export default function Home() {
     const { userEmail } = React.useContext(UserContext);
-    const [sucursal, setSucursal] = React.useState(0);
+    const [sucursal, setSucursal] = React.useState(1);
 
     React.useEffect(() => {
         //scroll to top

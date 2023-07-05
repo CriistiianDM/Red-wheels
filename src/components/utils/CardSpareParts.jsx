@@ -15,9 +15,15 @@ const CardSpareParts = ({ data_respuestos, target }) => {
         setData(data_respuestos);
     }, [data_respuestos]);
 
+    React.useEffect(() => {
+        console.log(data);
+    }, [data]);
+
     //renderizar los productos
     return (
         <>
+            {
+             data.length !== 0 ?
             <section className="_container-card-spareparts">
                 {data?.map((item, index) => {
                     return (
@@ -29,11 +35,16 @@ const CardSpareParts = ({ data_respuestos, target }) => {
                                 <h1>{item.nombre}</h1>
                                 <p>$ {item.precio}</p>
                             </span>
-                            <a onClick={handleDetails}>DETALLES</a>
+                            <a>DETALLES</a>
                         </div>
                     );
                 })}
-            </section>
+            </section> :
+             (
+                <div className="_loader_data">
+                        <h1>Cargando</h1>
+                </div>
+            )}
         </>
     );
 };

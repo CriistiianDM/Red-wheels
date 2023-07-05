@@ -22,6 +22,7 @@ const FilterSpareParts = ({ setDataSelect, setTarget }) => {
     };
 
     React.useEffect(() => {
+        setDataSelect([]);
         getReplacements();
     }, [vehicleType]);
 
