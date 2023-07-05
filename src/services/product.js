@@ -1,6 +1,15 @@
 import instance from "./api";
 
 /**
+ * Creates a new vehicle.
+ * @param {object} credentials
+ * @returns
+ */
+export function vehicle(data) {
+    return instance.post("/api/v1/vehiculo/", data);
+}
+
+/**
  * Gets all vehicles given a sucursal.
  * @param {object} credentials
  * @returns

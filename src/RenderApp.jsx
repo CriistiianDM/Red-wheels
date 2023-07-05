@@ -13,10 +13,10 @@ import NoLoginRepar from "./components/pages/NoLoginRepar";
 import DiagnosisRepairCar from "./components/pages/DiagnosisRepairCar";
 import DiagnosisRepairMoto from "./components/pages/DiagnosisRepairMoto";
 import Profile from "./components/pages/Profile";
-import ShoppingCart from './components/pages/ShoppingCart';
-import Pago from './components/pages/Pago';
-import Agradecimiento from './components/pages/Agradecimiento';
-import Moto from './components/pages/Motos';
+import ShoppingCart from "./components/pages/ShoppingCart";
+import Pago from "./components/pages/Pago";
+import Agradecimiento from "./components/pages/Agradecimiento";
+import Moto from "./components/pages/Motos";
 import GestionUsuarios from "./components/pages/GestionUsuarios";
 import Add from "./components/pages/Add";
 import Inventario from "./components/pages/Inventario";
@@ -28,47 +28,47 @@ import Ordenes_trabajo from "./components/pages/Ordenes_trabajo";
 import Cotizaciones from "./components/pages/Cotizaciones";
 import Ordenes from "./components/pages/Estadoorden";
 export default function RenderApp() {
-  return (
-    <>
-      <UserState>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/vehicles" element={<Vehicles />} />
-            <Route path="/view-product" element={<ViewProduct />} />
-            <Route path="/no-login-product" element={<NoLoginBuy />} />
-            <Route path="/no-login-repair" element={<NoLoginRepar />} />
-            <Route path="/respuestos" element={<SpareParts />} />
-            <Route path="/diagnostico-carros" element={<DiagnosisRepairCar />} />
-            <Route path="/diagnostico-motos" element={<DiagnosisRepairMoto />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/carrito" element={<ShoppingCart/>} /> 
-            <Route path="/pago" element={<Pago/>} /> 
-            <Route path="/gracias" element={<Agradecimiento/>} />
-            <Route path="/Motos" element={<Moto/>} />
-            <Route path="/inventario" element={<Inventario/>} />
-            <Route path="/gestionUsuarios" element={<GestionUsuarios/>} />
-            <Route path="/cotizacion-consultas" element={<Cotizaciones_consultas/>} />
-            <Route path="/vehiculos-vendidos" element={<VehiculosVendidos/>} />
-            <Route path="/Add" element={<Add/>} />
-            <Route path="/EstadoReparacion" element={<Reparacion/>} />
-            <Route path="/Editar" element={<Editar/>} />
-            <Route path="/ordenes-trabajo" element={<Ordenes_trabajo/>} />
-            <Route path="/Cotizaciones" element={<Cotizaciones/>} />
-            <Route path="/estadorden" element={<Ordenes/>} />
-            <Route
-              path="*"
-              element={
-                <>
-                  <h1>No Found Route</h1>
-                </>
-              }
-            />
-          </Routes>
-        </Router>
-      </UserState>
-    </>
-  );
+    return (
+        <>
+            <UserState>
+                <Router>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/register" element={<Register />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/vehicles" element={<Vehicles />} />
+                        <Route path="/view-product" element={<ViewProduct />} />
+                        <Route path="/no-login-product" element={<NoLoginBuy />} />
+                        <Route path="/no-login-repair" element={<NoLoginRepar />} />
+                        <Route path="/respuestos" element={<SpareParts />} />
+                        <Route path="/diagnostico-carros" element={<DiagnosisRepairCar />} />
+                        <Route path="/diagnostico-motos" element={<DiagnosisRepairMoto />} />
+                        <Route path="/profile" element={<Profile />} />
+                        <Route path="/carrito" element={<ShoppingCart />} />
+                        <Route path="/pago" element={<Pago />} />
+                        <Route path="/gracias" element={<Agradecimiento />} />
+                        <Route path="/Motos" element={<Moto />} />
+                        <Route path="/inventario" element={<Inventario />} />
+                        <Route path="/gestionUsuarios" element={<GestionUsuarios />} />
+                        <Route path="/cotizacion-consultas" element={<Cotizaciones_consultas />} />
+                        <Route path="/vehiculos-vendidos" element={<VehiculosVendidos />} />
+                        <Route path="/Add/:product" element={<Add />} />
+                        <Route path="/EstadoReparacion" element={<Reparacion />} />
+                        <Route path="/Editar" element={<Editar />} />
+                        <Route path="/ordenes-trabajo" element={<Ordenes_trabajo />} />
+                        <Route path="/Cotizaciones" element={<Cotizaciones />} />
+                        <Route path="/estadorden" element={<Ordenes />} />
+                        <Route
+                            path="*"
+                            element={
+                                <>
+                                    <h1>No Found Route</h1>
+                                </>
+                            }
+                        />
+                    </Routes>
+                </Router>
+            </UserState>
+        </>
+    );
 }
