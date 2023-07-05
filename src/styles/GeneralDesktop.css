@@ -591,6 +591,20 @@ div ._circle_color {
     border-radius: 30px;
 }
 
+.error-captcha {
+	color: #E43946;
+	margin-bottom: 20px;
+    font-size: 20px;
+    margin-top: 2em;
+    text-align: center;
+    font-family: var(--text-general-primary);
+}
+
+.recaptcha{
+    margin-top: 2em;
+    margin-left: 1em;
+}
+
 
 /*
    Variables Css
