@@ -55,7 +55,7 @@ const options_ = {
          },
          {
               'name': 'Estado de ordenes',  
-              'link': '/estado-orden?'     
+              'link': '/estadorden'     
          }
      ],
 }
